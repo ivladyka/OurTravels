@@ -1,0 +1,69 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Telerik.Web.UI;
+using System.Collections.Specialized;
+using System.Web.UI.HtmlControls;
+
+public partial class _Default : ProjectPageBase
+{
+    private int m_PageSize = 7;
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if(!Page.IsPostBack)
+        {
+            LoadData(1);
+        }
+    }
+
+    private void LoadData(int pageIndex)
+    {
+        VikkiSoft_BLL.BlogPage bp = new VikkiSoft_BLL.BlogPage();
+        int recordCount = bp.LoadBlogsWithPaging(pageIndex, PageSize);
+        rptBlogPage.DataSource = bp.DefaultView.Table;
+        rptBlogPage.DataBind();
+        rptPager.Visible = (recordCount > PageSize);
+        LoadPager(recordCount, pageIndex);
+    }
+
+
+    private void LoadPager(int recordCount, int currentPage)
+    {
+        double dblPageCount = (double)((decimal)recordCount / Convert.ToDecimal(PageSize));
+        int pageCount = (int)Math.Ceiling(dblPageCount);
+        List<ListItem> pages = new List<ListItem>();
+        if (pageCount > 0)
+        {
+            for (int i = 1; i <= pageCount; i++)
+            {
+                pages.Add(new ListItem(i.ToString(), i.ToString(), i != currentPage));
+            }
+        }
+        rptPager.DataSource = pages;
+        rptPager.DataBind();
+    }
+
+
+    protected void Page_Changed(object sender, EventArgs e)
+    {
+        int pageIndex = int.Parse((sender as LinkButton).CommandArgument);
+        LoadData(pageIndex);
+    }
+
+
+    private int PageSize
+    {
+        get
+        {
+            return m_PageSize;
+        }
+        set
+        {
+            m_PageSize = value;
+        }
+    }
+}

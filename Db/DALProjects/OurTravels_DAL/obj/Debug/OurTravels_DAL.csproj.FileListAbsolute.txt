@@ -1,0 +1,7 @@
+E:\Project\OurTravels\Db\DALProjects\OurTravels_DAL\bin\Debug\MyGeneration.dOOdads.dll
+E:\Project\OurTravels\Db\DALProjects\OurTravels_DAL\bin\Debug\MyGeneration.dOOdads.pdb
+E:\Project\OurTravels\Db\DALProjects\OurTravels_DAL\obj\Debug\OurTravels_DAL.csprojResolveAssemblyReference.cache
+E:\Project\OurTravels\Db\DALProjects\OurTravels_DAL\bin\Debug\OurTravels_DAL.dll
+E:\Project\OurTravels\Db\DALProjects\OurTravels_DAL\bin\Debug\OurTravels_DAL.pdb
+E:\Project\OurTravels\Db\DALProjects\OurTravels_DAL\obj\Debug\OurTravels_DAL.dll
+E:\Project\OurTravels\Db\DALProjects\OurTravels_DAL\obj\Debug\OurTravels_DAL.pdb

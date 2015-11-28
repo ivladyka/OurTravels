@@ -1,0 +1,19 @@
+1. Before database update setup recovery mode to Bulk-logged.
+	a. Using SQLManagement Studio select database
+	b. Select "Properties" from popup menu
+	c. Select "Options" in the Let menu
+	d. Setup Recovery Mode to the bulk-logged at the right side of window
+2. Update database structure
+3. Setup Recovery mode to the Full back.
+
+Reduce Transaction Log file
+
+1. Setup Database Recovery Mode to "Simple"
+2. Execute SQL Script:
+	USE [BWA_HelpDesk_1]
+	GO
+	CHECKPOINT
+	GO
+	DBCC SHRINKFILE (N'bigwebdesk_alpha_Log')
+	GO
+3. Setup Database Recovery Node to the "Full" back.

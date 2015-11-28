@@ -1,0 +1,107 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DefaultMP.master.cs" Inherits="MasterPage" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <link href="style.css" type="text/css" rel="stylesheet"/>
+    <link rel="icon" type="image/gif" href="Images/icon.gif"/>		
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />	
+    <meta content="VIKKI Soft, office@vikkisoft.com" name="VIKKIsoft" /> 
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
+    <%=Title%>
+    <%=Description%>
+    <%=Keywords%>
+    <%=ScriptTag%> 
+    <%=Canonical%>
+    </telerik:RadCodeBlock>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#topnav li").prepend("<span></span>"); //Throws an empty span tag right before the a tag
+            $("#topnav li").each(function () { //For each list item...
+                var linkText = $(this).find("a").html(); //Find the text inside of the a tag
+                $(this).find("span").show().html(linkText); //Add the text in the span tag
+            });
+            $("#topnav li").hover(function () { //On hover...
+                $(this).find("span").stop().animate({
+                    marginTop: "-40" //Find the span tag and move it up 40 pixels
+                }, 250);
+            }, function () { //On hover out...
+                $(this).find("span").stop().animate({
+                    marginTop: "0" //Move the span back to its original state (0px)
+                }, 250);
+            });
+        });
+</script>
+</head>
+<body style="width:100%; height:100%" class="body-backпround">
+    <form id="form1" runat="server" style="width:100%; height:100%">    
+   <div class="formdiv">
+      <div class="divmenu"> 
+    <ul id="topnav" class="v2">
+		<li id="startlimenu">
+            <asp:HyperLink id="hlHomeTop" runat="server">
+                <%=menuHome%>
+            </asp:HyperLink>           
+		</li>
+		<li>
+            <asp:HyperLink id="hlMenuHotelSearch" runat="server"> 
+                <%=menuHotels%>
+            </asp:HyperLink>
+		</li>
+		<li>
+            <asp:HyperLink id="hlAboutUs" runat="server">
+                <%=menuAboutUS%>
+            </asp:HyperLink>
+		</li>		
+        <li>
+            <asp:HyperLink id="hlPrivacyPolicy" runat="server">
+                <%=menuPrivacyPolicy%>
+            </asp:HyperLink>
+		</li>
+		<li>
+            <asp:HyperLink id="hlContactUsTop" runat="server">
+                <%=menuContactUS%>
+            </asp:HyperLink>
+		</li>	
+	</ul>   
+	</div>       
+      <div class="logodiv">   
+        <a href="Default.aspx">   
+        <asp:Image ID="logo" runat="server" ImageUrl="Images/logo.png" Width="100px"  />
+        <div id="logospan">           
+        <asp:Label ID="Label1" runat="server" Text="YourTravel" CssClass="CompanyName">Your</asp:Label>
+        <asp:Label ID="Label2" runat="server" Text="YourTravel" CssClass="CompanyName1">Travel</asp:Label>
+        </div> 
+        </a>
+
+        </div>        	     
+        <telerik:RadScriptManager runat="Server" ID="RadScriptManager1" />
+        <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        
+        </asp:ContentPlaceHolder>  
+      
+   </div>     
+        <div class="footer">  
+         <div class="footerlinks">
+            <asp:HyperLink ID="HyperLink1" runat="server">Home</asp:HyperLink> | <asp:HyperLink ID="HyperLink2" runat="server">Hotels</asp:HyperLink> | <asp:HyperLink ID="HyperLink3" runat="server">Contact Us</asp:HyperLink>
+        </div>
+        </div>
+        <script type="text/javascript">
+
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-36679888-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+    </form> 
+</body>
+</html>

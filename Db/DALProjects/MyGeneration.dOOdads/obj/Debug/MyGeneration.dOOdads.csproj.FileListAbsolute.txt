@@ -1,0 +1,4 @@
+E:\Project\OurTravels\Db\DALProjects\MyGeneration.dOOdads\bin\Debug\MyGeneration.dOOdads.dll
+E:\Project\OurTravels\Db\DALProjects\MyGeneration.dOOdads\bin\Debug\MyGeneration.dOOdads.pdb
+E:\Project\OurTravels\Db\DALProjects\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads.dll
+E:\Project\OurTravels\Db\DALProjects\MyGeneration.dOOdads\obj\Debug\MyGeneration.dOOdads.pdb
