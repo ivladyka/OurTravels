@@ -121,5 +121,12 @@
     <Build Include="Stored Procedures\DeleteCountry.sql" />
     <Build Include="Stored Procedures\DeleteCity.sql" />
     <Build Include="Stored Procedures\DeleteBlogPage.sql" />
+    <Build Include="Tables\BlogPageCity.sql" />
+    <Build Include="Stored Procedures\UpdateBlogPageCity.sql" />
+    <Build Include="Stored Procedures\LoadBlogPageCityByPrimaryKey.sql" />
+    <Build Include="Stored Procedures\LoadAllBlogPageCity.sql" />
+    <Build Include="Stored Procedures\InsertBlogPageCity.sql" />
+    <Build Include="Stored Procedures\DeleteBlogPageCity.sql" />
+    <Build Include="Stored Procedures\usp_BlogPageCity_LoadByBlogPageID.sql" />
   </ItemGroup>
 </Project>

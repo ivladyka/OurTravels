@@ -37,13 +37,15 @@ BEGIN
 		bp.BlogPageID
 	  ,bp.[Name]
       ,bp.[Name_en]
-      ,bp.[PageContent]
+	  ,CASE WHEN CHARINDEX('&nbsp;end', bp.[PageContent]) > 0 
+		THEN SUBSTRING(bp.[PageContent], 0, CHARINDEX('&nbsp;end', bp.[PageContent])) ELSE bp.[PageContent] END AS PageContent
       ,bp.[Keywords]
       ,bp.[Description]
       ,bp.[DateUpdate]
       ,bp.[StartTravelDate]
       ,bp.[EndTravelDate]
-      ,bp.[DatePublish]
+      ,bp.[DatePublish], 
+	  '' AS URL
 	FROM 
 		@BlogPages bps
 	INNER JOIN

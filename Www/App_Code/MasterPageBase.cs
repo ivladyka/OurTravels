@@ -10,6 +10,7 @@ public class MasterPageBase : System.Web.UI.MasterPage
 {
     private int m_CityID = 0;
     private int m_CountryID = 0;
+    private int m_BlogPageID = 0;
 
     public string PageName
     {
@@ -159,6 +160,47 @@ public class MasterPageBase : System.Web.UI.MasterPage
                     m_CityID = c.CityID;
                     return m_CityID;
                 }
+            }
+            return 0;
+        }
+    }
+
+    public bool IsBlogPagePage
+    {
+        get
+        {
+            if (Page.Request.Url.ToString().ToLower().IndexOf("/page/") > -1)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+
+    public int BlogPageID
+    {
+        get
+        {
+            if (Request.QueryString["bpid"] != null)
+            {
+                return int.Parse(Request.QueryString["bpid"].ToString());
+            }
+            if (m_BlogPageID > 0)
+            {
+                return m_BlogPageID;
+            }
+            return BlogPageIDFromFriendlyURL;
+        }
+    }
+
+    public int BlogPageIDFromFriendlyURL
+    {
+        get
+        {
+            if (Page.RouteData.Values["BlogPageID"] != null)
+            {
+                m_BlogPageID = int.Parse(Page.RouteData.Values["BlogPageID"].ToString());
+                return m_BlogPageID;
             }
             return 0;
         }

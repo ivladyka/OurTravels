@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="uc1" TagName="SiteTypeChoice" Src="ChoiceControls/SiteTypeChoice.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="IntInput" Src="ValueControls/IntInput.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="PhotoUpload" Src="ValueControls/PhotoUpload.ascx" %>
-<TABLE id="Table3" class="EditControl3" cellpadding="2" cellspacing="7"  align="center" border="0" width="550px">	
+<TABLE id="Table3" class="EditControl3" cellpadding="2" cellspacing="7"  align="left" border="0" width="550px">	
     <tr>
         <td align="right">
             Назва:

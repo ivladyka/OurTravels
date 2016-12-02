@@ -17,8 +17,8 @@ public partial class MasterPage : MasterPageBase
     {
         hlMenuHotelSearch.NavigateUrl = "http://reservations.yourtravel.biz/templates/407972/index?lang=uk";
         hlHomeTop.NavigateUrl = this.SiteURL + "/Default.aspx";
-        hlAboutUs.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?ct=1";
-        hlPrivacyPolicy.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?ct=2";
+        hlAboutUs.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?bpid=1";
+        hlPrivacyPolicy.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?bpid=2";
         hlContactUsTop.NavigateUrl = this.SiteURL + "/ContactUs.aspx";
         if (!Page.IsPostBack)
         {
@@ -91,6 +91,26 @@ public partial class MasterPage : MasterPageBase
                     if (!c.IsColumnNull(City.ColumnNames.Description))
                     {
                         m_Description = c.GetColumn(City.ColumnNames.Description).ToString();
+                    }
+                }
+            }
+            else if (IsBlogPagePage)
+            {
+                BlogPage bp = new BlogPage();
+                if (bp.LoadByPrimaryKey(BlogPageID))
+                {
+                    m_Title = bp.GetColumn(BlogPage.ColumnNames.Name).ToString();
+                    if (!s.IsColumnNull(Settings.ColumnNames.TitleSuffix))
+                    {
+                        m_Title += " - " + s.GetColumn(Settings.ColumnNames.TitleSuffix).ToString();
+                    }
+                    if (!bp.IsColumnNull(BlogPage.ColumnNames.Keywords))
+                    {
+                        m_Keywords = bp.GetColumn(BlogPage.ColumnNames.Keywords).ToString();
+                    }
+                    if (!bp.IsColumnNull(BlogPage.ColumnNames.Description))
+                    {
+                        m_Description = bp.GetColumn(BlogPage.ColumnNames.Description).ToString();
                     }
                 }
             }

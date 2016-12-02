@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Telerik.Web.UI;
-using System.Collections.Specialized;
-using System.Web.UI.HtmlControls;
+using System.Data;
+using VikkiSoft_BLL;
 
 public partial class _Default : ProjectPageBase
 {
@@ -54,6 +51,34 @@ public partial class _Default : ProjectPageBase
         LoadData(pageIndex);
     }
 
+    protected void rptBlogPage_ItemDataBound(object sender, RepeaterItemEventArgs e)
+    {
+        DataRow row = ((DataRowView)e.Item.DataItem).Row;
+        HyperLink hlTitle = (HyperLink)e.Item.FindControl("hlTitle");
+        HyperLink hlReadMore = (HyperLink)e.Item.FindControl("hlReadMore");
+        if (hlTitle != null && hlReadMore != null)
+        {
+           hlReadMore.NavigateUrl = hlTitle.NavigateUrl = Utils.GenerateFriendlyURL("page", new string[] {
+                       row[BlogPage.ColumnNames.BlogPageID].ToString(),
+                        row[BlogPage.ColumnNames.Name_en].ToString()});
+        }
+        Label lblTravelDate = (Label)e.Item.FindControl("lblTravelDate");
+        if(lblTravelDate != null)
+        {
+            if(!row.IsNull(BlogPage.ColumnNames.StartTravelDate) || !row.IsNull(BlogPage.ColumnNames.EndTravelDate))
+            {
+                lblTravelDate.Visible = true;
+                if (!row.IsNull(BlogPage.ColumnNames.StartTravelDate))
+                {
+                    lblTravelDate.Text = ((DateTime)row[BlogPage.ColumnNames.StartTravelDate]).ToString("dd.mm.yyyy");
+                }
+                if (!row.IsNull(BlogPage.ColumnNames.EndTravelDate))
+                {
+                    lblTravelDate.Text += " - " + ((DateTime)row[BlogPage.ColumnNames.EndTravelDate]).ToString("dd.mm.yyyy");
+                }
+            }
+        }
+    }
 
     private int PageSize
     {

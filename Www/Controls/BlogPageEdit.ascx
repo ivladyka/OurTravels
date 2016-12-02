@@ -1,7 +1,18 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BlogPageEdit.ascx.cs" Inherits="BlogPageEdit" %>
 <%@ Register TagPrefix="uc1" TagName="EditorHTML" Src="ValueControls/EditorHTML.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="DatePicker" Src="ValueControls/DatePicker.ascx" %>
-  <table id="Table3" align="center" border="0" cellpadding="2" cellspacing="5" >
+<%@ Register TagPrefix="uc1" TagName="BlogPageCityList" Src="BlogPageCityList.ascx" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<telerik:RadTabStrip ID="rtsBlogPage" runat="server" AutoPostBack="true" Align="Left" Width="747px" OnTabClick="rtsBlogPage_TabClick">
+    <Tabs>
+        <telerik:RadTab Text="Подорож/Сторінка" Selected="True">
+        </telerik:RadTab>
+        <telerik:RadTab Text="Міста">
+        </telerik:RadTab>
+    </Tabs>
+</telerik:RadTabStrip>
+<asp:Panel ID="pnlBlogPageEdit" runat="server" >
+  <table id="Table3" align="left" border="0" cellpadding="2" cellspacing="5" >
             <tr>
                 <td align="right">
                     Назва:
@@ -101,3 +112,7 @@
              </tr>
             
     </table>
+</asp:Panel>
+<asp:Panel ID="pnlCityList" runat="server" Visible="false">
+    <uc1:BlogPageCityList id="blogPageCityList" runat="server"></uc1:BlogPageCityList>
+</asp:Panel>

@@ -2,9 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
-    <asp:Repeater ID="rptBlogPage" runat="server">
+    <asp:Repeater ID="rptBlogPage" runat="server" onitemdatabound="rptBlogPage_ItemDataBound">
         <ItemTemplate>
-            <asp:HyperLink ID="hlTitle" runat="server" Text='<%# Eval("Name") %>'></asp:HyperLink>
+            <div>
+                <asp:HyperLink ID="hlTitle" runat="server" Text='<%# Eval("Name") %>'></asp:HyperLink><br />
+                <asp:Label ID="lblTravelDate" runat="server" Text="" Visible="false"></asp:Label><br />
+                <asp:Label ID="lblCategoryContent" runat="server"  Text='<%# Eval("PageContent") %>'></asp:Label><br />
+                <asp:HyperLink ID="hlReadMore" runat="server" Text='читати далі...'></asp:HyperLink><br />
+            </div>
         </ItemTemplate>
     </asp:Repeater>
     <br />

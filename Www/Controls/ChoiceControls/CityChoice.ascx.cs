@@ -11,11 +11,14 @@ public partial class CityChoice : ChoiceControlBase
 
     protected override void InitDDL()
     {
+        LoadCityDDL(CountryID);
+    }
+
+    public void LoadCityDDL(int countryID)
+    {
+        ddlList.Items.Clear();
         City c = new City();
-        if (CountryID > 0)
-        {
-            c.Where.CountryID.Value = CountryID;
-        }
+        c.Where.CountryID.Value = countryID;
         c.Query.AddOrderBy(City.ColumnNames.Name, WhereParameter.Dir.ASC);
         if (c.Query.Load())
         {
@@ -36,6 +39,10 @@ public partial class CityChoice : ChoiceControlBase
                 return int.Parse(Request.QueryString["CountryID"].ToString());
             }
             return 0;
+        }
+        set
+        {
+            LoadCityDDL(value);
         }
     }
 }

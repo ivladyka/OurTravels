@@ -17,8 +17,21 @@ public partial class BlogPageView : ProjectPageBase
                 lblName.Text = bp.GetColumn(BlogPage.ColumnNames.Name).ToString();
                 if (!bp.IsColumnNull(BlogPage.ColumnNames.PageContent))
                 {
-                    lblCategoryContent.Text = bp.GetColumn(BlogPage.ColumnNames.PageContent).ToString();
+                    lblCategoryContent.Text = bp.GetColumn(BlogPage.ColumnNames.PageContent).ToString().Replace("&nbsp;end", "");
                 }
+                if (!bp.IsColumnNull(BlogPage.ColumnNames.StartTravelDate) || !bp.IsColumnNull(BlogPage.ColumnNames.EndTravelDate))
+                {
+                    lblTravelDate.Visible = true;
+                    if (!bp.IsColumnNull(BlogPage.ColumnNames.StartTravelDate))
+                    {
+                        lblTravelDate.Text = bp.s_StartTravelDate;
+                    }
+                    if (!bp.IsColumnNull(BlogPage.ColumnNames.EndTravelDate))
+                    {
+                        lblTravelDate.Text += " - " + bp.s_EndTravelDate;
+                    }
+                }
+                blogPageTableList.LoadBlogPages(BlogPageID);
             }
         }
     }
@@ -27,11 +40,7 @@ public partial class BlogPageView : ProjectPageBase
     {
         get
         {
-            if (Request.QueryString["ct"] != null)
-            {
-                return int.Parse(Request.QueryString["ct"].ToString());
-            }
-            return 0;
+            return Master.BlogPageID;
         }
     }
 }

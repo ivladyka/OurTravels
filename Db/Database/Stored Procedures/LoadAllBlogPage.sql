@@ -10,7 +10,7 @@ BEGIN
 		[BlogPageID],
 		[Name],
 		[Name_en],
-		[PageContent],
+		--[PageContent],
 		[Keywords],
 		[Active],
 		[Description],
@@ -18,7 +18,8 @@ BEGIN
 		[StartTravelDate],
 		[EndTravelDate],
 		[DatePublish],
-		[IsBlogPage]
+		[IsBlogPage], 
+		'' AS URL
 	FROM [BlogPage]
 
 	SET @Err = @@Error

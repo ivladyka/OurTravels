@@ -22,6 +22,7 @@ public partial class BlogPageEdit : EditControlBase
         if(IsNew)
         {
             text_Name.Focus();
+            rtsBlogPage.Visible = false;
         }
     }
 
@@ -35,5 +36,35 @@ public partial class BlogPageEdit : EditControlBase
         base.WriteDataToEntity();
         BlogPage bp = (BlogPage)this.EditableEntity;
         bp.DateUpdate = DateTime.Now;
+    }
+
+    protected void rtsBlogPage_TabClick(object sender, RadTabStripEventArgs e)
+    {
+        switch (e.Tab.Text)
+        {
+            case "Подорож/Сторінка":
+                pnlBlogPageEdit.Visible = true;
+                pnlCityList.Visible = false;
+                break;
+            case "Міста":
+                pnlBlogPageEdit.Visible = false;
+                pnlCityList.Visible = true;
+                blogPageCityList.RebindGrid();
+                break;
+        }
+    }
+
+    public override EditableEntity EditableEntity
+    {
+        get
+        {
+            return UserSession.GetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY
+                + "BlogPageEdit") as EditableEntity;
+        }
+        set
+        {
+            UserSession.SetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY
+                + "BlogPageEdit", value);
+        }
     }
 }

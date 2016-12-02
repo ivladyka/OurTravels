@@ -2,7 +2,7 @@
 <%@ Register TagPrefix="uc1" TagName="EditorHTML" Src="ValueControls/EditorHTML.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="IntInput" Src="ValueControls/IntInput.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="CityChoice" Src="ChoiceControls/CityChoice.ascx" %>
-<TABLE id="Table3" class="EditControl3" cellpadding="2" cellspacing="7"  align="center" border="0" width="950px">	
+<TABLE id="Table3" class="EditControl3" cellpadding="2" cellspacing="7"  align="left" border="0" width="950px">	
     <tr>
         <td align="right">
             Назва:
@@ -29,7 +29,7 @@
 		<td align="right">Активний:
 		</td>
 		<td>
-           <asp:CheckBox id="chk_Active" runat="server" Text="" Checked="false"></asp:CheckBox>
+           <asp:CheckBox id="chk_Active" runat="server" Text="" Checked="true"></asp:CheckBox>
 		</td>
     </tr>
     <tr>

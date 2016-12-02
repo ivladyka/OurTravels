@@ -41,4 +41,12 @@ public class BookMasterPageBase : System.Web.UI.MasterPage
             return MasterPage.CountryID;
         }
     }
+
+    public int BlogPageID
+    {
+        get
+        {
+            return MasterPage.BlogPageID;
+        }
+    }
 }
