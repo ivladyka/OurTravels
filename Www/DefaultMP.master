@@ -67,8 +67,8 @@
                                             </asp:HyperLink>           
 		                                </li>
 		                                <li>
-                                            <asp:HyperLink id="hlMenuHotelSearch" runat="server"> 
-                                                <%=menuHotels%>
+                                            <asp:HyperLink id="hlMenuAccommodation" runat="server"> 
+                                                Проживання
                                             </asp:HyperLink>
 		                                </li>
 		                                <li>

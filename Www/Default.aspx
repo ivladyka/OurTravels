@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMP.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
+<%@ Register TagPrefix="uc1" TagName="BlogPageViewList" Src="Controls/BlogPageViewList.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
@@ -24,16 +25,7 @@
 			</div>
 
 			<div class="container">
-    <asp:Repeater ID="rptBlogPage" runat="server" onitemdatabound="rptBlogPage_ItemDataBound">
-        <ItemTemplate>
-            <div>
-                <asp:HyperLink ID="hlTitle" runat="server" Text='<%# Eval("Name") %>'></asp:HyperLink><br />
-                <asp:Label ID="lblTravelDate" runat="server" Text="" Visible="false"></asp:Label><br />
-                <asp:Label ID="lblCategoryContent" runat="server"  Text='<%# Eval("PageContent") %>'></asp:Label><br />
-                <asp:HyperLink ID="hlReadMore" runat="server" Text='читати далі...'></asp:HyperLink><br />
-            </div>
-        </ItemTemplate>
-    </asp:Repeater>
+                <uc1:BlogPageViewList id="blogPageViewList" runat="server" PageSize="3" ShowPager="false"></uc1:BlogPageViewList>
 				<div class="row">
 					<div class="col-lg-4 col-md-4">
 						<div class="fh5co-blog animate-box">
@@ -82,13 +74,6 @@
 				</div>
 			</div>
 		</div>	
-    <asp:Repeater ID="rptPager" runat="server">
-        <ItemTemplate>
-            <asp:LinkButton ID="lnkPage" runat="server" Text='<%#Eval("Text") %>' CommandArgument='<%# Eval("Value") %>'
-                CssClass='<%# Convert.ToBoolean(Eval("Enabled")) ? "page_enabled" : "page_disabled" %>'
-                OnClick="Page_Changed" OnClientClick='<%# !Convert.ToBoolean(Eval("Enabled")) ? "return false;" : "" %>'></asp:LinkButton>
-        </ItemTemplate>
-    </asp:Repeater>
 		<div id="fh5co-services-section">
 			<div class="container">
 				<div class="row">

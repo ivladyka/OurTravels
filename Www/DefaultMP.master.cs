@@ -15,7 +15,7 @@ public partial class MasterPage : MasterPageBase
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        hlMenuHotelSearch.NavigateUrl = "http://reservations.yourtravel.biz/templates/407972/index?lang=uk";
+        hlMenuAccommodation.NavigateUrl = this.SiteURL + "/page/3/accommodation/";
         hlHomeTop.NavigateUrl = this.SiteURL + "/Default.aspx";
         hlAboutUs.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?bpid=1";
         hlPrivacyPolicy.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?bpid=2";
