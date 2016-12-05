@@ -28,6 +28,10 @@ public partial class BlogPageEdit : EditControlBase
 
     protected override void RedirectBackToList()
     {
+        if (upload_TitleImage.IsPhotoDeleted)
+        {
+            upload_TitleImage.DeletePhoto();
+        }
         Response.Redirect("Office.aspx?content=BlogPageList");
     }
 

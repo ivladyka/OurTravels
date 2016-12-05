@@ -19,7 +19,9 @@ BEGIN
 		[EndTravelDate],
 		[DatePublish],
 		[IsBlogPage], 
-		'' AS URL
+		'' AS URL,
+		[TitleImage],
+		[BlogDescription]
 	FROM [BlogPage]
 
 	SET @Err = @@Error

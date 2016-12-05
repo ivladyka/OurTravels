@@ -45,7 +45,9 @@ BEGIN
       ,bp.[StartTravelDate]
       ,bp.[EndTravelDate]
       ,bp.[DatePublish], 
-	  '' AS URL
+	  '' AS URL,
+	  bp.[TitleImage],
+	  bp.[BlogDescription]
 	FROM 
 		@BlogPages bps
 	INNER JOIN

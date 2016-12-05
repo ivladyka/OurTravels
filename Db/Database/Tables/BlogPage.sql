@@ -11,6 +11,10 @@
     [EndTravelDate]   SMALLDATETIME NULL,
     [DatePublish]     SMALLDATETIME NULL,
     [IsBlogPage]      BIT           CONSTRAINT [DF_BlogPage_BlogPage] DEFAULT ((1)) NOT NULL,
+    [TitleImage]      VARCHAR (50)  NULL,
+    [BlogDescription] VARCHAR (250) NULL,
     CONSTRAINT [PK_Category] PRIMARY KEY CLUSTERED ([BlogPageID] ASC)
 );
+
+
 

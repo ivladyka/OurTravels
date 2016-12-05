@@ -2,6 +2,7 @@
 <%@ Register TagPrefix="uc1" TagName="EditorHTML" Src="ValueControls/EditorHTML.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="DatePicker" Src="ValueControls/DatePicker.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="BlogPageCityList" Src="BlogPageCityList.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="PhotoUpload" Src="ValueControls/PhotoUpload.ascx" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <telerik:RadTabStrip ID="rtsBlogPage" runat="server" AutoPostBack="true" Align="Left" Width="747px" OnTabClick="rtsBlogPage_TabClick">
     <Tabs>
@@ -42,12 +43,27 @@
                 </td>
             </tr>
             <tr>
+                <td align="right">
+                    Заголовок для блогу:
+                </td>
+                <td>
+                    <asp:TextBox ID="text_BlogDescription" runat="server" CssClass="textBoxStyle" MaxLength="250" Width="300px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
 		        <td align="right">Активний:
 		        </td>
 		        <td>
                     <asp:CheckBox id="chk_Active" runat="server" Text="" Checked="true"></asp:CheckBox>
 		        </td>
             </tr>
+            <tr>
+		        <td align="right">Зображення для заголовку:
+		        </td>
+		        <td>
+                    <uc1:PhotoUpload id="upload_TitleImage" runat="server" AllowedFileExtensions="jpg,gif,png" CreateThumbnail="true"></uc1:PhotoUpload>
+		        </td>
+	        </tr>
             <tr>
                 <td align="right" valign="top">
                     Опис:

@@ -40,6 +40,10 @@ public partial class BlogPageList : ListControlBase, Interfaces.IColouredGrid
         SetColumnSettings(BlogPage.ColumnNames.Name_en, true, "Дружній URL", 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.PageContent, false, BlogPage.ColumnNames.PageContent,
            0, HorizontalAlign.Center, "");
+        SetColumnSettings(BlogPage.ColumnNames.BlogDescription, false, BlogPage.ColumnNames.PageContent,
+           0, HorizontalAlign.Center, "");
+        SetColumnSettings(BlogPage.ColumnNames.TitleImage, false, BlogPage.ColumnNames.PageContent,
+           0, HorizontalAlign.Center, "");
     }
 
     protected override void OnEditableGridItemDataBound(object sender, GridItemEventArgs e)

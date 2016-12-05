@@ -20,7 +20,9 @@ BEGIN
 		[StartTravelDate],
 		[EndTravelDate],
 		[DatePublish],
-		[IsBlogPage]
+		[IsBlogPage],
+		[TitleImage],
+		[BlogDescription]
 	FROM [BlogPage]
 	WHERE
 		([BlogPageID] = @BlogPageID)

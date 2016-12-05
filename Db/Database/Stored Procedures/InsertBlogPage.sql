@@ -12,7 +12,9 @@ CREATE PROCEDURE [dbo].[InsertBlogPage]
 	@StartTravelDate smalldatetime = NULL,
 	@EndTravelDate smalldatetime = NULL,
 	@DatePublish smalldatetime = NULL,
-	@IsBlogPage bit
+	@IsBlogPage bit,
+	@TitleImage varchar(50) = NULL,
+	@BlogDescription varchar(250) = NULL
 )
 AS
 BEGIN
@@ -33,7 +35,9 @@ BEGIN
 		[StartTravelDate],
 		[EndTravelDate],
 		[DatePublish],
-		[IsBlogPage]
+		[IsBlogPage],
+		[TitleImage],
+		[BlogDescription]
 	)
 	VALUES
 	(
@@ -47,7 +51,9 @@ BEGIN
 		@StartTravelDate,
 		@EndTravelDate,
 		@DatePublish,
-		@IsBlogPage
+		@IsBlogPage,
+		@TitleImage,
+		@BlogDescription
 	)
 
 	SET @Err = @@Error
