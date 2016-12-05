@@ -25,14 +25,14 @@ body.fh5co-offcanvas {
 }
 
 a {
-  color: #ef6249;
+  color: #01a3d4;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover {
   text-decoration: none !important;
-  color: #ef6249 !important;
+  color: #01a3d4 !important;
 }
 
 p, ul, ol {
@@ -55,17 +55,17 @@ figure {
 
 ::-webkit-selection {
   color: #fcfcfc;
-  background: #ef6249;
+  background: #01a3d4;
 }
 
 ::-moz-selection {
   color: #fcfcfc;
-  background: #ef6249;
+  background: #01a3d4;
 }
 
 ::selection {
   color: #fcfcfc;
-  background: #ef6249;
+  background: #01a3d4;
 }
 
 #fh5co-header {
@@ -109,7 +109,7 @@ figure {
   bottom: 0;
   right: 0;
   z-index: 1;
-  background: rgba(41, 34, 43, 0.5);
+  background: rgba(41, 34, 43, 0.3);
 }
 
 .fh5co-cover {
@@ -151,6 +151,7 @@ figure {
   font-size: 60px;
   margin-bottom: 10px;
   font-weight: 300 !important;
+   text-shadow: 5px 5px 5px #000
 }
 .fh5co-cover .desc h2 strong {
   font-weight: 700;
@@ -165,6 +166,7 @@ figure {
   margin-bottom: 30px;
   font-size: 28px;
   letter-spacing: 1px;
+     text-shadow: 3px 3px 3px #000
 }
 .fh5co-cover .desc span a {
   color: #fff;
@@ -221,7 +223,7 @@ figure {
 }
 
 .sf-menu a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
   padding: 0.75em 1em !important;
   font-weight: normal;
   border-left: none;
@@ -316,6 +318,7 @@ figure {
   left: 0;
   width: 100%;
   z-index: 2;
+ background: rgba(0, 119, 147, 0.6) none repeat scroll 0 0;
 }
 
 .nav-header {
@@ -362,7 +365,7 @@ figure {
 }
 
 #fh5co-primary-menu > li > ul li.active > a {
-  color: #ef6249 !important;
+  color: #01a3d4 !important;
 }
 #fh5co-primary-menu > li > .sf-with-ul:after {
   border: none !important;
@@ -481,7 +484,7 @@ figure {
   background: none;
 }
 #fh5co-primary-menu .fh5co-sub-menu a:hover {
-  color: #ef6249 !important;
+  color: #01a3d4 !important;
 }
 
 #fh5co-work-section,
@@ -519,7 +522,7 @@ figure {
   width: 100px;
   margin-left: -50px;
   height: 1px;
-  background: #ef6249;
+  background: #01a3d4;
 }
 .heading-section h3 {
   font-size: 40px;
@@ -538,7 +541,7 @@ figure {
   margin-bottom: 30px;
   width: 80px;
   height: 80px;
-  border: 1px solid #ef6249;
+  border: 1px solid #01a3d4;
   display: table;
   margin: 0 auto;
   -webkit-border-radius: 50%;
@@ -549,7 +552,7 @@ figure {
 }
 .services span i {
   font-size: 30px;
-  color: #ef6249 !important;
+  color: #01a3d4 !important;
   display: table-cell;
   vertical-align: middle;
   height: 80px;
@@ -584,7 +587,7 @@ figure {
   display: table-cell;
   vertical-align: middle;
   font-size: 40px;
-  color: #ef6249;
+  color: #01a3d4;
 }
 .feature-left .feature-copy {
   float: right;
@@ -913,7 +916,7 @@ figure {
 
 #fh5co-services .fh5co-number {
   font-size: 30px;
-  color: #ef6249;
+  color: #01a3d4;
   position: relative;
   padding-top: 10px;
   font-style: italic;
@@ -929,7 +932,7 @@ figure {
   height: 3px;
   top: 0;
   left: 0;
-  background: #ef6249;
+  background: #01a3d4;
 }
 #fh5co-services .fh5co-icon {
   margin-bottom: 30px;
@@ -948,7 +951,7 @@ figure {
 }
 #fh5co-services .fh5co-icon i {
   font-size: 200px;
-  color: #ef6249;
+  color: #01a3d4;
 }
 @media screen and (max-width: 768px) {
   #fh5co-services .fh5co-icon i {
@@ -1096,7 +1099,7 @@ figure {
   color: rgba(0, 0, 0, 0.3);
 }
 .fh5co-blog .blog-text span.comment a i {
-  color: #ef6249;
+  color: #01a3d4;
   padding-left: 7px;
 }
 .fh5co-blog .blog-text h3 {
@@ -1141,7 +1144,7 @@ figure {
 
 .fh5co-social-icons > a {
   padding: 4px 10px;
-  color: #ef6249;
+  color: #01a3d4;
 }
 .fh5co-social-icons > a i {
   font-size: 26px;
@@ -1255,9 +1258,9 @@ figure {
 }
 
 .btn-primary {
-  background: #ef6249;
+  background: #01a3d4;
   color: #fff;
-  border: 2px solid #ef6249;
+  border: 2px solid #01a3d4;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #f17660 !important;
@@ -1266,11 +1269,11 @@ figure {
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #ef6249;
-  border: 2px solid #ef6249;
+  color: #01a3d4;
+  border: 2px solid #01a3d4;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #ef6249;
+  background: #01a3d4;
   color: #fff;
 }
 
@@ -1450,14 +1453,14 @@ figure {
   color: rgba(255, 255, 255, 0.4);
 }
 #offcanvas-menu ul li a:hover {
-  color: #ef6249;
+  color: #01a3d4;
 }
 #offcanvas-menu ul li > .fh5co-sub-menu {
   margin-top: 9px;
   padding-left: 20px;
 }
 #offcanvas-menu ul li.active > a {
-  color: #ef6249;
+  color: #01a3d4;
 }
 #offcanvas-menu ul .fh5co-sub-menu {
   display: block !important;

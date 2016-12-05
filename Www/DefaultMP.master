@@ -8,6 +8,18 @@
     <link rel="icon" type="image/gif" href="Images/icon.gif"/>		
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />	
     <meta content="VIKKI Soft, office@vikkisoft.com" name="VIKKIsoft" /> 
+		<link rel="stylesheet" href="css/animate.css"/>
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="Theme/css/icomoon.css"/>
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="Theme/css/bootstrap.css"/>
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="Theme/css/magnific-popup.css"/>
+	<!-- Superfish -->
+	<link rel="stylesheet" href="Theme/css/superfish.css"/>
+
+	<link rel="stylesheet" href="Theme/css/style.css"/>
+    <script src="Theme/js/modernizr-2.6.2.min.js"></script>	
     <link rel="shortcut icon" href="/favicon.ico" />
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <%=Title%>
@@ -37,59 +49,117 @@
         });
 </script>
 </head>
-<body style="width:100%; height:100%" class="body-backпround">
-    <form id="form1" runat="server" style="width:100%; height:100%">    
-   <div class="formdiv">
-      <div class="divmenu"> 
-    <ul id="topnav" class="v2">
-		<li id="startlimenu">
-            <asp:HyperLink id="hlHomeTop" runat="server">
-                <%=menuHome%>
-            </asp:HyperLink>           
-		</li>
-		<li>
-            <asp:HyperLink id="hlMenuHotelSearch" runat="server"> 
-                <%=menuHotels%>
-            </asp:HyperLink>
-		</li>
-		<li>
-            <asp:HyperLink id="hlAboutUs" runat="server">
-                <%=menuAboutUS%>
-            </asp:HyperLink>
-		</li>		
-        <li>
-            <asp:HyperLink id="hlPrivacyPolicy" runat="server">
-                <%=menuPrivacyPolicy%>
-            </asp:HyperLink>
-		</li>
-		<li>
-            <asp:HyperLink id="hlContactUsTop" runat="server">
-                <%=menuContactUS%>
-            </asp:HyperLink>
-		</li>	
-	</ul>   
-	</div>       
-      <div class="logodiv">   
-        <a href="Default.aspx">   
-        <asp:Image ID="logo" runat="server" ImageUrl="Images/logo.png" Width="100px"  />
-        <div id="logospan">           
-        <asp:Label ID="Label1" runat="server" Text="YourTravel" CssClass="CompanyName">Your</asp:Label>
-        <asp:Label ID="Label2" runat="server" Text="YourTravel" CssClass="CompanyName1">Travel</asp:Label>
-        </div> 
-        </a>
-
-        </div>        	     
+<body style="width:100%; height:100%" >
+    		<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+		<div id="fh5co-header">
+			<header id="fh5co-header-section">
+				<div class="container">
+					<div class="nav-header  ">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
+						<h1 id="fh5co-logo"><a href="index.html">Our Travels</a></h1>
+						<!-- START #fh5co-menu-wrap -->
+						<nav id="fh5co-menu-wrap" role="navigation">
+							<ul class="sf-menu" id="fh5co-primary-menu">
+                                        <li id="startlimenu">
+                                            <asp:HyperLink id="hlHomeTop" runat="server">
+                                                <%=menuHome%>
+                                            </asp:HyperLink>           
+		                                </li>
+		                                <li>
+                                            <asp:HyperLink id="hlMenuHotelSearch" runat="server"> 
+                                                <%=menuHotels%>
+                                            </asp:HyperLink>
+		                                </li>
+		                                <li>
+                                            <asp:HyperLink id="hlAboutUs" runat="server">
+                                                <%=menuAboutUS%>
+                                            </asp:HyperLink>
+		                                </li>		
+                                        <li>
+                                            <asp:HyperLink id="hlPrivacyPolicy" runat="server">
+                                                <%=menuPrivacyPolicy%>
+                                            </asp:HyperLink>
+		                                </li>
+		                                <li>
+                                            <asp:HyperLink id="hlContactUsTop" runat="server">
+                                                <%=menuContactUS%>
+                                            </asp:HyperLink>
+		                                </li>	
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</header>
+		</div>
+	<!-- end:header-top -->	
         <telerik:RadScriptManager runat="Server" ID="RadScriptManager1" />
         <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        
-        </asp:ContentPlaceHolder>  
-      
-   </div>     
-        <div class="footer">  
-         <div class="footerlinks">
-            <asp:HyperLink ID="HyperLink1" runat="server">Home</asp:HyperLink> | <asp:HyperLink ID="HyperLink2" runat="server">Hotels</asp:HyperLink> | <asp:HyperLink ID="HyperLink3" runat="server">Contact Us</asp:HyperLink>
-        </div>
-        </div>
-        <script type="text/javascript">
+        </asp:ContentPlaceHolder> 
+		<!-- fh5co-blog-section -->-->
+		<footer>
+			<div id="footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+							<h3>About Us</h3>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+						</div>
+						<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+							<h3>Our Services</h3>
+							<ul class="float">
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">Branding &amp; Identity</a></li>
+								<li><a href="#">Free HTML5</a></li>
+								<li><a href="#">HandCrafted Templates</a></li>
+							</ul>
+							<ul class="float">
+								<li><a href="#">Free Bootstrap Template</a></li>
+								<li><a href="#">Free HTML5 Template</a></li>
+								<li><a href="#">Free HTML5 &amp; CSS3 Template</a></li>
+								<li><a href="#">HandCrafted Templates</a></li>
+							</ul>
+
+						</div>
+						<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+							<h3>Follow Us</h3>
+							<ul class="fh5co-social">
+								<li><a href="#"><i class="icon-twitter2"></i> Twitter</a></li>
+								<li><a href="#"><i class="icon-facebook2"></i> Facebook</a></li>
+								<li><a href="#"><i class="icon-google-plus2"></i> Google Plus</a></li>
+								<li><a href="#"><i class="icon-instagram2"></i> Instagram</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="fh5co-copyright text-center">
+					<p>&copy; 2016 Free HTML5 template. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images by <a href="http://unsplash.com/" target="_blank">Unsplash</a></span></p>	
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- END fh5co-page -->
+	</div>
+	<!-- END fh5co-wrapper -->
+	<!-- jQuery -->
+	<script src="Theme/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="Theme/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="Theme/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="Theme/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar -->
+	<script src="Theme/js/jquery.stellar.min.js"></script>
+	<!-- Superfish -->
+	<script src="Theme/js/hoverIntent.js"></script>
+	<script src="Theme/js/superfish.js"></script>
+	<!-- Magnific Popup -->
+	<script src="Theme/js/jquery.magnific-popup.min.js"></script>
+	<script src="Theme/js/magnific-popup-options.js"></script>
+	<!-- Main JS -->
+	<script src="Theme/js/main.js"></script>      
+         <script type="text/javascript">
 
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-36679888-1']);
@@ -100,8 +170,6 @@
                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
             })();
-
         </script>
-    </form> 
 </body>
 </html>
