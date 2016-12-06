@@ -6,7 +6,8 @@
 <head runat="server">
     <link href="style.css" type="text/css" rel="stylesheet"/>
     <link rel="icon" type="image/gif" href="Images/icon.gif"/>		
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />	
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />    	
     <meta content="VIKKI Soft, office@vikkisoft.com" name="VIKKIsoft" /> 
 		<link rel="stylesheet" href="css/animate.css"/>
 	<!-- Icomoon Icon Fonts-->
@@ -15,9 +16,10 @@
 	<link rel="stylesheet" href="Theme/css/bootstrap.css"/>
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="Theme/css/magnific-popup.css"/>
+
 	<!-- Superfish -->
 	<link rel="stylesheet" href="Theme/css/superfish.css"/>
-
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="Theme/css/style.css"/>
     <script src="Theme/js/modernizr-2.6.2.min.js"></script>	
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -96,7 +98,7 @@
         <telerik:RadScriptManager runat="Server" ID="RadScriptManager1" />
         <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        
         </asp:ContentPlaceHolder> 
-		<!-- fh5co-blog-section -->-->
+		<!-- fh5co-blog-section -->
 		<footer>
 			<div id="footer">
 				<div class="container">
