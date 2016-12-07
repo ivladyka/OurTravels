@@ -39,6 +39,14 @@ public partial class BlogPageView : ProjectPageBase
                 {
                     blogPageTableList.Visible = false;
                 }
+                if (!bp.IsColumnNull(BlogPage.ColumnNames.TitleImage) && bp.s_TitleImage.Length > 0)
+                {
+                    imgTitleImage.ImageUrl = Master.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + bp.TitleImage;
+                }
+                else
+                {
+                    pnlTitleImage.Visible = false;
+                }
             }
         }
     }
