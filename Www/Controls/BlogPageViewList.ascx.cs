@@ -34,18 +34,15 @@ public partial class Controls_BlogPageViewList : System.Web.UI.UserControl
             }
             string pageURL = SiteURL + "/" + Utils.GenerateFriendlyURL("page", new string[] { row[BlogPage.ColumnNames.BlogPageID].ToString(), row[BlogPage.ColumnNames.Name_en].ToString() }, false);
             strBlogList.Append("<div class=\"col-lg-4 col-md-4\">");
-            strBlogList.Append("<div class=\"fh5co-blog animate-box\">");
+            strBlogList.Append("<div class=\"fh5co-blog animate-box\"><div class='whitebgbloglist'>");
             if (!row.IsNull(BlogPage.ColumnNames.TitleImage))
             {
-                strBlogList.Append("<a href=\"" + pageURL + "\"><img class=\"img-responsive\" src=\""
-                    + SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + row[BlogPage.ColumnNames.TitleImage].ToString() + "\" alt=\"\"></a>");
+                strBlogList.Append("<div class='listblogimg'><a href=\"" + pageURL + "\"><img class=\"img-responsive\" src=\""
+                    + SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + row[BlogPage.ColumnNames.TitleImage].ToString() + "\" alt=\"\"></a></div>");
             }
             strBlogList.Append("<div class=\"blog-text\">");
             strBlogList.Append("<div class=\"prod-title\">");
-            if (!row.IsNull(BlogPage.ColumnNames.BlogDescription))
-            {
-                strBlogList.Append("<h3><a href=\"" + pageURL + "\">" + row[BlogPage.ColumnNames.BlogDescription].ToString() + "</a></h3>");
-            }
+            strBlogList.Append("<h3><a href=\"" + pageURL + "\">" + row[BlogPage.ColumnNames.Name].ToString() + "</a></h3>");
             if (!row.IsNull(BlogPage.ColumnNames.StartTravelDate))
             {
                 strBlogList.Append("<span class=\"posted_by\">" + ((DateTime)row[BlogPage.ColumnNames.StartTravelDate]).ToString("dd.mm.yyyy"));
@@ -55,11 +52,12 @@ public partial class Controls_BlogPageViewList : System.Web.UI.UserControl
                 }
                 strBlogList.Append("</span>");
             }
-            if (!row.IsNull(BlogPage.ColumnNames.PageContent))
+            if (!row.IsNull(BlogPage.ColumnNames.BlogDescription))
             {
-                strBlogList.Append("<p>" + row[BlogPage.ColumnNames.PageContent].ToString() + "</p>");
+                strBlogList.Append("<p>" + row[BlogPage.ColumnNames.BlogDescription].ToString() + "</p>");
             }
             strBlogList.Append("<a href=\"" + pageURL + "\" class=\"btn btn-primary\">Читати далі</a>");
+            strBlogList.Append("</div>");
             strBlogList.Append("</div>");
             strBlogList.Append("</div>");
             strBlogList.Append("</div>");

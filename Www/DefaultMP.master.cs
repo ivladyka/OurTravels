@@ -16,10 +16,16 @@ public partial class MasterPage : MasterPageBase
     protected void Page_Load(object sender, EventArgs e)
     {
         hlMenuAccommodation.NavigateUrl = this.SiteURL + "/page/3/accommodation/";
+        hlMenuTransport.NavigateUrl = this.SiteURL + "/page/4/transport/";
+        hlMenuAnimals.NavigateUrl = this.SiteURL + "/page/5/animals/";
+        hlMenuChildren.NavigateUrl = this.SiteURL + "/page/6/children/";
+        hlMenuPlanning.NavigateUrl = this.SiteURL + "/page/7/planning/";
+        hlMenuSuitcase.NavigateUrl = this.SiteURL + "/page/8/suitcase/";
         hlHomeTop.NavigateUrl = this.SiteURL + "/Default.aspx";
+        hlMenuAdvice.NavigateUrl = this.SiteURL + "/Advice.aspx";
         hlAboutUs.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?bpid=1";
-        hlPrivacyPolicy.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?bpid=2";
         hlContactUsTop.NavigateUrl = this.SiteURL + "/ContactUs.aspx";
+        hlBlogs.NavigateUrl = this.SiteURL + "/Blogs.aspx";
         if (!Page.IsPostBack)
         {
             LoadCommonPageData();

@@ -59,7 +59,7 @@
 				<div class="container">
 					<div class="nav-header  ">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-						<h1 id="fh5co-logo"><a href="index.html">Our Travels</a></h1>
+						<h1 id="fh5co-logo"><a href="Default.aspx">Our Travels</a></h1>
 						<!-- START #fh5co-menu-wrap -->
 						<nav id="fh5co-menu-wrap" role="navigation">
 							<ul class="sf-menu" id="fh5co-primary-menu">
@@ -68,21 +68,29 @@
                                                 <%=menuHome%>
                                             </asp:HyperLink>           
 		                                </li>
-		                                <li>
-                                            <asp:HyperLink id="hlMenuAccommodation" runat="server"> 
-                                                Проживання
+                                		 <li>
+                                            <asp:HyperLink id="hlBlogs" runat="server"> 
+                                                Подорожі
                                             </asp:HyperLink>
+		                                </li>
+		                                <li>
+                                            <asp:HyperLink id="hlMenuAdvice" runat="server"> 
+                                                Поради
+                                            </asp:HyperLink>                                            
+                                            	<ul class="fh5co-sub-menu">
+												<li><asp:HyperLink id="hlMenuAccommodation" runat="server">Проживання</asp:HyperLink></li>
+												<li><asp:HyperLink id="hlMenuTransport" runat="server">Транспорт</asp:HyperLink></li>
+												<li><asp:HyperLink id="hlMenuAnimals" runat="server">Тварини</asp:HyperLink></li>
+												<li><asp:HyperLink id="hlMenuChildren" runat="server">Діти</asp:HyperLink></li>
+												<li><asp:HyperLink id="hlMenuPlanning" runat="server">Планування подорожі</asp:HyperLink></li>
+												<li><asp:HyperLink id="hlMenuSuitcase" runat="server">Збираємо валізу</asp:HyperLink></li>
+											</ul>
 		                                </li>
 		                                <li>
                                             <asp:HyperLink id="hlAboutUs" runat="server">
                                                 <%=menuAboutUS%>
-                                            </asp:HyperLink>
+                                            </asp:HyperLink>                                            	
 		                                </li>		
-                                        <li>
-                                            <asp:HyperLink id="hlPrivacyPolicy" runat="server">
-                                                <%=menuPrivacyPolicy%>
-                                            </asp:HyperLink>
-		                                </li>
 		                                <li>
                                             <asp:HyperLink id="hlContactUsTop" runat="server">
                                                 <%=menuContactUS%>

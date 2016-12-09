@@ -41,11 +41,7 @@ public partial class BlogPageView : ProjectPageBase
                 }
                 if (!bp.IsColumnNull(BlogPage.ColumnNames.TitleImage) && bp.s_TitleImage.Length > 0)
                 {
-                    imgTitleImage.ImageUrl = Master.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + bp.TitleImage;
-                }
-                else
-                {
-                    pnlTitleImage.Visible = false;
+                    pnlPageTitle.Attributes["style"] = "background-image: url(" + Master.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + bp.TitleImage + ");";
                 }
             }
         }
