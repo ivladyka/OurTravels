@@ -585,7 +585,7 @@ background-color: rgba(255, 255, 255, 0.7);
 }
 #fh5co-blog-section.fh5co-home-blog-section
 {
-    padding-top:0px
+    padding-top:40px
 }
 
 #fh5co-blog-section h1{
@@ -862,13 +862,13 @@ background-color: rgba(255, 255, 255, 0.7);
 }
 
 #fh5co-partner {
-  margin-top: -3em;
+  margin-top: -8em;
   float: left;
   width: 100%;
 }
 @media screen and (max-width: 768px) {
   #fh5co-partner {
-    margin-top: 0;
+    margin-top:-8em;
   }
 }
 #fh5co-partner .partner-wrap {

@@ -14,6 +14,39 @@
 			</div>
 
 		</div>
+    		<div id="fh5co-partner">
+			<div class="container">
+				<div class="partner-wrap">
+					<div class="wrap">
+						<div class="partner animate-box">
+							<div class="inner">
+								<img class="img-responsive" src="Theme/images/logo-1.png" alt="">
+							</div>
+						</div>
+						<div class="partner animate-box">
+							<div class="inner">
+								<img class="img-responsive" src="Theme/images/logo-2.png" alt="">
+							</div>
+						</div>
+						<div class="partner animate-box">
+							<div class="inner">
+								<img class="img-responsive" src="Theme/images/logo-3.png" alt="">
+							</div>
+						</div>
+						<div class="partner animate-box">
+							<div class="inner">
+								<img class="img-responsive" src="Theme/images/logo-4.png" alt="">
+							</div>
+						</div>
+						<div class="partner animate-box">
+							<div class="inner">
+								<img class="img-responsive" src="Theme/images/logo-5.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
        <div id="fh5co-blog-section" class="fh5co-section-gray fh5co-home-blog-section">
 			<div class="container">
 				<div class="row">
