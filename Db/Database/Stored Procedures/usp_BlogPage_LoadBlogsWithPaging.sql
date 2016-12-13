@@ -47,7 +47,8 @@ BEGIN
       ,bp.[DatePublish], 
 	  '' AS URL,
 	  bp.[TitleImage],
-	  bp.[BlogDescription]
+	  bp.[BlogDescription],
+	  bp.MainImage
 	FROM 
 		@BlogPages bps
 	INNER JOIN

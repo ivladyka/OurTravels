@@ -9,7 +9,8 @@ CREATE PROCEDURE [dbo].[UpdateCountry]
 	@Active bit,
 	@CapitalID int = NULL,
 	@Description varchar(200) = NULL,
-	@DateUpdate smalldatetime = NULL
+	@DateUpdate smalldatetime = NULL,
+	@MainImage varchar(100) = NULL
 )
 AS
 BEGIN
@@ -26,7 +27,8 @@ BEGIN
 		[Active] = @Active,
 		[CapitalID] = @CapitalID,
 		[Description] = @Description,
-		[DateUpdate] = @DateUpdate
+		[DateUpdate] = @DateUpdate,
+		[MainImage] = @MainImage
 	WHERE
 		[CountryID] = @CountryID
 

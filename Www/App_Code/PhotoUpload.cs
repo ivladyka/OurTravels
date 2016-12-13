@@ -16,6 +16,10 @@ public class PhotoUpload : ControlBase
     private RadWindow m_radWindow;
     private bool m_CreateThumbnail = true;
     private Label m_lblAllowedExtensions;
+    private int m_ImageWidth = 0;
+    private int m_ImageHeight = 0;
+    private string m_SubFolder = "";
+    private string m_FileName = "";
 
     protected RadAsyncUpload auFile
     {
@@ -153,7 +157,7 @@ public class PhotoUpload : ControlBase
                         string extension = value.Substring(value.Length - 4, 4);
                         imageName = value.Substring(0, value.Length - 4) + "_s" + extension;
                     }
-                    imgPhoto.ImageUrl = Path.Combine(Utils.GaleryImagePath, imageName);
+                    imgPhoto.ImageUrl = Path.Combine(Utils.GaleryImagePath, imageName.TrimStart('/'));
                     imgDelete.Visible = true;
                     imgPhoto.Attributes["onclick"] = "return VIKKI_ShowImageViewWindowPhotoUpload('0', '" 
                         + value + "', '" + radWindow.ClientID + "');";
@@ -222,6 +226,54 @@ public class PhotoUpload : ControlBase
         set
         {
             m_CreateThumbnail = value;
+        }
+    }
+
+    public int ImageWidth
+    {
+        get
+        {
+            return m_ImageWidth;
+        }
+        set
+        {
+            m_ImageWidth = value;
+        }
+    }
+
+    public int ImageHeight
+    {
+        get
+        {
+            return m_ImageHeight;
+        }
+        set
+        {
+            m_ImageHeight = value;
+        }
+    }
+
+    public string SubFolder
+    {
+        get
+        {
+            return m_SubFolder;
+        }
+        set
+        {
+            m_SubFolder = value;
+        }
+    }
+
+    public string FileName
+    {
+        set
+        {
+            m_FileName = value;
+        }
+        get
+        {
+            return m_FileName;
         }
     }
 }

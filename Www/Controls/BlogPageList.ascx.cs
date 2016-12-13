@@ -34,16 +34,13 @@ public partial class BlogPageList : ListControlBase, Interfaces.IColouredGrid
         this.editableGrid.GridMode = GridModes.Add | GridModes.Delete
             | GridModes.Edit | GridModes.Refresh;
         editableGrid.Width = 1500;
-        SetColumnSettings(BlogPage.ColumnNames.BlogPageID, false, BlogPage.ColumnNames.BlogPageID,
-           0, HorizontalAlign.Center, "");
+        SetColumnSettings(BlogPage.ColumnNames.BlogPageID, false, BlogPage.ColumnNames.BlogPageID, 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.Name, true, "Назва", 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.Name_en, true, "Дружній URL", 0, HorizontalAlign.Center, "");
-        SetColumnSettings(BlogPage.ColumnNames.PageContent, false, BlogPage.ColumnNames.PageContent,
-           0, HorizontalAlign.Center, "");
-        SetColumnSettings(BlogPage.ColumnNames.BlogDescription, false, BlogPage.ColumnNames.PageContent,
-           0, HorizontalAlign.Center, "");
-        SetColumnSettings(BlogPage.ColumnNames.TitleImage, false, BlogPage.ColumnNames.PageContent,
-           0, HorizontalAlign.Center, "");
+        SetColumnSettings(BlogPage.ColumnNames.PageContent, false, BlogPage.ColumnNames.PageContent, 0, HorizontalAlign.Center, "");
+        SetColumnSettings(BlogPage.ColumnNames.BlogDescription, false, BlogPage.ColumnNames.BlogDescription, 0, HorizontalAlign.Center, "");
+        SetColumnSettings(BlogPage.ColumnNames.TitleImage, false, BlogPage.ColumnNames.TitleImage, 0, HorizontalAlign.Center, "");
+        SetColumnSettings(BlogPage.ColumnNames.MainImage, false, BlogPage.ColumnNames.MainImage, 0, HorizontalAlign.Center, "");
     }
 
     protected override void OnEditableGridItemDataBound(object sender, GridItemEventArgs e)

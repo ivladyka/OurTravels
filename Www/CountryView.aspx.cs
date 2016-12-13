@@ -30,6 +30,10 @@ public partial class CountryView : ProjectPageBase
                 {
                     lblCountryContent.Text = c.GetColumn(Country.ColumnNames.Content).ToString();
                 }
+                if (!c.IsColumnNull(Country.ColumnNames.MainImage) && c.s_MainImage.Length > 0)
+                {
+                    pnlPageTitle.Attributes["style"] = "background-image: url(" + Master.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + c.MainImage + ");";
+                }
             }
         }
     }
@@ -39,14 +43,6 @@ public partial class CountryView : ProjectPageBase
         get
         {
             return Master.CountryID;
-        }
-    }
-
-    public string Capital
-    {
-        get
-        {
-            return Resources.Vikkisoft.Capital;
         }
     }
 }

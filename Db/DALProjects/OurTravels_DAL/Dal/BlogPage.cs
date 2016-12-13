@@ -210,6 +210,14 @@ namespace VikkiSoft_BLL.DAL
                     return new SqlParameter("@BlogDescription", SqlDbType.VarChar, 250);
                 }
             }
+
+            public static SqlParameter MainImage
+            {
+                get
+                {
+                    return new SqlParameter("@MainImage", SqlDbType.VarChar, 50);
+                }
+            }
 			
 		}
 		#endregion		
@@ -231,6 +239,7 @@ namespace VikkiSoft_BLL.DAL
             public const string IsBlogPage = "IsBlogPage";
             public const string TitleImage = "TitleImage";
             public const string BlogDescription = "BlogDescription";
+            public const string MainImage = "MainImage";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -252,6 +261,7 @@ namespace VikkiSoft_BLL.DAL
                     ht[IsBlogPage] = _BlogPage.PropertyNames.IsBlogPage;
                     ht[TitleImage] = _BlogPage.PropertyNames.TitleImage;
                     ht[BlogDescription] = _BlogPage.PropertyNames.BlogDescription;
+                    ht[MainImage] = _BlogPage.PropertyNames.MainImage;
 				}
 				return (string)ht[columnName];
 			}
@@ -277,6 +287,7 @@ namespace VikkiSoft_BLL.DAL
             public const string IsBlogPage = "IsBlogPage";
             public const string TitleImage = "TitleImage";
             public const string BlogDescription = "BlogDescription";
+            public const string MainImage = "MainImage";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -298,6 +309,7 @@ namespace VikkiSoft_BLL.DAL
                     ht[IsBlogPage] = _BlogPage.ColumnNames.IsBlogPage;
                     ht[TitleImage] = _BlogPage.ColumnNames.TitleImage;
                     ht[BlogDescription] = _BlogPage.ColumnNames.BlogDescription;
+                    ht[MainImage] = _BlogPage.ColumnNames.MainImage;
 
 				}
 				return (string)ht[propertyName];
@@ -324,6 +336,7 @@ namespace VikkiSoft_BLL.DAL
             public const string IsBlogPage = "s_IsBlogPage";
             public const string TitleImage = "s_TitleImage";
             public const string BlogDescription = "s_BlogDescription";
+            public const string MainImage = "s_MainImage";
 
 		}
 		#endregion		
@@ -495,6 +508,18 @@ namespace VikkiSoft_BLL.DAL
             set
             {
                 base.Setstring(ColumnNames.BlogDescription, value);
+            }
+        }
+
+        public virtual string MainImage
+        {
+            get
+            {
+                return base.Getstring(ColumnNames.MainImage);
+            }
+            set
+            {
+                base.Setstring(ColumnNames.MainImage, value);
             }
         }
 
@@ -712,6 +737,21 @@ namespace VikkiSoft_BLL.DAL
             }
         }
 
+        public virtual string s_MainImage
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.MainImage) ? string.Empty : base.GetstringAsString(ColumnNames.MainImage);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.MainImage);
+                else
+                    this.MainImage = base.SetstringAsString(ColumnNames.MainImage, value);
+            }
+        }
+
 		#endregion		
 	
 		#region Where Clause
@@ -879,6 +919,16 @@ namespace VikkiSoft_BLL.DAL
                     get
                     {
                         WhereParameter where = new WhereParameter(ColumnNames.BlogDescription, Parameters.BlogDescription);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
+
+                public WhereParameter MainImage
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.MainImage, Parameters.MainImage);
                         this._clause._entity.Query.AddWhereParameter(where);
                         return where;
                     }
@@ -1056,6 +1106,18 @@ namespace VikkiSoft_BLL.DAL
                 }
             }
 
+            public WhereParameter MainImage
+            {
+                get
+                {
+                    if (_MainImage_W == null)
+                    {
+                        _MainImage_W = TearOff.MainImage;
+                    }
+                    return _MainImage_W;
+                }
+            }
+
 			private WhereParameter _BlogPageID_W = null;
 			private WhereParameter _Name_W = null;
 			private WhereParameter _Name_en_W = null;
@@ -1070,6 +1132,7 @@ namespace VikkiSoft_BLL.DAL
             private WhereParameter _IsBlogPage_W = null;
             private WhereParameter _TitleImage_W = null;
             private WhereParameter _BlogDescription_W = null;
+            private WhereParameter _MainImage_W = null;
 
 			public void WhereClauseReset()
 			{
@@ -1087,6 +1150,7 @@ namespace VikkiSoft_BLL.DAL
                 _IsBlogPage_W = null;
                 _TitleImage_W = null;
                 _BlogDescription_W = null;
+                _MainImage_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -1283,6 +1347,16 @@ namespace VikkiSoft_BLL.DAL
                     }
                 }
 
+                public AggregateParameter MainImage
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.MainImage, Parameters.MainImage);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
+
 				private AggregateClause _clause;
 			}
 			#endregion
@@ -1455,6 +1529,18 @@ namespace VikkiSoft_BLL.DAL
                 }
             }
 
+            public AggregateParameter MainImage
+            {
+                get
+                {
+                    if (_MainImage_W == null)
+                    {
+                        _MainImage_W = TearOff.MainImage;
+                    }
+                    return _MainImage_W;
+                }
+            }
+
 			private AggregateParameter _BlogPageID_W = null;
 			private AggregateParameter _Name_W = null;
 			private AggregateParameter _Name_en_W = null;
@@ -1469,6 +1555,7 @@ namespace VikkiSoft_BLL.DAL
             private AggregateParameter _IsBlogPage_W = null;
             private AggregateParameter _TitleImage_W = null;
             private AggregateParameter _BlogDescription_W = null;
+            private AggregateParameter _MainImage_W = null;
 
 			public void AggregateClauseReset()
 			{
@@ -1486,6 +1573,7 @@ namespace VikkiSoft_BLL.DAL
                 _IsBlogPage_W = null;
                 _TitleImage_W = null;
                 _BlogDescription_W = null;
+                _MainImage_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -1614,6 +1702,10 @@ namespace VikkiSoft_BLL.DAL
 
             p = cmd.Parameters.Add(Parameters.BlogDescription);
             p.SourceColumn = ColumnNames.BlogDescription;
+            p.SourceVersion = DataRowVersion.Current;
+
+            p = cmd.Parameters.Add(Parameters.MainImage);
+            p.SourceColumn = ColumnNames.MainImage;
             p.SourceVersion = DataRowVersion.Current;
 
 			return cmd;

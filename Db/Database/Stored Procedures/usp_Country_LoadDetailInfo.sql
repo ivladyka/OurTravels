@@ -18,7 +18,8 @@ BEGIN
 		[Country].[CapitalID],
 		[Country].[Description],
 		City.Name AS CapitalName, 
-		City.Name_en AS CapitalName_en
+		City.Name_en AS CapitalName_en,
+		[Country].[MainImage]
 	FROM 
 		[Country]
 	LEFT OUTER JOIN

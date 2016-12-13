@@ -39,9 +39,9 @@ public partial class BlogPageView : ProjectPageBase
                 {
                     blogPageTableList.Visible = false;
                 }
-                if (!bp.IsColumnNull(BlogPage.ColumnNames.TitleImage) && bp.s_TitleImage.Length > 0)
+                if (!bp.IsColumnNull(BlogPage.ColumnNames.MainImage) && bp.s_MainImage.Length > 0)
                 {
-                    pnlPageTitle.Attributes["style"] = "background-image: url(" + Master.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + bp.TitleImage + ");";
+                    pnlPageTitle.Attributes["style"] = "background-image: url(" + Master.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + bp.MainImage + ");";
                 }
             }
         }

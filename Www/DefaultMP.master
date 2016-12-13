@@ -32,24 +32,6 @@
     </telerik:RadCodeBlock>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#topnav li").prepend("<span></span>"); //Throws an empty span tag right before the a tag
-            $("#topnav li").each(function () { //For each list item...
-                var linkText = $(this).find("a").html(); //Find the text inside of the a tag
-                $(this).find("span").show().html(linkText); //Add the text in the span tag
-            });
-            $("#topnav li").hover(function () { //On hover...
-                $(this).find("span").stop().animate({
-                    marginTop: "-40" //Find the span tag and move it up 40 pixels
-                }, 250);
-            }, function () { //On hover out...
-                $(this).find("span").stop().animate({
-                    marginTop: "0" //Move the span back to its original state (0px)
-                }, 250);
-            });
-        });
-</script>
 </head>
 <body style="width:100%; height:100%" >
     		<div id="fh5co-wrapper">
@@ -59,7 +41,7 @@
 				<div class="container">
 					<div class="nav-header  ">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
-						<h1 id="fh5co-logo"><a href="Default.aspx">Our Travels</a></h1>
+						<h1 id="fh5co-logo"><asp:HyperLink id="hlLogoLink" runat="server">Our Travels</asp:HyperLink></h1>
 						<!-- START #fh5co-menu-wrap -->
 						<nav id="fh5co-menu-wrap" role="navigation">
 							<ul class="sf-menu" id="fh5co-primary-menu">
@@ -103,7 +85,6 @@
 			</header>
 		</div>
 	<!-- end:header-top -->	
-        <telerik:RadScriptManager runat="Server" ID="RadScriptManager1" />
         <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        
         </asp:ContentPlaceHolder> 
 		<!-- fh5co-blog-section -->

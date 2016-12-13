@@ -9,7 +9,9 @@ CREATE PROCEDURE [dbo].[InsertCity]
 	@Keywords varchar(250) = NULL,
 	@Active bit,
 	@Description varchar(200) = NULL,
-	@DateUpdate smalldatetime = NULL
+	@DateUpdate smalldatetime = NULL,
+	@TitleImage varchar(100) = NULL,
+	@MainImage varchar(100) = NULL
 )
 AS
 BEGIN
@@ -27,7 +29,9 @@ BEGIN
 		[Keywords],
 		[Active],
 		[Description],
-		[DateUpdate]
+		[DateUpdate],
+		[TitleImage],
+		[MainImage]
 	)
 	VALUES
 	(
@@ -38,7 +42,9 @@ BEGIN
 		@Keywords,
 		@Active,
 		@Description,
-		@DateUpdate
+		@DateUpdate,
+		@TitleImage,
+		@MainImage
 	)
 
 	SET @Err = @@Error

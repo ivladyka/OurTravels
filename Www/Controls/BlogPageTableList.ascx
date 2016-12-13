@@ -1,4 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BlogPageTableList.ascx.cs" Inherits="BlogPageTableList" %>
-<asp:Label ID="lblOtherTravels" runat="server" Text="Інші наші подорожі в цьому напрямку:"></asp:Label><br />
-<table cellpadding="10" cellspacing="2" border="0" width="100%" id="tblBlogPage" runat="server">
-</table>
+<div id="divOtherTravels" runat="server" class="fh5co-section-gray1"><!--id="fh5co-blog-section"-->
+    <div class="container">
+	    <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3>Інші наші подорожі в цьому напрямку:</h3>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="divBlogPageViewList" runat="server">
+
+    </div>
+</div>

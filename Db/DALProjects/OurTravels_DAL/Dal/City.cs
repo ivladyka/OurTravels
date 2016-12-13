@@ -170,6 +170,22 @@ namespace VikkiSoft_BLL.DAL
 					return new SqlParameter("@DateUpdate", SqlDbType.SmallDateTime, 0);
 				}
 			}
+
+            public static SqlParameter TitleImage
+            {
+                get
+                {
+                    return new SqlParameter("@TitleImage", SqlDbType.VarChar, 100);
+                }
+            }
+
+            public static SqlParameter MainImage
+            {
+                get
+                {
+                    return new SqlParameter("@MainImage", SqlDbType.VarChar, 100);
+                }
+            }
 			
 		}
 		#endregion		
@@ -186,6 +202,8 @@ namespace VikkiSoft_BLL.DAL
             public const string Active = "Active";
             public const string Description = "Description";
             public const string DateUpdate = "DateUpdate";
+            public const string TitleImage = "TitleImage";
+            public const string MainImage = "MainImage";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -202,6 +220,8 @@ namespace VikkiSoft_BLL.DAL
 					ht[Active] = _City.PropertyNames.Active;
 					ht[Description] = _City.PropertyNames.Description;
 					ht[DateUpdate] = _City.PropertyNames.DateUpdate;
+                    ht[TitleImage] = _City.PropertyNames.TitleImage;
+                    ht[MainImage] = _City.PropertyNames.MainImage;
 
 				}
 				return (string)ht[columnName];
@@ -223,6 +243,8 @@ namespace VikkiSoft_BLL.DAL
             public const string Active = "Active";
             public const string Description = "Description";
             public const string DateUpdate = "DateUpdate";
+            public const string TitleImage = "TitleImage";
+            public const string MainImage = "MainImage";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -239,6 +261,8 @@ namespace VikkiSoft_BLL.DAL
 					ht[Active] = _City.ColumnNames.Active;
 					ht[Description] = _City.ColumnNames.Description;
 					ht[DateUpdate] = _City.ColumnNames.DateUpdate;
+                    ht[TitleImage] = _City.ColumnNames.TitleImage;
+                    ht[MainImage] = _City.ColumnNames.MainImage;
 
 				}
 				return (string)ht[propertyName];
@@ -260,6 +284,8 @@ namespace VikkiSoft_BLL.DAL
             public const string Active = "s_Active";
             public const string Description = "s_Description";
             public const string DateUpdate = "s_DateUpdate";
+            public const string TitleImage = "s_TitleImage";
+            public const string MainImage = "s_MainImage";
 
 		}
 		#endregion		
@@ -374,6 +400,29 @@ namespace VikkiSoft_BLL.DAL
 			}
 		}
 
+        public virtual string TitleImage
+        {
+            get
+            {
+                return base.Getstring(ColumnNames.TitleImage);
+            }
+            set
+            {
+                base.Setstring(ColumnNames.TitleImage, value);
+            }
+        }
+
+        public virtual string MainImage
+        {
+            get
+            {
+                return base.Getstring(ColumnNames.MainImage);
+            }
+            set
+            {
+                base.Setstring(ColumnNames.MainImage, value);
+            }
+        }
 
 		#endregion
 		
@@ -514,6 +563,36 @@ namespace VikkiSoft_BLL.DAL
 			}
 		}
 
+        public virtual string s_TitleImage
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.TitleImage) ? string.Empty : base.GetstringAsString(ColumnNames.TitleImage);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.TitleImage);
+                else
+                    this.TitleImage = base.SetstringAsString(ColumnNames.TitleImage, value);
+            }
+        }
+
+        public virtual string s_MainImage
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.MainImage) ? string.Empty : base.GetstringAsString(ColumnNames.MainImage);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.MainImage);
+                else
+                    this.MainImage = base.SetstringAsString(ColumnNames.MainImage, value);
+            }
+        }
+
 
 		#endregion		
 	
@@ -638,6 +717,26 @@ namespace VikkiSoft_BLL.DAL
 					}
 				}
 
+                public WhereParameter TitleImage
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.TitleImage, Parameters.TitleImage);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
+
+                public WhereParameter MainImage
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.MainImage, Parameters.MainImage);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
+
 
 				private WhereClause _clause;
 			}
@@ -751,6 +850,30 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+            public WhereParameter TitleImage
+            {
+                get
+                {
+                    if (_TitleImage_W == null)
+                    {
+                        _TitleImage_W = TearOff.TitleImage;
+                    }
+                    return _TitleImage_W;
+                }
+            }
+
+            public WhereParameter MainImage
+            {
+                get
+                {
+                    if (_MainImage_W == null)
+                    {
+                        _MainImage_W = TearOff.MainImage;
+                    }
+                    return _MainImage_W;
+                }
+            }
+
 			private WhereParameter _CityID_W = null;
 			private WhereParameter _Name_W = null;
 			private WhereParameter _Name_en_W = null;
@@ -760,6 +883,8 @@ namespace VikkiSoft_BLL.DAL
 			private WhereParameter _Active_W = null;
 			private WhereParameter _Description_W = null;
 			private WhereParameter _DateUpdate_W = null;
+            private WhereParameter _TitleImage_W = null;
+            private WhereParameter _MainImage_W = null;
 
 			public void WhereClauseReset()
 			{
@@ -772,6 +897,8 @@ namespace VikkiSoft_BLL.DAL
 				_Active_W = null;
 				_Description_W = null;
 				_DateUpdate_W = null;
+                _TitleImage_W = null;
+                _MainImage_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -918,6 +1045,26 @@ namespace VikkiSoft_BLL.DAL
 					}
 				}
 
+                public AggregateParameter TitleImage
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.TitleImage, Parameters.TitleImage);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
+
+                public AggregateParameter MainImage
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.MainImage, Parameters.MainImage);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
+
 
 				private AggregateClause _clause;
 			}
@@ -1031,6 +1178,30 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+            public AggregateParameter TitleImage
+            {
+                get
+                {
+                    if (_TitleImage_W == null)
+                    {
+                        _TitleImage_W = TearOff.TitleImage;
+                    }
+                    return _TitleImage_W;
+                }
+            }
+
+            public AggregateParameter MainImage
+            {
+                get
+                {
+                    if (_MainImage_W == null)
+                    {
+                        _MainImage_W = TearOff.MainImage;
+                    }
+                    return _MainImage_W;
+                }
+            }
+
 			private AggregateParameter _CityID_W = null;
 			private AggregateParameter _Name_W = null;
 			private AggregateParameter _Name_en_W = null;
@@ -1040,6 +1211,8 @@ namespace VikkiSoft_BLL.DAL
 			private AggregateParameter _Active_W = null;
 			private AggregateParameter _Description_W = null;
 			private AggregateParameter _DateUpdate_W = null;
+            private AggregateParameter _TitleImage_W = null;
+            private AggregateParameter _MainImage_W = null;
 
 			public void AggregateClauseReset()
 			{
@@ -1052,6 +1225,8 @@ namespace VikkiSoft_BLL.DAL
 				_Active_W = null;
 				_Description_W = null;
 				_DateUpdate_W = null;
+                _TitleImage_W = null;
+                _MainImage_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -1161,6 +1336,14 @@ namespace VikkiSoft_BLL.DAL
 			p = cmd.Parameters.Add(Parameters.DateUpdate);
 			p.SourceColumn = ColumnNames.DateUpdate;
 			p.SourceVersion = DataRowVersion.Current;
+
+            p = cmd.Parameters.Add(Parameters.TitleImage);
+            p.SourceColumn = ColumnNames.TitleImage;
+            p.SourceVersion = DataRowVersion.Current;
+
+            p = cmd.Parameters.Add(Parameters.MainImage);
+            p.SourceColumn = ColumnNames.MainImage;
+            p.SourceVersion = DataRowVersion.Current;
 
 
 			return cmd;

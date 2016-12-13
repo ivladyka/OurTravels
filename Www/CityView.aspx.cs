@@ -23,6 +23,10 @@ public partial class CityView : ProjectPageBase
                 hlCountry.Text = c.GetColumn("CountryName").ToString();
                 hlCountry.NavigateUrl = Utils.GenerateFriendlyURL("country",
                     new string[] { c.GetColumn("CountryName_en").ToString() });
+                if (!c.IsColumnNull(City.ColumnNames.MainImage) && c.s_MainImage.Length > 0)
+                {
+                    pnlPageTitle.Attributes["style"] = "background-image: url(" + Master.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + c.MainImage + ");";
+                }
             }
         }
     }
@@ -32,14 +36,6 @@ public partial class CityView : ProjectPageBase
         get
         {
             return Master.CityID;
-        }
-    }
-
-    public string Country
-    {
-        get
-        {
-            return Resources.Vikkisoft.Country;
         }
     }
 }

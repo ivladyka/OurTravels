@@ -2,6 +2,7 @@
 <%@ Register TagPrefix="uc1" TagName="EditorHTML" Src="ValueControls/EditorHTML.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="IntInput" Src="ValueControls/IntInput.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="CityChoice" Src="ChoiceControls/CityChoice.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="PhotoUpload" Src="ValueControls/PhotoUpload.ascx" %>
 <TABLE id="Table3" class="EditControl3" cellpadding="2" cellspacing="7"  align="left" border="0" width="950px">	
     <tr>
         <td align="right">
@@ -39,6 +40,16 @@
             <uc1:CityChoice id="choice_CapitalID" runat="server" UseValueInsteadText="true" Width="300"></uc1:CityChoice>
 		</td>
     </tr>
+    <asp:Panel ID="pnlMainImage" runat="server">
+    <tr>
+	    <td align="right">Головне зображення:
+		</td>
+		<td>
+            <uc1:PhotoUpload id="upload_MainImage" runat="server" AllowedFileExtensions="jpg,gif,png" CreateThumbnail="true"></uc1:PhotoUpload>
+        </td>
+	</tr>
+    </asp:Panel>
+    <asp:Panel ID="pnlContent" runat="server">
     <tr>
         <td align="right" valign="top">
             Опис:
@@ -47,6 +58,7 @@
             <uc1:EditorHTML ID="editor_Content" runat="server" />
         </td>
     </tr>
+    </asp:Panel>
     <tr>
         <td align="right">
             Ключові слова:

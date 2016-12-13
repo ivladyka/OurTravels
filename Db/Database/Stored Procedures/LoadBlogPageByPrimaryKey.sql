@@ -22,7 +22,8 @@ BEGIN
 		[DatePublish],
 		[IsBlogPage],
 		[TitleImage],
-		[BlogDescription]
+		[BlogDescription],
+		[MainImage]
 	FROM [BlogPage]
 	WHERE
 		([BlogPageID] = @BlogPageID)

@@ -9,7 +9,8 @@ CREATE PROCEDURE [dbo].[InsertCountry]
 	@Active bit,
 	@CapitalID int = NULL,
 	@Description varchar(200) = NULL,
-	@DateUpdate smalldatetime = NULL
+	@DateUpdate smalldatetime = NULL,
+	@MainImage varchar(100) = NULL
 )
 AS
 BEGIN
@@ -27,7 +28,8 @@ BEGIN
 		[Active],
 		[CapitalID],
 		[Description],
-		[DateUpdate]
+		[DateUpdate],
+		[MainImage]
 	)
 	VALUES
 	(
@@ -38,7 +40,8 @@ BEGIN
 		@Active,
 		@CapitalID,
 		@Description,
-		@DateUpdate
+		@DateUpdate,
+		@MainImage
 	)
 
 	SET @Err = @@Error

@@ -61,7 +61,14 @@
 		        <td align="right">Зображення для заголовку:
 		        </td>
 		        <td>
-                    <uc1:PhotoUpload id="upload_TitleImage" runat="server" AllowedFileExtensions="jpg,gif,png" CreateThumbnail="true"></uc1:PhotoUpload>
+                    <uc1:PhotoUpload id="upload_TitleImage" runat="server" AllowedFileExtensions="jpg,gif,png" CreateThumbnail="true" ImageWidth="400" ImageHeight="300"></uc1:PhotoUpload>
+		        </td>
+	        </tr>
+            <tr>
+		        <td align="right">Головне зображення:
+		        </td>
+		        <td>
+                    <uc1:PhotoUpload id="upload_MainImage" runat="server" AllowedFileExtensions="jpg,gif,png" CreateThumbnail="true"></uc1:PhotoUpload>
 		        </td>
 	        </tr>
             <tr>

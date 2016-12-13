@@ -8,7 +8,10 @@
     [CapitalID]   INT           NULL,
     [Description] VARCHAR (200) NULL,
     [DateUpdate]  SMALLDATETIME NULL,
+    [MainImage]   VARCHAR (100) NULL,
     CONSTRAINT [PK_Country] PRIMARY KEY CLUSTERED ([CountryID] ASC),
     CONSTRAINT [FK_Country_City] FOREIGN KEY ([CapitalID]) REFERENCES [dbo].[City] ([CityID])
 );
+
+
 

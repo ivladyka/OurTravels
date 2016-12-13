@@ -12,7 +12,9 @@ BEGIN
 		[Site].SiteID, 
 		[Site].Name, 
 		[Site].URL, 
-		[Site].Banner
+		[Site].Banner,
+		[Site].Logo,
+		[Site].Notes
 	FROM         
 		[Site] 
 	WHERE

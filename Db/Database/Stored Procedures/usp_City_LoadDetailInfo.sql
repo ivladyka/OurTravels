@@ -10,7 +10,9 @@ BEGIN
 		City.Name_en, 
 		Country.Name AS CountryName, 
 		Country.Name_en AS CountryName_en, 
-		City.Content
+		City.Content,
+		City.[TitleImage],
+		City.[MainImage]
 	FROM         
 		City 
 	INNER JOIN

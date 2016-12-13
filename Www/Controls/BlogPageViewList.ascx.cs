@@ -137,11 +137,12 @@ public partial class Controls_BlogPageViewList : System.Web.UI.UserControl
     {
         get
         {
-            string serverURL = Request.Url.Scheme + Uri.SchemeDelimiter + System.Web.HttpContext.Current.Request.ServerVariables["SERVER_NAME"];
-            if (!Request.Url.IsDefaultPort)
-                serverURL += ":" + Request.Url.Port;
-            return serverURL;
+            MasterPageBase master = Page.Master as MasterPageBase;
+            if (master != null)
+            {
+                return master.SiteURL;
+            }
+            return "";
         }
     }
-
 }

@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMP.master" AutoEventWireup="true" CodeFile="BlogPageView.aspx.cs" Inherits="BlogPageView" %>
 <%@ Register TagPrefix="uc1" TagName="BlogPageTableList" Src="Controls/BlogPageTableList.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="SiteViewList" Src="Controls/SiteViewList.ascx" %>
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -21,10 +22,11 @@
 			</div>
 			<div class="container">
 				<div class="row row-bottom-padded-md">					
-    <asp:Label ID="lblCategoryContent" runat="server" Text=""></asp:Label><br />
-    <uc1:BlogPageTableList id="blogPageTableList" runat="server"></uc1:BlogPageTableList>
+                    <asp:Label ID="lblCategoryContent" runat="server" Text=""></asp:Label><br />
 				</div>				
 			</div>
 		</div> 
+    <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
+    <uc1:BlogPageTableList id="blogPageTableList" runat="server"></uc1:BlogPageTableList>
 </asp:Content>
 

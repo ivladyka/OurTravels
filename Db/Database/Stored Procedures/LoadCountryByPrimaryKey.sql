@@ -17,7 +17,8 @@ BEGIN
 		[Active],
 		[CapitalID],
 		[Description],
-		[DateUpdate]
+		[DateUpdate],
+		[MainImage]
 	FROM [Country]
 	WHERE
 		([CountryID] = @CountryID)

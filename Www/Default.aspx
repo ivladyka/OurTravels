@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMP.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 <%@ Register TagPrefix="uc1" TagName="BlogPageViewList" Src="Controls/BlogPageViewList.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="SiteViewList" Src="Controls/SiteViewList.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
@@ -61,6 +62,7 @@
                 <uc1:BlogPageViewList id="blogPageViewList" runat="server" PageSize="3" ShowPager="false"></uc1:BlogPageViewList>				
 			</div>
 		</div>	
+        <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
 		<div id="fh5co-services-section">
 			<div class="container">
 				<div class="row">

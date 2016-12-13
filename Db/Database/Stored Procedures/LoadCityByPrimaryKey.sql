@@ -17,7 +17,9 @@ BEGIN
 		[Keywords],
 		[Active],
 		[Description],
-		[DateUpdate]
+		[DateUpdate],
+		[TitleImage],
+		[MainImage]
 	FROM [City]
 	WHERE
 		([CityID] = @CityID)

@@ -14,7 +14,8 @@ CREATE PROCEDURE [dbo].[UpdateBlogPage]
 	@DatePublish smalldatetime = NULL,
 	@IsBlogPage bit,
 	@TitleImage varchar(50) = NULL,
-	@BlogDescription varchar(250) = NULL
+	@BlogDescription varchar(250) = NULL,
+	@MainImage varchar(50) = NULL
 )
 AS
 BEGIN
@@ -36,7 +37,8 @@ BEGIN
 		[DatePublish] = @DatePublish,
 		[IsBlogPage] = @IsBlogPage,
 		[TitleImage] = @TitleImage,
-		[BlogDescription] = @BlogDescription
+		[BlogDescription] = @BlogDescription,
+		[MainImage] = @MainImage
 	WHERE
 		[BlogPageID] = @BlogPageID
 

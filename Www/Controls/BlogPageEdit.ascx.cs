@@ -32,6 +32,10 @@ public partial class BlogPageEdit : EditControlBase
         {
             upload_TitleImage.DeletePhoto();
         }
+        if (upload_MainImage.IsPhotoDeleted)
+        {
+            upload_MainImage.DeletePhoto();
+        }
         Response.Redirect("Office.aspx?content=BlogPageList");
     }
 

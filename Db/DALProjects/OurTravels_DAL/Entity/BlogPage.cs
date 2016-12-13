@@ -26,5 +26,20 @@ namespace VikkiSoft_BLL
             base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_BlogPage_LoadBlogsWithPaging]", parameters);
             return (int)spRecordCount.Value;
         }
+
+        public virtual void SearchByBlogPageID(int blogPageID)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@BlogPageID", SqlDbType.Int), blogPageID);
+            base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_BlogPage_SearchByBlogPageID]", parameters);
+        }
+
+        public virtual void SearchByCityIDAndCountryID(int cityID, int countryID)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@CityID", SqlDbType.Int), cityID);
+            parameters.Add(new SqlParameter("@CountryID", SqlDbType.Int), countryID);
+            base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_BlogPage_SearchByCityIDAndCountryID]", parameters);
+        }
 	}
 }

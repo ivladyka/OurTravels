@@ -8,6 +8,9 @@ using VikkiSoft_BLL;
 
 public partial class CountryEdit : EditControlBase
 {
+    private string m_CountrySubFolder = "";
+    private string m_CountryName = "";
+
     public CountryEdit()
     {
         this.m_Name = "Країнa";
@@ -25,18 +28,12 @@ public partial class CountryEdit : EditControlBase
         if (!IsNew)
         {
             text_Name_en.Enabled = false;
-            string countryFolder = Server.MapPath(Utils.GaleryImagePath + "//country");
-            if (!System.IO.Directory.Exists(countryFolder))
-            {
-                System.IO.Directory.CreateDirectory(countryFolder);
-            }
-            countryFolder = Server.MapPath(Utils.GaleryImagePath + "//country//" + text_Name_en.Text.ToLower());
-            if (!System.IO.Directory.Exists(countryFolder))
-            {
-                System.IO.Directory.CreateDirectory(countryFolder);
-            }
-            string countryFolderVirtual = Utils.GaleryImagePath + "/country/" + text_Name_en.Text.ToLower();
-            editor_Content.ImageManagerViewPaths = countryFolderVirtual;
+            editor_Content.ImageManagerViewPaths = Utils.GaleryImagePath + CountrySubFolder;
+            InitPhotoUpload();
+        }
+        else
+        {
+            pnlMainImage.Visible = pnlContent.Visible = false;
         }
     }
 
@@ -44,12 +41,17 @@ public partial class CountryEdit : EditControlBase
     {
         if (!IsNew)
         {
-            string countryFolderVirtual = Utils.GaleryImagePath + "/country/" + text_Name_en.Text.ToLower();
-
-            editor_Content.ImageManagerUploadPaths = countryFolderVirtual;
-            editor_Content.ImageManagerDeletePaths = countryFolderVirtual;
+            editor_Content.ImageManagerUploadPaths = Utils.GaleryImagePath + CountrySubFolder;
+            editor_Content.ImageManagerDeletePaths = Utils.GaleryImagePath + CountrySubFolder;
+            InitPhotoUpload();
         }
         base.SetEventHandlers();
+    }
+
+    private void InitPhotoUpload()
+    {
+        upload_MainImage.SubFolder = CountrySubFolder;
+        upload_MainImage.FileName = CountryName;
     }
 
     protected override void WriteDataToEntity()
@@ -57,5 +59,50 @@ public partial class CountryEdit : EditControlBase
         base.WriteDataToEntity();
         Country c = (Country)this.EditableEntity;
         c.DateUpdate = DateTime.Now;
+    }
+
+    public string CountrySubFolder
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(m_CountrySubFolder))
+            {
+                return m_CountrySubFolder;
+            }
+            string countryFolder = Server.MapPath(Utils.GaleryImagePath + "//country");
+            if (!System.IO.Directory.Exists(countryFolder))
+            {
+                System.IO.Directory.CreateDirectory(countryFolder);
+            }
+            if (this.EditableEntity != null)
+            {
+                Country c = (Country)this.EditableEntity;
+                countryFolder = Server.MapPath(Utils.GaleryImagePath + "//country//" + c.Name_en.ToLower());
+                if (!System.IO.Directory.Exists(countryFolder))
+                {
+                    System.IO.Directory.CreateDirectory(countryFolder);
+                }
+                m_CountrySubFolder = "/country/" + c.Name_en.ToLower();
+                m_CountryName = c.Name_en.ToLower();
+            }
+            return m_CountrySubFolder;
+        }
+    }
+
+    protected override void RedirectBackToList()
+    {
+        if (upload_MainImage.IsPhotoDeleted)
+        {
+            upload_MainImage.DeletePhoto();
+        }
+        Response.Redirect("Office.aspx?content=CountryList");
+    }
+
+    private string CountryName
+    {
+        get
+        {
+            return m_CountryName;
+        }
     }
 }

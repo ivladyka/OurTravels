@@ -171,6 +171,14 @@ namespace VikkiSoft_BLL.DAL
 					return new SqlParameter("@DateUpdate", SqlDbType.SmallDateTime, 0);
 				}
 			}
+
+            public static SqlParameter MainImage
+            {
+                get
+                {
+                    return new SqlParameter("@MainImage", SqlDbType.VarChar, 100);
+                }
+            }
 			
 		}
 		#endregion		
@@ -187,6 +195,7 @@ namespace VikkiSoft_BLL.DAL
             public const string CapitalID = "CapitalID";
             public const string Description = "Description";
             public const string DateUpdate = "DateUpdate";
+            public const string MainImage = "MainImage";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -203,6 +212,7 @@ namespace VikkiSoft_BLL.DAL
 					ht[CapitalID] = _Country.PropertyNames.CapitalID;
 					ht[Description] = _Country.PropertyNames.Description;
 					ht[DateUpdate] = _Country.PropertyNames.DateUpdate;
+                    ht[MainImage] = _Country.PropertyNames.MainImage;
 
 				}
 				return (string)ht[columnName];
@@ -224,6 +234,7 @@ namespace VikkiSoft_BLL.DAL
             public const string CapitalID = "CapitalID";
             public const string Description = "Description";
             public const string DateUpdate = "DateUpdate";
+            public const string MainImage = "MainImage";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -240,6 +251,7 @@ namespace VikkiSoft_BLL.DAL
 					ht[CapitalID] = _Country.ColumnNames.CapitalID;
 					ht[Description] = _Country.ColumnNames.Description;
 					ht[DateUpdate] = _Country.ColumnNames.DateUpdate;
+                    ht[MainImage] = _Country.ColumnNames.MainImage;
 
 				}
 				return (string)ht[propertyName];
@@ -261,6 +273,7 @@ namespace VikkiSoft_BLL.DAL
             public const string CapitalID = "s_CapitalID";
             public const string Description = "s_Description";
             public const string DateUpdate = "s_DateUpdate";
+            public const string MainImage = "s_MainImage";
 
 		}
 		#endregion		
@@ -374,6 +387,18 @@ namespace VikkiSoft_BLL.DAL
 				base.SetDateTime(ColumnNames.DateUpdate, value);
 			}
 		}
+
+        public virtual string MainImage
+        {
+            get
+            {
+                return base.Getstring(ColumnNames.MainImage);
+            }
+            set
+            {
+                base.Setstring(ColumnNames.MainImage, value);
+            }
+        }
 
 
 		#endregion
@@ -515,6 +540,21 @@ namespace VikkiSoft_BLL.DAL
 			}
 		}
 
+        public virtual string s_MainImage
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.MainImage) ? string.Empty : base.GetstringAsString(ColumnNames.MainImage);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.MainImage);
+                else
+                    this.MainImage = base.SetstringAsString(ColumnNames.MainImage, value);
+            }
+        }
+
 
 		#endregion		
 	
@@ -638,6 +678,16 @@ namespace VikkiSoft_BLL.DAL
 					}
 				}
 
+                public WhereParameter MainImage
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.MainImage, Parameters.MainImage);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
+
 
 				private WhereClause _clause;
 			}
@@ -751,6 +801,18 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+            public WhereParameter MainImage
+            {
+                get
+                {
+                    if (_MainImage_W == null)
+                    {
+                        _MainImage_W = TearOff.MainImage;
+                    }
+                    return _MainImage_W;
+                }
+            }
+
 			private WhereParameter _CountryID_W = null;
 			private WhereParameter _Name_W = null;
 			private WhereParameter _Name_en_W = null;
@@ -760,6 +822,7 @@ namespace VikkiSoft_BLL.DAL
 			private WhereParameter _CapitalID_W = null;
 			private WhereParameter _Description_W = null;
 			private WhereParameter _DateUpdate_W = null;
+            private WhereParameter _MainImage_W = null;
 
 			public void WhereClauseReset()
 			{
@@ -772,6 +835,7 @@ namespace VikkiSoft_BLL.DAL
 				_CapitalID_W = null;
 				_Description_W = null;
 				_DateUpdate_W = null;
+                _MainImage_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -918,6 +982,16 @@ namespace VikkiSoft_BLL.DAL
 					}
 				}
 
+                public AggregateParameter MainImage
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.MainImage, Parameters.MainImage);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
+
 
 				private AggregateClause _clause;
 			}
@@ -1031,6 +1105,18 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+            public AggregateParameter MainImage
+            {
+                get
+                {
+                    if (_MainImage_W == null)
+                    {
+                        _MainImage_W = TearOff.MainImage;
+                    }
+                    return _MainImage_W;
+                }
+            }
+
 			private AggregateParameter _CountryID_W = null;
 			private AggregateParameter _Name_W = null;
 			private AggregateParameter _Name_en_W = null;
@@ -1040,6 +1126,7 @@ namespace VikkiSoft_BLL.DAL
 			private AggregateParameter _CapitalID_W = null;
 			private AggregateParameter _Description_W = null;
 			private AggregateParameter _DateUpdate_W = null;
+            private AggregateParameter _MainImage_W = null;
 
 			public void AggregateClauseReset()
 			{
@@ -1052,6 +1139,7 @@ namespace VikkiSoft_BLL.DAL
 				_CapitalID_W = null;
 				_Description_W = null;
 				_DateUpdate_W = null;
+                _MainImage_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -1161,6 +1249,10 @@ namespace VikkiSoft_BLL.DAL
 			p = cmd.Parameters.Add(Parameters.DateUpdate);
 			p.SourceColumn = ColumnNames.DateUpdate;
 			p.SourceVersion = DataRowVersion.Current;
+
+            p = cmd.Parameters.Add(Parameters.MainImage);
+            p.SourceColumn = ColumnNames.MainImage;
+            p.SourceVersion = DataRowVersion.Current;
 
 
 			return cmd;

@@ -21,7 +21,7 @@ public partial class MasterPage : MasterPageBase
         hlMenuChildren.NavigateUrl = this.SiteURL + "/page/6/children/";
         hlMenuPlanning.NavigateUrl = this.SiteURL + "/page/7/planning/";
         hlMenuSuitcase.NavigateUrl = this.SiteURL + "/page/8/suitcase/";
-        hlHomeTop.NavigateUrl = this.SiteURL + "/Default.aspx";
+        hlHomeTop.NavigateUrl = hlLogoLink.NavigateUrl = this.SiteURL + "/Default.aspx";
         hlMenuAdvice.NavigateUrl = this.SiteURL + "/Advice.aspx";
         hlAboutUs.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?bpid=1";
         hlContactUsTop.NavigateUrl = this.SiteURL + "/ContactUs.aspx";

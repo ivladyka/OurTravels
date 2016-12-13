@@ -128,5 +128,7 @@
     <Build Include="Stored Procedures\InsertBlogPageCity.sql" />
     <Build Include="Stored Procedures\DeleteBlogPageCity.sql" />
     <Build Include="Stored Procedures\usp_BlogPageCity_LoadByBlogPageID.sql" />
+    <Build Include="Stored Procedures\usp_BlogPage_SearchByCityIDAndCountryID.sql" />
+    <Build Include="Stored Procedures\usp_BlogPage_SearchByBlogPageID.sql" />
   </ItemGroup>
 </Project>

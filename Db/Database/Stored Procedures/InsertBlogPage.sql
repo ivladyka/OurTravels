@@ -14,7 +14,8 @@ CREATE PROCEDURE [dbo].[InsertBlogPage]
 	@DatePublish smalldatetime = NULL,
 	@IsBlogPage bit,
 	@TitleImage varchar(50) = NULL,
-	@BlogDescription varchar(250) = NULL
+	@BlogDescription varchar(250) = NULL,
+	@MainImage varchar(50) = NULL
 )
 AS
 BEGIN
@@ -37,7 +38,8 @@ BEGIN
 		[DatePublish],
 		[IsBlogPage],
 		[TitleImage],
-		[BlogDescription]
+		[BlogDescription],
+		[MainImage]
 	)
 	VALUES
 	(
@@ -53,7 +55,8 @@ BEGIN
 		@DatePublish,
 		@IsBlogPage,
 		@TitleImage,
-		@BlogDescription
+		@BlogDescription,
+		@MainImage
 	)
 
 	SET @Err = @@Error

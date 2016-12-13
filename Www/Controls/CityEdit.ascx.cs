@@ -8,6 +8,9 @@ using VikkiSoft_BLL;
 
 public partial class CityEdit : EditControlBase
 {
+    private string m_CitySubFolder = "";
+    private string m_CityName = "";
+
     public CityEdit()
     {
         this.m_Name = "Містo";
@@ -26,26 +29,12 @@ public partial class CityEdit : EditControlBase
         {
             choice_CountryID.Enabled = false;
             text_Name_en.Enabled = false;
-            string countryFolder = Server.MapPath(Utils.GaleryImagePath + "//city");
-            if (!System.IO.Directory.Exists(countryFolder))
-            {
-                System.IO.Directory.CreateDirectory(countryFolder);
-            }
-            string country = choice_CountryID.DDLSelectedItem.Attributes["NameEn"].ToString().ToLower();
-            countryFolder = Server.MapPath(Utils.GaleryImagePath + "//city//" + country);
-            if (!System.IO.Directory.Exists(countryFolder))
-            {
-                System.IO.Directory.CreateDirectory(countryFolder);
-            }
-            countryFolder = Server.MapPath(Utils.GaleryImagePath + "//city//" + country)
-                + "//" + text_Name_en.Text.ToLower();
-            if (!System.IO.Directory.Exists(countryFolder))
-            {
-                System.IO.Directory.CreateDirectory(countryFolder);
-            }
-            CityFolderVirtual = Utils.GaleryImagePath + "/city/" + country 
-                + "/" + text_Name_en.Text.ToLower();
-            editor_Content.ImageManagerViewPaths = CityFolderVirtual;
+            editor_Content.ImageManagerViewPaths = Utils.GaleryImagePath + CitySubFolder;
+            InitPhotoUploads();
+        }
+        else
+        {
+            pnlTitleImage.Visible = pnlMainImage.Visible = pnlContent.Visible = false;
         }
     }
 
@@ -53,25 +42,55 @@ public partial class CityEdit : EditControlBase
     {
         if (!IsNew)
         {
-            editor_Content.ImageManagerUploadPaths = CityFolderVirtual;
-            editor_Content.ImageManagerDeletePaths = CityFolderVirtual;
+            editor_Content.ImageManagerUploadPaths = Utils.GaleryImagePath + CitySubFolder;
+            editor_Content.ImageManagerDeletePaths = Utils.GaleryImagePath + CitySubFolder;
+            InitPhotoUploads();
         }
         base.SetEventHandlers();
     }
 
-    public string CityFolderVirtual
+    private void InitPhotoUploads()
+    {
+        upload_TitleImage.SubFolder = CitySubFolder;
+        upload_MainImage.SubFolder = CitySubFolder;
+        upload_TitleImage.FileName = (string.IsNullOrEmpty(CityName) ? "" : CityName + "_t");
+        upload_MainImage.FileName = CityName;
+    }
+
+    public string CitySubFolder
     {
         get
         {
-            if (this.ViewState["CityFolderVirtual"] != null)
+            if (!string.IsNullOrEmpty(m_CitySubFolder))
             {
-                return this.ViewState["CityFolderVirtual"].ToString();
+                return m_CitySubFolder;
             }
-            return "";
-        }
-        set
-        {
-            this.ViewState["CityFolderVirtual"] = value;
+            string cityFolder = Server.MapPath(Utils.GaleryImagePath + "//city");
+            if (!System.IO.Directory.Exists(cityFolder))
+            {
+                System.IO.Directory.CreateDirectory(cityFolder);
+            }
+            if (this.EditableEntity != null)
+            {
+                City c = (City)this.EditableEntity;
+                Country cntr = new Country();
+                cntr.LoadByPrimaryKey(c.CountryID);
+                string country = cntr.Name_en.ToLower();
+                cityFolder = Server.MapPath(Utils.GaleryImagePath + "//city//" + country);
+                if (!System.IO.Directory.Exists(cityFolder))
+                {
+                    System.IO.Directory.CreateDirectory(cityFolder);
+                }
+                cityFolder = Server.MapPath(Utils.GaleryImagePath + "//city//" + country)
+                    + "//" + text_Name_en.Text.ToLower();
+                if (!System.IO.Directory.Exists(cityFolder))
+                {
+                    System.IO.Directory.CreateDirectory(cityFolder);
+                }
+                m_CitySubFolder = "/city/" + country + "/" + c.Name_en.ToLower();
+                m_CityName = c.Name_en.ToLower();
+            }
+            return m_CitySubFolder;
         }
     }
 
@@ -80,5 +99,26 @@ public partial class CityEdit : EditControlBase
         base.WriteDataToEntity();
         City c = (City)this.EditableEntity;
         c.DateUpdate = DateTime.Now;
+    }
+
+    protected override void RedirectBackToList()
+    {
+        if (upload_TitleImage.IsPhotoDeleted)
+        {
+            upload_TitleImage.DeletePhoto();
+        }
+        if (upload_MainImage.IsPhotoDeleted)
+        {
+            upload_MainImage.DeletePhoto();
+        }
+        Response.Redirect("Office.aspx?content=CityList");
+    }
+
+    private string CityName
+    {
+        get
+        {
+            return m_CityName;
+        }
     }
 }

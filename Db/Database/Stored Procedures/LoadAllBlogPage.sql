@@ -21,7 +21,8 @@ BEGIN
 		[IsBlogPage], 
 		'' AS URL,
 		[TitleImage],
-		[BlogDescription]
+		[BlogDescription],
+		[MainImage]
 	FROM [BlogPage]
 
 	SET @Err = @@Error

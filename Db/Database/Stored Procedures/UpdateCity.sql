@@ -9,7 +9,9 @@ CREATE PROCEDURE [dbo].[UpdateCity]
 	@Keywords varchar(250) = NULL,
 	@Active bit,
 	@Description varchar(200) = NULL,
-	@DateUpdate smalldatetime = NULL
+	@DateUpdate smalldatetime = NULL,
+	@TitleImage varchar(100) = NULL,
+	@MainImage varchar(100) = NULL
 )
 AS
 BEGIN
@@ -26,7 +28,9 @@ BEGIN
 		[Keywords] = @Keywords,
 		[Active] = @Active,
 		[Description] = @Description,
-		[DateUpdate] = @DateUpdate
+		[DateUpdate] = @DateUpdate,
+		[TitleImage] = @TitleImage,
+		[MainImage] = @MainImage
 	WHERE
 		[CityID] = @CityID
 
