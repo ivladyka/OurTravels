@@ -58,7 +58,7 @@
 				</div>
 			</div>
 
-			<div class="container">
+			<div class="container ">
                 <uc1:BlogPageViewList id="blogPageViewList" runat="server" PageSize="3" ShowPager="false"></uc1:BlogPageViewList>				
 			</div>
 		</div>	

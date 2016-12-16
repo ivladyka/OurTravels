@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="BlogPageTableList.ascx.cs" Inherits="BlogPageTableList" %>
-<div id="divOtherTravels" runat="server" class="fh5co-section-gray1"><!--id="fh5co-blog-section"-->
+<div id="divOtherTravels" runat="server" class="small-blog-list"><!--id="fh5co-blog-section"-->
     <div class="container">
 	    <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
@@ -8,6 +8,5 @@
         </div>
     </div>
     <div class="container" id="divBlogPageViewList" runat="server">
-
     </div>
 </div>

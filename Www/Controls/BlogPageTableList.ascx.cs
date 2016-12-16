@@ -33,13 +33,13 @@ public partial class BlogPageTableList : System.Web.UI.UserControl
                     strBlogList.Append("<div class=\"row\">");
                 }
                 string pageURL = SiteURL + "/" + Utils.GenerateFriendlyURL("page", new string[] { row[BlogPage.ColumnNames.BlogPageID].ToString(), row[BlogPage.ColumnNames.Name_en].ToString() }, false);
-                strBlogList.Append("<div class=\"col-lg-4 col-md-4\">");
+                strBlogList.Append("<div class=\"col-lg-4 col-md-4 small-blog-item\">");
                 strBlogList.Append("<div class=\"fh5co-blog animate-box\">");
                 if (shortForm)
                 {
                     if (!row.IsNull(BlogPage.ColumnNames.TitleImage))
                     {
-                        strBlogList.Append("<div class='smallbloglist' style='background-image: url(" + SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + row[BlogPage.ColumnNames.TitleImage].ToString() + ");'>");
+                        strBlogList.Append("<div class='smallbloglist' style='background-image: url(" + SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + row[BlogPage.ColumnNames.TitleImage].ToString() + ");'><div class='fh5co-overlay'></div>");
                         strBlogList.Append("<h3><a href=\"" + pageURL + "\">" + row[BlogPage.ColumnNames.Name].ToString() + "</a></h3>");
                         strBlogList.Append("</div>");
                     }

@@ -31,10 +31,10 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
                 {
                     strSiteList.Append("<div class=\"row\">");
                 }
-                strSiteList.Append("<div class=\"col-md-4 animate-box fadeInUp animated\">");
+                strSiteList.Append("");
                 if (!row.IsNull(VikkiSoft_BLL.Site.ColumnNames.Logo))
                 {
-                    strSiteList.Append("<span class=\"icon\">");
+                    strSiteList.Append("<div class=\"col-md-4 animate-box fadeInUp animated\"><div class=\"feature-left\"><span class=\"icon\">");
                     strSiteList.Append("<a href=\"" + row[VikkiSoft_BLL.Site.ColumnNames.URL].ToString() + "\" target=\"_blank\"><img src=\""
                         + SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + row[VikkiSoft_BLL.Site.ColumnNames.Logo].ToString() + "\" alt=\"\"></a>");
                     strSiteList.Append("</span>");
@@ -44,7 +44,7 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
                     + "</a></h3>");
                 strSiteList.Append("<p>" + row[VikkiSoft_BLL.Site.ColumnNames.Notes].ToString() + "</p>");
                 strSiteList.Append("</div>");
-                strSiteList.Append("</div>");
+                strSiteList.Append("</div></div>");
                 i++;
                 if (i % 3 == 0)
                 {
@@ -57,7 +57,7 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
                 i++;
                 if (i % 3 == 0)
                 {
-                    strSiteList.Append("</div>");
+                    strSiteList.Append("</div></div>");
                 }
             }
             divSiteViewList.InnerHtml = strSiteList.ToString();
