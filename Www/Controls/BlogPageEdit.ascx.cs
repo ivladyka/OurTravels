@@ -26,6 +26,17 @@ public partial class BlogPageEdit : EditControlBase
         }
     }
 
+    protected override void SetEventHandlers()
+    {
+        if (!IsNew)
+        {
+            editor_PageContent.ImageManagerUploadPaths = Utils.GaleryImagePath;
+            editor_PageContent.ImageManagerDeletePaths = Utils.GaleryImagePath;
+            editor_PageContent.ImageManagerViewPaths = Utils.GaleryImagePath;
+        }
+        base.SetEventHandlers();
+    }
+
     protected override void RedirectBackToList()
     {
         if (upload_TitleImage.IsPhotoDeleted)
