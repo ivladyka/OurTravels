@@ -29,7 +29,6 @@
 			</div>
     </div> 
     <uc1:CityTableView id="cityTableView" runat="server"></uc1:CityTableView>
-
     <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
 </asp:Content>
 

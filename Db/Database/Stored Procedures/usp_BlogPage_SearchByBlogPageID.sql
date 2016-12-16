@@ -29,6 +29,8 @@ BEGIN
 	WHERE
 		bp.BlogPageID <> @BlogPageID
 		AND
+		bp.Active = 1
+		AND
 		bpc.CityID IN (SELECT CityID FROM BlogPageCity WHERE BlogPageID = @BlogPageID)
 
 END

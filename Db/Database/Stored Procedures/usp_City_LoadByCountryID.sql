@@ -13,6 +13,7 @@ BEGIN
       ,[City].[Name]
       ,[City].[Name_en]
       ,Country.Name_en AS CountryName
+	  ,[City].TitleImage
 	FROM 
 		[dbo].[City]
 	INNER JOIN

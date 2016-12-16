@@ -3,7 +3,7 @@
     <div class="container">
 	    <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                <h3>Інші наші подорожі в цьому напрямку:</h3>
+                <h3>Наші подорожі в цьому напрямку</h3>
             </div>
         </div>
     </div>

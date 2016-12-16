@@ -29,6 +29,8 @@ BEGIN
 	INNER JOIN
         City c ON bpc.CityID = c.CityID
 	WHERE
+		bp.Active = 1
+		AND
 		(bpc.CityID = @CityID OR @CityID = 0)
 		AND
 		(c.CountryID = @CountryID OR @CountryID = 0)

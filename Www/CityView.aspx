@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMP.master" AutoEventWireup="true" CodeFile="CityView.aspx.cs" Inherits="CityView" %>
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
-<%@ Register TagPrefix="uc1" TagName="CityTableView" Src="Controls/CityTableView.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SiteViewList" Src="Controls/SiteViewList.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="BlogPageTableList" Src="Controls/BlogPageTableList.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
@@ -28,8 +28,7 @@
 				</div>				
 			</div>
     </div> 
-    <uc1:CityTableView id="cityTableView" runat="server"></uc1:CityTableView>
-
+    <uc1:BlogPageTableList id="blogPageTableList" runat="server"></uc1:BlogPageTableList>
     <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
 </asp:Content>
 
