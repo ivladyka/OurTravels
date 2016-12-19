@@ -17,7 +17,8 @@ public partial class BlogPageView : ProjectPageBase
                 lblName.Text = bp.GetColumn(BlogPage.ColumnNames.Name).ToString();
                 if (!bp.IsColumnNull(BlogPage.ColumnNames.PageContent))
                 {
-                    lblCategoryContent.Text = bp.GetColumn(BlogPage.ColumnNames.PageContent).ToString().Replace("&nbsp;end", "");
+
+                    divCategoryContent.InnerHtml = Utils.FormatContent(bp.GetColumn(BlogPage.ColumnNames.PageContent).ToString());
                 }
                 if (bp.IsBlogPage && (!bp.IsColumnNull(BlogPage.ColumnNames.StartTravelDate) || !bp.IsColumnNull(BlogPage.ColumnNames.EndTravelDate)))
                 {
@@ -30,6 +31,10 @@ public partial class BlogPageView : ProjectPageBase
                     {
                         lblTravelDate.Text += " - " + bp.s_EndTravelDate;
                     }
+                }
+                else
+                {
+                    pTravelDate.Visible = false;
                 }
                 if (bp.IsBlogPage)
                 {

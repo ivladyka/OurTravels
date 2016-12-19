@@ -1328,7 +1328,6 @@ padding: 30px;
 
 #footer {
   background: #2F3032;
-  padding: 6em 0 0 0;
   width: 100%;
   float: left;
 }
@@ -1383,10 +1382,9 @@ padding: 30px;
 }
 #footer .fh5co-copyright {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  margin-top: 40px !important;
-  padding: 3em;
   width: 100%;
   float: left;
+  padding-top: 20px;
 }
 #footer .fh5co-copyright span {
   display: block;

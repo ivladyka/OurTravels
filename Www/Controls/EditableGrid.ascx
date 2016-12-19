@@ -42,6 +42,7 @@
 				<asp:HyperLink Runat="server" ImageUrl ="../Images/Edit.gif" ID="lnkEdit" Text="Редагувати" ToolTip="Редагувати"></asp:HyperLink>
 				<asp:CheckBox Runat="server" ID="chkApply" Visible="False"></asp:CheckBox>
 				</ItemTemplate>
+                <ItemStyle Width="25px" />
 			</telerik:GridTemplateColumn>
 		</Columns>
 		<CommandItemTemplate>

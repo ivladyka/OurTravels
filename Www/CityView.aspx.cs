@@ -18,7 +18,7 @@ public partial class CityView : ProjectPageBase
                 lblName.Text = c.GetColumn(City.ColumnNames.Name).ToString();
                 if (!c.IsColumnNull(City.ColumnNames.Content))
                 {
-                    lblCityContent.Text = c.GetColumn(City.ColumnNames.Content).ToString();
+                    divCityContent.InnerHtml = c.GetColumn(City.ColumnNames.Content).ToString();
                 }
                 hlCountry.Text = c.GetColumn("CountryName").ToString();
                 hlCountry.NavigateUrl = Utils.GenerateFriendlyURL("country",

@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMP.master" AutoEventWireup="true" CodeFile="BlogPageView.aspx.cs" Inherits="BlogPageView" %>
 <%@ Register TagPrefix="uc1" TagName="BlogPageTableList" Src="Controls/BlogPageTableList.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SiteViewList" Src="Controls/SiteViewList.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="SocialNetworks" Src="Controls/SocialNetworks.ascx" %>
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -16,13 +17,14 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h3>
-						<p>  <asp:Label ID="lblTravelDate" runat="server" Text="" Visible="false"></asp:Label><br /></p>
+						<p id="pTravelDate" runat="server"><asp:Label ID="lblTravelDate" runat="server" Text="" Visible="false"></asp:Label><br /></p>
 					</div>
 				</div>
 			</div>
 			<div class="container">
 				<div class="row row-bottom-padded-md">					
-                    <asp:Label ID="lblCategoryContent" runat="server" Text=""></asp:Label><br />
+                    <div ID="divCategoryContent" runat="server"></div>
+                    <uc1:SocialNetworks id="socialNetworks" runat="server"></uc1:SocialNetworks>
 				</div>				
 			</div>
 		</div> 

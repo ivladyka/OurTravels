@@ -28,7 +28,7 @@ public partial class CountryView : ProjectPageBase
                 }
                 if (!c.IsColumnNull(Country.ColumnNames.Content))
                 {
-                    lblCountryContent.Text = c.GetColumn(Country.ColumnNames.Content).ToString();
+                    divCountryContent.InnerHtml = c.GetColumn(Country.ColumnNames.Content).ToString();
                 }
                 if (!c.IsColumnNull(Country.ColumnNames.MainImage) && c.s_MainImage.Length > 0)
                 {

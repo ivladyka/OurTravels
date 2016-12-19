@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://www.yourtravel.biz/sitemap.aspx
+Sitemap: http://www.traveldreams.com.ua/sitemap.aspx

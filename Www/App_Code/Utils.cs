@@ -163,7 +163,7 @@ public class Utils
         }
     }
 
-    public static void SendEmail(string subject, string body)
+    public static string SendEmail(string subject, string body)
     {
         try
         {
@@ -197,8 +197,11 @@ public class Utils
             }
             client.Send(message);
         }
-        catch
-        { }
+        catch (Exception ex)
+        {
+            return ex.Message;
+        }
+        return string.Empty;
     }
 
     public static string GenerateFriendlyURL(string subfolderName, string[] titles, bool dafaultFolder)
@@ -251,5 +254,41 @@ public class Utils
         title = title.Trim();
         title = title.Trim('-');
         return title;
+    }
+
+    public static string ReCaptchaSiteKey
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["ReCaptchaSiteKey"]))
+            {
+                return ConfigurationManager.AppSettings["ReCaptchaSiteKey"].ToString();
+            }
+            return "";
+        }
+    }
+
+    public static string ReCaptchaSecretKey
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings["ReCaptchaSecretKey"]))
+            {
+                return ConfigurationManager.AppSettings["ReCaptchaSecretKey"].ToString();
+            }
+            return "";
+        }
+    }
+
+    public static string FormatContent(string content)
+    {
+        content = content.Replace("&nbsp;end", "");
+        /*string[] arrSiteNames = { "rooms.bg", "pochivka.bg", "AirBnb", "Karpaty.info", "meteor-turystyka.pl", "умови" };
+        foreach (string siteName in arrSiteNames)
+        {
+            content = content.Replace(">" + siteName + "</a>", " rel='nofollow'>" + siteName + "</a>");
+        }*/
+        content = content.Replace("target=\"_blank\">", "target=\"_blank\" rel=\"nofollow\">");
+        return content;
     }
 }

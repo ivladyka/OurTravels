@@ -2,6 +2,7 @@
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
 <%@ Register TagPrefix="uc1" TagName="CityTableView" Src="Controls/CityTableView.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SiteViewList" Src="Controls/SiteViewList.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="SocialNetworks" Src="Controls/SocialNetworks.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
@@ -24,7 +25,8 @@
 			</div>
 			<div class="container">
 				<div class="row row-bottom-padded-md">					
-                    <asp:Label ID="lblCountryContent" runat="server" Text=""></asp:Label><br />
+                    <div ID="divCountryContent" runat="server"></div>
+                    <uc1:SocialNetworks id="socialNetworks" runat="server"></uc1:SocialNetworks>
 				</div>				
 			</div>
     </div> 

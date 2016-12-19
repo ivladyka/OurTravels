@@ -5,16 +5,22 @@ BEGIN
 	DECLARE @SiteMap TABLE(	
 		CountryName varchar(50),
 		CityName varchar(50),
-		DateUpdate smalldatetime)
+		DateUpdate smalldatetime,
+		BlogPageID int,
+		BlogPageName_en varchar(255))
 	
 	INSERT INTO @SiteMap
 		(CountryName,
 		CityName,
-		DateUpdate)
+		DateUpdate,
+		BlogPageID,
+		BlogPageName_en)
 	SELECT 
 		[Name_en],
 		'',
-		[DateUpdate]
+		[DateUpdate],
+		0,
+		''
 	FROM 
 		[dbo].[Country]
 	WHERE
@@ -23,11 +29,15 @@ BEGIN
 	INSERT INTO @SiteMap
 		(CountryName,
 		CityName,
-		DateUpdate)
+		DateUpdate,
+		BlogPageID,
+		BlogPageName_en)
 	SELECT     
 		Country.Name_en, 
 		City.Name_en, 
-		City.DateUpdate
+		City.DateUpdate,
+		0,
+		''
 	FROM         
 		City 
 	INNER JOIN
@@ -36,6 +46,23 @@ BEGIN
 		City.Active = 1
 		AND
 		Country.Active = 1
+
+	INSERT INTO @SiteMap
+		(CountryName,
+		CityName,
+		DateUpdate,
+		BlogPageID,
+		BlogPageName_en)
+	SELECT     
+		'', 
+		'', 
+		BlogPage.DateUpdate,
+		BlogPage.BlogPageID,
+		BlogPage.Name_en
+	FROM         
+		BlogPage 
+    WHERE
+		BlogPage.Active = 1
         
     SELECT
 		*

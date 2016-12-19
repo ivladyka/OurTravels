@@ -3,7 +3,7 @@
 <telerik:radeditor id="editorHTML" runat="server" showsubmitcancelbuttons="false" 
     toolsfile="~/Controls/ValueControls/BasicTools.xml"
     AllowThumbGeneration="True" 
-    BackColor="White" BorderColor="#EAEAEA">
+    BackColor="White" BorderColor="#EAEAEA" NewLineMode="P">
     <Content>
 </Content>
     <ImageManager MaxUploadFileSize="5242880" UploadPaths="~/Images/Upload" 

@@ -25,20 +25,24 @@ public partial class SiteMap : System.Web.UI.Page
             {
                 siteUrl += ":" + Request.Url.Port;
             }
+            siteUrl += "/";
+            AddURL(writer, siteUrl, "Default.aspx", cont.DateUpdate);
+            AddURL(writer, siteUrl, "Blogs.aspx", cont.DateUpdate);
             do
             {
                 string url = "";
-                if(cont.GetColumn("CityName").ToString() == "")
+                if (cont.GetColumn("BlogPageID").ToString() != "0")
+                {
+                    url = Utils.GenerateFriendlyURL("page", new string[] { cont.GetColumn("BlogPageID").ToString(), cont.GetColumn("BlogPageName_en").ToString() }, false);
+                }
+                else if(cont.GetColumn("CityName").ToString() == "")
                 {
                     url = Utils.GenerateFriendlyURL("country", new string[] { cont.GetColumn("CountryName").ToString() }, false);
                 }
                 else{
                     url = Utils.GenerateFriendlyURL("city", new string[] { cont.GetColumn("CountryName").ToString(), cont.GetColumn("CityName").ToString() }, false);
                 }
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", siteUrl + url);
-                writer.WriteElementString("lastmod", String.Format("{0:yyyy-MM-dd}", cont.DateUpdate));
-                writer.WriteEndElement();
+                AddURL(writer, siteUrl, url, cont.DateUpdate);
             } while (cont.MoveNext());
         }
 
@@ -46,5 +50,13 @@ public partial class SiteMap : System.Web.UI.Page
         writer.WriteEndDocument();
         writer.Flush();
         Response.End();
+    }
+
+    private void AddURL(XmlTextWriter writer, string siteUrl, string url, DateTime dateUpdate)
+    {
+        writer.WriteStartElement("url");
+        writer.WriteElementString("loc", siteUrl + url);
+        writer.WriteElementString("lastmod", String.Format("{0:yyyy-MM-dd}", dateUpdate));
+        writer.WriteEndElement();
     }
 }
