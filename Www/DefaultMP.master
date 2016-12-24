@@ -52,7 +52,7 @@
 		                                </li>
                                 		 <li>
                                             <asp:HyperLink id="hlBlogs" runat="server"> 
-                                                Подорожі
+                                                Мандри
                                             </asp:HyperLink>
 		                                </li>
 		                                <li>
@@ -60,11 +60,11 @@
                                                 Поради
                                             </asp:HyperLink>                                            
                                             	<ul class="fh5co-sub-menu">
+                                                <li><asp:HyperLink id="hlMenuPlanning" runat="server">Планування подорожі</asp:HyperLink></li>
 												<li><asp:HyperLink id="hlMenuAccommodation" runat="server">Проживання</asp:HyperLink></li>
 												<li><asp:HyperLink id="hlMenuTransport" runat="server">Транспорт</asp:HyperLink></li>
+                                                <li><asp:HyperLink id="hlMenuChildren" runat="server">Діти</asp:HyperLink></li>
 												<li><asp:HyperLink id="hlMenuAnimals" runat="server">Тварини</asp:HyperLink></li>
-												<li><asp:HyperLink id="hlMenuChildren" runat="server">Діти</asp:HyperLink></li>
-												<li><asp:HyperLink id="hlMenuPlanning" runat="server">Планування подорожі</asp:HyperLink></li>
 												<li><asp:HyperLink id="hlMenuSuitcase" runat="server">Збираємо валізу</asp:HyperLink></li>
 											</ul>
 		                                </li>

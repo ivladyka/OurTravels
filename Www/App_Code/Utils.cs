@@ -289,6 +289,8 @@ public class Utils
             content = content.Replace(">" + siteName + "</a>", " rel='nofollow'>" + siteName + "</a>");
         }*/
         content = content.Replace("target=\"_blank\">", "target=\"_blank\" rel=\"nofollow\">");
+        content = content.Replace(":-)", "<span class=\"smile\">&nbsp;</span>");
+        content = content.Replace(";-)", "<span class=\"smile2\">&nbsp;</span>");
         return content;
     }
 }

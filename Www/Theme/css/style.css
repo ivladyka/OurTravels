@@ -1981,3 +1981,16 @@ width:100%
 {
     margin:10px 0
 }
+
+.smile {
+    background: url(/images/smile.png) center no-repeat;
+    background-size: 22px 21px;
+    padding-left: 18px;
+}
+
+.smile2
+{
+    background: url(/images/smile2.png) center no-repeat;
+    background-size: 22px 21px;
+    padding-left: 18px;
+}
