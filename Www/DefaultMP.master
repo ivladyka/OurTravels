@@ -36,10 +36,10 @@
 <body style="width:100%; height:100%" >
     		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
-		<div id="fh5co-header">
+		<div id="fh5co-header" class="default">
 			<header id="fh5co-header-section">
 				<div class="container">
-					<div class="nav-header  ">
+					<div class="nav-header" >
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 						<h1 id="fh5co-logo"><asp:HyperLink id="hlLogoLink" runat="server">Мандрівні Мрії</asp:HyperLink></h1>
 						<!-- START #fh5co-menu-wrap -->
@@ -128,6 +128,25 @@
         ga('create', 'UA-89139442-1', 'auto');
         ga('send', 'pageview');
 
+    </script>
+    <script>
+        $(function () {
+            var menu = $('#fh5co-header'),
+                pos = menu.offset();
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > pos.top + menu.height() && menu.hasClass('default')) {
+                    menu.fadeOut('fast', function () {
+                        $(this).removeClass('default').addClass('fixed').fadeIn('fast');
+                    });
+                } else if ($(this).scrollTop() <= pos.top && menu.hasClass('fixed')) {
+                    menu.fadeOut('fast', function () {
+                        $(this).removeClass('fixed').addClass('default').fadeIn('fast');
+                    });
+                }
+            });
+
+        });
     </script>
 </body>
 </html>

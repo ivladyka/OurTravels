@@ -404,7 +404,7 @@ background-color: rgba(255, 255, 255, 0.7);
     font-size: 22pt;
     font-weight: 700;
     margin-bottom: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     position: relative;
     
     z-index: 2; font-family: "Lobster",cursive;
@@ -462,6 +462,7 @@ background-color: rgba(255, 255, 255, 0.7);
 }
 #fh5co-primary-menu > li > ul li {
   position: relative;
+  text-align:left
 }
 #fh5co-primary-menu > li > ul li > .sf-with-ul:after {
   border: none !important;
@@ -1949,4 +1950,34 @@ padding: 30px;
 {
     background-position:50% 50% !important
 }
+	#fh5co-header{
+	text-align: center;
+	margin: 0 auto;
+	padding: 0;}
 /*# sourceMappingURL=style.css.map */
+
+#fh5co-header.default {
+width:100%
+	
+
+}
+
+#fh5co-header.fixed {
+	position: fixed;
+	top: -5px;
+	left: 0;
+	width: 100%;
+}
+#fh5co-header.fixed #fh5co-header-section
+{
+    background-color:rgba(0, 119, 147, 1);
+ 
+}
+#fh5co-header.fixed #fh5co-logo a, #fh5co-header.fixed .sf-menu a
+{
+   padding: 0.5em 1em !important;
+}
+#fh5co-header.fixed  #fh5co-logo
+{
+    margin:10px 0
+}
