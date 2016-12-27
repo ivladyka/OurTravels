@@ -23,7 +23,7 @@ public partial class MasterPage : MasterPageBase
         hlMenuSuitcase.NavigateUrl = this.SiteURL + "/page/8/suitcase/";
         hlHomeTop.NavigateUrl = hlLogoLink.NavigateUrl = this.SiteURL + "/Default.aspx";
         hlMenuAdvice.NavigateUrl = this.SiteURL + "/Advice.aspx";
-        hlAboutUs.NavigateUrl = this.SiteURL + "/BlogPageView.aspx?bpid=1";
+        hlAboutUs.NavigateUrl = this.SiteURL + "/page/12/aboutus/";
         hlContactUsTop.NavigateUrl = this.SiteURL + "/ContactUs.aspx";
         hlBlogs.NavigateUrl = this.SiteURL + "/Blogs.aspx";
         if (!Page.IsPostBack)
