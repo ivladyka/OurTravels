@@ -53,7 +53,8 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3>Наші останні подорожі</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit est facilis maiores, perspiciatis accusamus asperiores sint consequuntur debitis.</p>
+						<p>Я бачу мою дорогу, але не знаю куди вона приведе. Незнання того, куди йде дорога, надихає мене йти нею.<br />
+– Росалія де Кастро</p>
 					</div>
 				</div>
 			</div>
