@@ -4,6 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta name="yandex-verification" content="2cfe2f35ef77153d" />
+
     <link href="style.css" type="text/css" rel="stylesheet"/>
     <link rel="icon" type="image/gif" href="Images/icon.gif"/>		
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
@@ -88,10 +90,47 @@
         <asp:ContentPlaceHolder id="cphWithoutScroll" runat="server">        
         </asp:ContentPlaceHolder> 
 		<!-- fh5co-blog-section -->
-		<footer>
+<footer>
 			<div id="footer">
-				<div class="fh5co-copyright text-center">
-					<p>&copy; Всі права застережено. 2016 - 2017</p>	
+				<div class="container">
+					<div class="row">
+						<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+                            <ul class="float">
+                                <li><a id="ctl00_hlHomeTop" href="http://localhost:14142/Default.aspx">Головна</a></li>
+                                <li><a id="ctl00_hlAboutUs" href="http://localhost:14142/BlogPageView.aspx?bpid=1">Про нас</a></li>
+							    <li><a id="ctl00_hlBlogs" href="http://localhost:14142/Blogs.aspx"> Мандри </a></li>
+							    <li><a id="ctl00_hlContactUsTop" href="http://localhost:14142/ContactUs.aspx">Контакти</a></li>
+                                </ul>
+						</div>
+						<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+							<h3>Поради</h3>
+							<ul class="float">
+								<li><a id="ctl00_hlMenuPlanning" href="http://localhost:14142/page/7/planning/">Планування подорожі</a></li>
+								<li><a id="ctl00_hlMenuAccommodation" href="http://localhost:14142/page/3/accommodation/">Проживання</a></li>
+								<li><a id="ctl00_hlMenuTransport" href="http://localhost:14142/page/4/transport/">Транспорт</a></li>
+								<li><a id="ctl00_hlMenuChildren" href="http://localhost:14142/page/6/children/">Діти</a></li>
+                                <li><a id="ctl00_hlMenuAnimals" href="http://localhost:14142/page/5/animals/">Тварини</a></li>
+                                <li><a id="ctl00_hlMenuSuitcase" href="http://localhost:14142/page/8/suitcase/">Збираємо валізу</a></li>
+							</ul>
+							<ul class="float">
+								
+							</ul>
+
+						</div>
+
+						<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+							<h3>Слідуй за нами</h3>
+							<ul class="fh5co-social">
+								<li><a href="#"><i class="icon-twitter2"></i> Twitter</a></li>
+								<li><a href="#"><i class="icon-facebook2"></i> Facebook</a></li>
+								<li><a href="#"><i class="icon-google-plus2"></i> Google Plus</a></li>
+								<li><a href="#"><i class="icon-instagram2"></i> Instagram</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="fh5co-copyright text-center" >
+					<p style="color:rgba(255, 255, 255, 0.4)">&copy; 2016 - <span style="font-family: Lobster;    font-size: 18pt; display:inline;   font-weight: 700;">Мандрівні Мрії </span> Всі права захищені. </p>	
 				</div>
 			</div>
 		</footer>

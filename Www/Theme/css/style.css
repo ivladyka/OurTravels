@@ -567,7 +567,11 @@ background-color: rgba(255, 255, 255, 0.7);
 #fh5co-work-section_2,
 #fh5co-blog-section,
 #fh5co-features {
-  padding: 3em 0;
+  padding: 3em 0 1em;
+}
+.services  p
+{
+      margin-bottom: 0;
 }
 @media screen and (max-width: 768px) {
   #fh5co-work-section,
@@ -631,7 +635,8 @@ background-color: rgba(255, 255, 255, 0.7);
 
 .services {
   padding: 40px 20px 20px 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  min-height:350px
 }
 .services span {
   margin-bottom: 30px;
@@ -681,6 +686,7 @@ background-color: rgba(255, 255, 255, 0.7);
 {
     max-height: none; min-width:1px; overflow:hidden;
 }
+
 }
 @media screen and (max-width: 768px) {
   .feature-left .icon {
@@ -925,7 +931,7 @@ background-color: rgba(255, 255, 255, 0.7);
   float: left;
 }
 #fh5co-partner .partner .inner {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
 }
 
@@ -1328,9 +1334,10 @@ padding: 30px;
 }
 
 #footer {
-  background: #2F3032;
+  background:  rgba(0, 119, 147, 1);
   width: 100%;
   float: left;
+  padding-top:40px
 }
 @media screen and (max-width: 768px) {
   #footer {
@@ -1360,7 +1367,7 @@ padding: 30px;
 }
 #footer ul li {
   padding: 0;
-  margin: 0 0 10px 0;
+  margin: 0 0 0px 0;
   list-style: none;
 }
 #footer ul li a {
@@ -1948,7 +1955,8 @@ padding: 30px;
 }  
 .fh5co-cover.text-center
 {
-    background-position:50% 50% !important
+    background-position-x: 50% !important ;
+ //   background-position:50% 50% !important
 }
 	#fh5co-header{
 	text-align: center;
@@ -1993,4 +2001,301 @@ width:100%
     background: url(/images/smile2.png) center no-repeat;
     background-size: 22px 21px;
     padding-left: 18px;
+}
+.text_style1
+{
+    font-size:12pt;
+    font-weight:bold;
+    font-style:italic;
+    color:#000;
+}
+ a.text_style2
+ {
+color:#01a3d4;
+ }
+.text_style2
+{
+    font-size:14pt;
+    font-weight:bold;
+    font-style:italic;
+    color:#01a3d4;
+}
+#ctl00_cphWithoutScroll_divCategoryContent  li
+{
+    margin:10px 0
+}
+.text_style3
+{
+    display:inline-block;
+    width:100%;
+    padding:20px;
+    border: solid 1px #01a3d4;
+    font-size:12pt;
+    font-weight:bold;
+    font-style:italic;
+    color:#01a3d4;
+    margin:20px 0;
+    text-align:center
+}
+#ctl00_cphWithoutScroll_divCategoryContent td {
+    display: inline-block;
+    padding: 20px;
+    text-align: left;
+    vertical-align: top;
+    width:48%
+}
+#ctl00_cphWithoutScroll_divCategoryContent td img
+{
+    max-width:100%;
+    height:auto;
+}
+.fh5co-hero.fh5co-hero-2.fh5co-map .fh5co-cover.fh5co-cover_2.text-center
+{
+background-repeat:no-repeat;
+}
+@media screen and (max-width: 1000px){
+    #fh5co-features
+{
+        padding: 20px 0;
+}
+
+    .heading-section h3
+{
+    padding-bottom:20px
+}
+.services {
+    margin-bottom: 30px;
+    min-height: 450px;
+    padding: 40px 20px 20px;
+}
+    #fh5co-work-section, #fh5co-services-section, #fh5co-content-section, #fh5co-work-section_2, #fh5co-blog-section, #fh5co-features {
+    padding: 2em 0;
+}
+.fh5co-hero.fh5co-hero-2.fh5co-map .fh5co-cover.fh5co-cover_2.text-center {
+    background-position: 50% 50% !important;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 350px;
+}
+.fh5co-hero.fh5co-hero-2.fh5co-map, .fh5co-hero.fh5co-hero-2.fh5co-map .fh5co-cover.fh5co-cover_2 {
+    height: 350px;
+}
+
+   .fh5co-icon .icon-animals1
+    {
+        background-image:url("/Theme/images/animals.png");
+        background-repeat:no-repeat;
+        background-position:center center;
+         background-size:100% 100%;
+        width:127px;
+        height:116px;
+        display:inline-block
+}
+
+      .fh5co-icon .icon-baby1
+    {
+        background-image:url("/Theme/images/baby.png");
+        background-repeat:no-repeat;
+        background-position:center center;
+         background-size:100% 100%;
+        width:120px;
+        height:150px;
+        display:inline-block
+}    
+
+.fh5co-icon .icon-plan1
+    {
+        background-image:url("/Theme/images/plan.png");
+        background-repeat:no-repeat;
+        background-position:center center;
+         background-size:100% 100%;
+        width:136px;
+        height:125px;
+        display:inline-block
+}   
+.fh5co-icon .icon-travels1 {
+    background-image: url("/Theme/images/transport.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+     background-size:100% 100%;
+    display: inline-block;
+    height:127px;
+    width:127px;
+}
+.fh5co-icon .icon-baggage1
+    {
+        background-image:url("/Theme/images/baggage.png");
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-size:100% 100%;
+        width:135px;
+        height:125px;
+        display:inline-block
+} 
+#fh5co-advice .fh5co-icon {
+    display: inline-block;
+    height: 127px;
+    width: 150px;
+} 
+.fh5co-icon .icon-accommodations1 {
+    background-image: url("/Theme/images/accommodations.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    height: 127px;
+    width: 150px;
+}
+#fh5co-advice .row-bottom-padded-lg {
+    padding-bottom:2em;
+}
+#fh5co-advice .col-md-3.animate-box.fadeInUp.animated
+{
+    text-align:center
+}
+#fh5co-advice .fh5co-icon
+{
+    text-align:center
+}
+#fh5co-services .fh5co-icon, #fh5co-advice .fh5co-icon
+{
+     margin-bottom: 20px;
+    margin-top: 20px;
+}
+}
+@media screen and (max-width: 768px) {
+#ctl00_cphWithoutScroll_divCategoryContent td {
+    display: inline-block;
+    padding: 20px;
+    text-align: left;
+    vertical-align: top;
+    width:100%
+}
+#fh5co-advice .fh5co-icon
+{
+    height:auto
+}
+#fh5co-features
+{
+        padding: 3em 0;
+}
+
+.fh5co-hero.fh5co-hero-2.fh5co-map .fh5co-cover.fh5co-cover_2.text-center
+{
+  background-position:50% 50% !important
+}
+.heading-section h3
+{
+    padding-bottom:1em
+}
+#fh5co-partner .partner .inner {
+    margin: 0 auto;
+    width: 90%;
+}
+#fh5co-partner .wrap
+{
+padding: 20px 0;
+}
+.fh5co-blog {
+    margin-bottom: 20px;
+}
+.listblogimg
+{
+    height:auto
+}
+
+.fh5co-hero.fh5co-hero-2.fh5co-map .fh5co-cover.fh5co-cover_2.text-center
+{
+    background-size: 100% auto;
+    background-position-y:center;
+    background-repeat:no-repeat;
+     height:230px
+}
+.fh5co-hero.fh5co-hero-2.fh5co-map
+{
+ height:230px
+}
+.fh5co-cover .desc
+{
+    margin-top:-30px
+}
+.services {
+    margin-bottom: 0px;
+    min-height: 1px;
+    padding: 20px;
+}
+
+   .fh5co-icon .icon-animals1
+    {
+        background-image:url("/Theme/images/animals.png");
+        background-repeat:no-repeat;
+        background-position:center center;
+         background-size:100% 100%;
+        width:127px;
+        height:116px;
+        display:inline-block
+}
+
+      .fh5co-icon .icon-baby1
+    {
+        background-image:url("/Theme/images/baby.png");
+        background-repeat:no-repeat;
+        background-position:center center;
+         background-size:100% 100%;
+        width:120px;
+        height:150px;
+        display:inline-block
+}    
+
+.fh5co-icon .icon-plan1
+    {
+        background-image:url("/Theme/images/plan.png");
+        background-repeat:no-repeat;
+        background-position:center center;
+         background-size:100% 100%;
+        width:136px;
+        height:125px;
+        display:inline-block
+}   
+.fh5co-icon .icon-travels1 {
+    background-image: url("/Theme/images/transport.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+     background-size:100% 100%;
+    display: inline-block;
+    height:127px;
+    width:127px;
+}
+.fh5co-icon .icon-baggage1
+    {
+        background-image:url("/Theme/images/baggage.png");
+        background-repeat:no-repeat;
+        background-position:center center;
+        background-size:100% 100%;
+        width:135px;
+        height:125px;
+        display:inline-block
+} 
+#fh5co-advice .fh5co-icon {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+} 
+.fh5co-icon .icon-accommodations1 {
+    background-image: url("/Theme/images/accommodations.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    height: 127px;
+    width: 150px;
+}
+#fh5co-advice .col-md-3.animate-box.fadeInUp.animated
+{
+    text-align:center
+}
+#fh5co-advice .fh5co-icon
+{
+    text-align:center
+}
 }
