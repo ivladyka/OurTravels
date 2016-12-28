@@ -17,12 +17,12 @@
 	<link rel="stylesheet" href="Theme/css/bootstrap.css"/>
 	<!-- Magnific Popup -->
 	<link rel="stylesheet" href="Theme/css/magnific-popup.css"/>
-
 	<!-- Superfish -->
 	<link rel="stylesheet" href="Theme/css/superfish.css"/>
     <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="Theme/css/style.css"/>
     <script src="Theme/js/modernizr-2.6.2.min.js"></script>	
+    <script src="/js/snow.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="/favicon.ico" />
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <%=Title%>
@@ -35,6 +35,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body style="width:100%; height:100%" >
+   
     		<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 		<div id="fh5co-header" class="default">
@@ -136,7 +137,48 @@
 	</div>
 	<!-- END fh5co-page -->
 	</div>
+     <a href="#" id="back-to-top" title="Back to top"><span class="icon-arrow-bold-up"> </span></a>
 	<!-- END fh5co-wrapper -->
+    <script>
+        $(function () {
+            var menu = $('#fh5co-header'),
+                pos = menu.offset();
+
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > pos.top + menu.height() && menu.hasClass('default')) {
+                    menu.fadeOut('fast', function () {
+                        $(this).removeClass('default').addClass('fixed').fadeIn('fast');
+                    });
+                } else if ($(this).scrollTop() <= pos.top && menu.hasClass('fixed')) {
+                    menu.fadeOut('fast', function () {
+                        $(this).removeClass('fixed').addClass('default').fadeIn('fast');
+                    });
+                }
+            });
+
+        });
+        if ($('#back-to-top').length) {
+            var scrollTrigger = 100, // px
+                backToTop = function () {
+                    var scrollTop = $(window).scrollTop();
+                    if (scrollTop > scrollTrigger) {
+                        $('#back-to-top').addClass('show');
+                    } else {
+                        $('#back-to-top').removeClass('show');
+                    }
+                };
+            backToTop();
+            $(window).on('scroll', function () {
+                backToTop();
+            });
+            $('#back-to-top').on('click', function (e) {
+                e.preventDefault();
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 700);
+            });
+        }
+    </script>
 	<!-- jQuery -->
 	<script src="Theme/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -167,24 +209,6 @@
         ga('send', 'pageview');
 
     </script>
-    <script>
-        $(function () {
-            var menu = $('#fh5co-header'),
-                pos = menu.offset();
-
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > pos.top + menu.height() && menu.hasClass('default')) {
-                    menu.fadeOut('fast', function () {
-                        $(this).removeClass('default').addClass('fixed').fadeIn('fast');
-                    });
-                } else if ($(this).scrollTop() <= pos.top && menu.hasClass('fixed')) {
-                    menu.fadeOut('fast', function () {
-                        $(this).removeClass('fixed').addClass('default').fadeIn('fast');
-                    });
-                }
-            });
-
-        });
-    </script>
+    
 </body>
 </html>

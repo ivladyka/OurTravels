@@ -2308,3 +2308,37 @@ padding: 20px 0;
     text-align:center
 }
 }
+#back-to-top {
+      background: #01a3d4 none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 2px;
+    bottom: 100px;
+    color: #fff;
+    cursor: pointer;
+    height: 60px;
+    line-height: 30px;
+    opacity: 0;
+    position: fixed;
+    right: 40px;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.2s ease-out 0s;
+    width: 60px;
+    z-index: 9999;
+    line-height: 52px;
+    font-weight: bolder;
+}
+#back-to-top  .icon-arrow-bold-up
+{
+ line-height:60px;
+ font-size:24pt
+}
+#back-to-top:hover {
+    background: #e9ebec;
+}
+#back-to-top.show {
+    opacity: 1;
+}
+#content {
+    height: 2000px;
+}

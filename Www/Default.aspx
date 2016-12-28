@@ -6,10 +6,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
     <div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(Theme/images/cover_bg_1.jpg);">
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(Theme/images/winterbg.jpg);">
 				<div class="desc animate-box">
-					<h2><strong>Світ – це книжка і той, хто не подорожує, <br/>читає лише одну сторінку</strong></h2>
-					<span><strong><i>– Св. Августин</i></strong></span>
+                    <h2><strong>Істинне призначення вашої подорожі - <br/>це не місце на карті,  а новий погляд на життя. </strong></h2>
+                    <span><strong><i>- Генрі Міллер</i></strong></span>
+					<!--<h2><strong>Світ – це книжка і той, хто не подорожує, <br/>читає лише одну сторінку</strong>
+					<span><strong><i>– Св. Августин</i></strong></span></h2>-->
 					<!--<p><a class="btn btn-primary btn-lg btn-learn" href="#">Learn More</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-play"></i> Watch Video</a></p>	-->
                 </div>
 			</div>
