@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="Theme/css/style.css"/>
     <script src="Theme/js/modernizr-2.6.2.min.js"></script>	
-    <script src="/js/snow.js" type="text/javascript"></script>
+     <script src="/js/snow.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="/favicon.ico" />
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <%=Title%>
