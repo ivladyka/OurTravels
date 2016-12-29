@@ -2367,5 +2367,6 @@ padding: 20px 0;
 }
 #ctl00_cphWithoutScroll_divCategoryContent img
 {
-    max-width:100% !important
+    max-width:100% !important;
+    height:auto !important
 }
