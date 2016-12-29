@@ -2365,3 +2365,7 @@ padding: 20px 0;
 {
     margin-bottom: 2em
 }
+#ctl00_cphWithoutScroll_divCategoryContent img
+{
+    max-width:100% !important
+}
