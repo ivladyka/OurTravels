@@ -586,7 +586,7 @@ background-color: rgba(255, 255, 255, 0.7);
 }
 #fh5co-blog-section
 {
-    padding-top:130px
+    padding-top:130px !important
 }
 #fh5co-blog-section.fh5co-home-blog-section
 {
@@ -2202,6 +2202,10 @@ background-repeat:no-repeat;
     vertical-align: top;
     width:100% !important;
 }
+#sthoverbuttons.sthoverbuttons-pos-left
+{
+    display:none !important
+}
 #fh5co-advice .fh5co-icon
 {
     height:auto
@@ -2373,7 +2377,7 @@ padding: 20px 0;
 #sthoverbuttons {
     cursor: pointer;
     font: 11px Helvetica,Tahoma,Arial;
-    margin-left: -7px;
+    margin-left: -2px;
     position: fixed;
     top: 25%;
     width: 42px !important;
@@ -2398,10 +2402,19 @@ padding: 20px 0;
     height: 42px !important;
     display: inline-block;
 }
-.st_facebook_large
+.st_facebook_large .stButton .stLarge:hover {
+    background-image: url("/Theme/images/facebook_42hover.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_facebook_large, .st_twitter_large, .st_odnoklassniki_large, .st_vkontakte_large, .st_googleplus_large, .st_blogger_large, .st_linkedin_large, .st_pinterest_large, .st_email_large
 {
-width: 42px;
-    height: 42px;
+   width: 42px !important;
+    height: 42px !important;
 }
 .stButton {
     color: #000;
@@ -2414,4 +2427,161 @@ width: 42px;
     position: relative;
     text-decoration: none;
     z-index: 1;
+}
+.st_twitter_large .stButton .stLarge {
+    background-image: url("/Theme/images/twitter_42.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_twitter_large .stButton .stLarge:hover {
+    background-image: url("/Theme/images/twitter_42hover.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+
+.st_odnoklassniki_large .stButton .stLarge {
+    background-image: url("/Theme/images/odnoklassniki_42.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_odnoklassniki_large .stButton .stLarge:hover {
+    background-image: url("/Theme/images/odnoklassniki_42hover.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+
+.st_vkontakte_large .stButton .stLarge {
+    background-image: url("/Theme/images/vkontakte_42.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_vkontakte_large .stButton .stLarge:hover {
+    background-image: url("/Theme/images/vkontakte_42hover.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+
+.st_googleplus_large .stButton .stLarge {
+    background-image: url("/Theme/images/googleplus_42.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_googleplus_large .stButton .stLarge:hover {
+    background-image: url("/Theme/images/googleplus_42hover.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+
+.st_blogger_large .stButton .stLarge {
+    background-image: url("/Theme/images/bloger_42.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_blogger_large .stButton .stLarge:hover {
+    background-image: url("/Theme/images/bloger_42hover.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+
+.st_linkedin_large .stButton .stLarge {
+    background-image: url("/Theme/images/linkedin_42.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_linkedin_large .stButton .stLarge:hover {
+    background-image: url("/Theme/images/linkedin_42hover.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+
+.st_pinterest_large .stButton .stLarge {
+    background-image: url("/Theme/images/pinterest_42.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_pinterest_large .stButton .stLarge:hover {
+    background-image: url("/Theme/images/pinterest_42hover.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+
+.st_email_large .stButton .stLarge {
+    background-image: url("/Theme/images/email_42.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_email_large .stButton .stLarge:hover {
+    background-image: url("/Theme/images/email_42hover.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+#sthoverbuttons #sthoverbuttonsMain {
+    padding: 0px !important;
+    position: relative;
+    width: 42px !important;
+    z-index: 1000000;
 }
