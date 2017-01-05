@@ -5,6 +5,33 @@
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="BlogContentPlaceHolder3" Runat="Server">
+    <div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.8";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+ <script>
+     window.fbAsyncInit = function () {
+         FB.init({
+             appId: '1792560357674340',
+             xfbml: true,
+             version: 'v2.8'
+         });
+     };
+
+     (function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) { return; }
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+</script>
+</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
        	<div class="fh5co-hero fh5co-hero-3 blogpage-header">
 			<div class="fh5co-overlay"></div>
@@ -24,7 +51,8 @@
 			<div class="container">
 				<div class="row row-bottom-padded-md">					
                     <div ID="divCategoryContent" runat="server"></div>
-                    <uc1:SocialNetworks id="socialNetworks" runat="server"></uc1:SocialNetworks>
+                    <div class="fb-comments" data-href="https://www.facebook.com/traveldreamsua/" data-width="100%" data-numposts="5"></div>
+                   <!-- <uc1:SocialNetworks id="socialNetworks" runat="server"></uc1:SocialNetworks> -->
 				</div>				
 			</div>
 		</div> 

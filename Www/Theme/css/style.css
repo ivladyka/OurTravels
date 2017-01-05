@@ -2370,3 +2370,48 @@ padding: 20px 0;
     max-width:100% !important;
     height:auto !important
 }
+#sthoverbuttons {
+    cursor: pointer;
+    font: 11px Helvetica,Tahoma,Arial;
+    margin-left: -7px;
+    position: fixed;
+    top: 25%;
+    width: 42px !important;
+    z-index: 980000 !important;
+}
+#sthoverbuttons .sthoverbuttons-shade-l {
+    background-image:none !important;
+}
+#sthoverbuttons .sthoverbuttons-top-l {
+    background-image:none !important;
+}
+.sthoverbuttons-label span{display:none  !important;}
+#sthoverbuttons .sthoverbuttons-bottom-l {
+   background-image:none !important;
+}
+.st_facebook_large .stButton .stLarge {
+    background-image: url("/Theme/images/facebook_42.png") !important;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    width: 42px !important;
+    height: 42px !important;
+    display: inline-block;
+}
+.st_facebook_large
+{
+width: 42px;
+    height: 42px;
+}
+.stButton {
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 16px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+}
