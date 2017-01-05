@@ -33,6 +33,9 @@
     </telerik:RadCodeBlock>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
+    <script type="text/javascript">var switchTo5x = true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
 </head>
 <body style="width:100%; height:100%" >
    
@@ -210,6 +213,10 @@
         ga('send', 'pageview');
 
     </script>
-    
+    <script type="text/javascript">stLight.options({ publisher: "5135c174-79a0-4070-9da8-6ea8546a4fff", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
+<script>
+    var options = { "publisher": "5135c174-79a0-4070-9da8-6ea8546a4fff", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0 }, "chicklets": { "items": ["facebook", "twitter", "odnoklassniki", "vkontakte", "googleplus", "blogger", "linkedin", "pinterest", "email"] } };
+    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script>
 </body>
 </html>
