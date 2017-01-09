@@ -2,7 +2,8 @@
 (
 	@BlogPageCityID int,
 	@BlogPageID int,
-	@CityID int
+	@CityID int,
+	@ShowSites bit
 )
 AS
 BEGIN
@@ -13,12 +14,25 @@ BEGIN
 	UPDATE [BlogPageCity]
 	SET
 		BlogPageID = @BlogPageID,
-		CityID = @CityID
+		CityID = @CityID,
+		ShowSites = @ShowSites
 	WHERE
 		[BlogPageCityID] = @BlogPageCityID
 
 
 	SET @Err = @@Error
+
+	UPDATE [BlogPage]
+	SET
+		[DateUpdate] = GETDATE()
+	WHERE
+		[BlogPageID] = @BlogPageID
+
+	UPDATE [City]
+	SET
+		[DateUpdate] = GETDATE()
+	WHERE
+		[CityID] = @CityID
 
 
 	RETURN @Err

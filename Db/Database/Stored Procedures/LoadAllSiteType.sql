@@ -8,7 +8,8 @@ BEGIN
 
 	SELECT
 		[SiteTypeID],
-		[Name]
+		[Name],
+		[OrderIndex]
 	FROM [SiteType]
 
 	SET @Err = @@Error

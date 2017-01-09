@@ -293,4 +293,24 @@ public class Utils
         content = content.Replace(";-)", "<span class=\"smile2\">&nbsp;</span>");
         return content;
     }
+
+    public static string SiteTypeImagePath
+    {
+        get
+        {
+            return System.Configuration.ConfigurationManager.AppSettings["SiteTypeImagePath"];
+        }
+    }
+
+    public static bool ShowAddShare
+    {
+        get
+        {
+            if (System.Configuration.ConfigurationManager.AppSettings["ShowAddShare"] != null)
+            {
+                return bool.Parse(System.Configuration.ConfigurationManager.AppSettings["ShowAddShare"]);
+            }
+            return true;
+        }
+    }
 }

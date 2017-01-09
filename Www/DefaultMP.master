@@ -21,21 +21,20 @@
 	<link rel="stylesheet" href="Theme/css/superfish.css"/>
     <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="Theme/css/style.css"/>
-    <script src="Theme/js/modernizr-2.6.2.min.js"></script>	
-     <script src="/js/snow.js" type="text/javascript"></script>
+    <script src="/Theme/js/modernizr-2.6.2.min.js"></script>	
+    <script src="/js/snow.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="/favicon.ico" />
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <%=Title%>
     <%=Description%>
-    <%=Keywords%>
     <%=ScriptTag%> 
+    <%=FBImage%>
     <%=Canonical%>
     </telerik:RadCodeBlock>
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
     <script type="text/javascript">var switchTo5x = true;</script>
-<script type="text/javascript" src="/js/buttons.js"></script>
-<script type="text/javascript" src="/js/loader.js"></script>
+    <%=AddShareScripts%>
 </head>
 <body style="width:100%; height:100%" >
        <asp:ContentPlaceHolder id="BlogContentPlaceHolder3" runat="server">
@@ -185,23 +184,23 @@
         }
     </script>
 	<!-- jQuery -->
-	<script src="Theme/js/jquery.min.js"></script>
+	<script src="/Theme/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="Theme/js/jquery.easing.1.3.js"></script>
+	<script src="/Theme/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="Theme/js/bootstrap.min.js"></script>
+	<script src="/Theme/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="Theme/js/jquery.waypoints.min.js"></script>
+	<script src="/Theme/js/jquery.waypoints.min.js"></script>
 	<!-- Stellar -->
-	<script src="Theme/js/jquery.stellar.min.js"></script>
+	<script src="/Theme/js/jquery.stellar.min.js"></script>
 	<!-- Superfish -->
-	<script src="Theme/js/hoverIntent.js"></script>
-	<script src="Theme/js/superfish.js"></script>
+	<script src="/Theme/js/hoverIntent.js"></script>
+	<script src="/Theme/js/superfish.js"></script>
 	<!-- Magnific Popup -->
-	<script src="Theme/js/jquery.magnific-popup.min.js"></script>
-	<script src="Theme/js/magnific-popup-options.js"></script>
+	<script src="/Theme/js/jquery.magnific-popup.min.js"></script>
+	<script src="/Theme/js/magnific-popup-options.js"></script>
 	<!-- Main JS -->
-	<script src="Theme/js/main.js"></script>      
+	<script src="/Theme/js/main.js"></script>      
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -214,10 +213,6 @@
         ga('send', 'pageview');
 
     </script>
-    <script type="text/javascript">stLight.options({ publisher: "5135c174-79a0-4070-9da8-6ea8546a4fff", doNotHash: false, doNotCopy: false, hashAddressBar: false });</script>
-    <script>
-    var options = { "publisher": "5135c174-79a0-4070-9da8-6ea8546a4fff", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0 }, "chicklets": { "items": ["facebook", "twitter", "odnoklassniki", "vkontakte", "googleplus", "blogger", "linkedin", "pinterest", "email"] } };
-    var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
-</script>
+    <%=AddShareScripts2%>
 </body>
 </html>

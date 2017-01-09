@@ -73,6 +73,7 @@
   <ItemGroup>
     <None Include="SqlSchemaCompareToLocalDatabase.scmp" />
     <None Include="SqlSchemaCompareToProductionDatabase.scmp" />
+    <None Include="SQLScripts\Insert Data\InsertSiteTypes.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\SiteType.sql" />
@@ -130,5 +131,24 @@
     <Build Include="Stored Procedures\usp_BlogPageCity_LoadByBlogPageID.sql" />
     <Build Include="Stored Procedures\usp_BlogPage_SearchByCityIDAndCountryID.sql" />
     <Build Include="Stored Procedures\usp_BlogPage_SearchByBlogPageID.sql" />
+    <Build Include="Stored Procedures\usp_SiteType_LoadWithIcon.sql" />
+    <Build Include="Tables\CountrySite.sql" />
+    <Build Include="Tables\CitySite.sql" />
+    <Build Include="Stored Procedures\UpdateCountrySite.sql" />
+    <Build Include="Stored Procedures\UpdateCitySite.sql" />
+    <Build Include="Stored Procedures\LoadCountrySiteByPrimaryKey.sql" />
+    <Build Include="Stored Procedures\LoadCitySiteByPrimaryKey.sql" />
+    <Build Include="Stored Procedures\LoadAllCountrySite.sql" />
+    <Build Include="Stored Procedures\LoadAllCitySite.sql" />
+    <Build Include="Stored Procedures\InsertCountrySite.sql" />
+    <Build Include="Stored Procedures\InsertCitySite.sql" />
+    <Build Include="Stored Procedures\DeleteCountrySite.sql" />
+    <Build Include="Stored Procedures\DeleteCitySite.sql" />
+    <Build Include="Stored Procedures\usp_CountrySite_LoadByCountryID.sql" />
+    <Build Include="Stored Procedures\usp_CitySite_LoadByCityID.sql" />
+    <Build Include="Stored Procedures\usp_Site_LoadMainSite.sql" />
+    <Build Include="Stored Procedures\usp_Site_LoadByCountryID.sql" />
+    <Build Include="Stored Procedures\usp_Site_LoadByCityID.sql" />
+    <Build Include="Stored Procedures\usp_Site_LoadByBlogPageID.sql" />
   </ItemGroup>
 </Project>

@@ -10,7 +10,7 @@ public partial class SiteEdit : EditControlBase
 {
     public SiteEdit()
     {
-        this.m_Name = "Сайт";
+        this.m_Name = "Корисне Посилання";
         this.AllowUserTypes = "LoggedUser";
     }
     protected override Type GetEditableEntityType()

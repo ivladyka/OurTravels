@@ -10,7 +10,8 @@ BEGIN
 
 	SELECT
 		[SiteTypeID],
-		[Name]
+		[Name],
+		[OrderIndex]
 	FROM [SiteType]
 	WHERE
 		([SiteTypeID] = @SiteTypeID)

@@ -2,7 +2,8 @@
 CREATE PROCEDURE [dbo].[UpdateSiteType]
 (
 	@SiteTypeID int,
-	@Name varchar(50)
+	@Name varchar(50),
+	@OrderIndex int = NULL
 )
 AS
 BEGIN
@@ -12,7 +13,8 @@ BEGIN
 
 	UPDATE [SiteType]
 	SET
-		[Name] = @Name
+		[Name] = @Name,
+		[OrderIndex] = @OrderIndex
 	WHERE
 		[SiteTypeID] = @SiteTypeID
 

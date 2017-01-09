@@ -9,7 +9,8 @@ CREATE PROCEDURE [dbo].[UpdateSite]
 	@OrderIndex int = NULL,
 	@Notes varchar(2000) = NULL,
 	@Logo varchar(50) = NULL,
-	@Banner varchar(50) = NULL
+	@Banner varchar(50) = NULL,
+	@Main bit
 )
 AS
 BEGIN
@@ -26,7 +27,8 @@ BEGIN
 		[OrderIndex] = @OrderIndex,
 		[Notes] = @Notes,
 		[Logo] = @Logo,
-		[Banner] = @Banner
+		[Banner] = @Banner,
+		[Main] = @Main
 	WHERE
 		[SiteID] = @SiteID
 

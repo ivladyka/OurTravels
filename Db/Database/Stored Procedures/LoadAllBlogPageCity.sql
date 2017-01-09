@@ -10,6 +10,7 @@ BEGIN
 		[BlogPageCityID]
       ,[BlogPageID]
       ,[CityID]
+	  ,[ShowSites]
 	FROM [BlogPageCity]
 
 	SET @Err = @@Error

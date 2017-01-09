@@ -122,6 +122,14 @@ namespace VikkiSoft_BLL.DAL
                     return new SqlParameter("@CityID", SqlDbType.Int, 0);
                 }
             }
+
+            public static SqlParameter ShowSites
+            {
+                get
+                {
+                    return new SqlParameter("@ShowSites", SqlDbType.Bit, 0);
+                }
+            }
 		}
 		#endregion		
 	
@@ -131,6 +139,7 @@ namespace VikkiSoft_BLL.DAL
             public const string BlogPageCityID = "BlogPageCityID";
             public const string BlogPageID = "BlogPageID";
             public const string CityID = "CityID";
+            public const string ShowSites = "ShowSites";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -141,6 +150,7 @@ namespace VikkiSoft_BLL.DAL
 					ht[BlogPageCityID] = _BlogPageCity.PropertyNames.BlogPageCityID;
                     ht[BlogPageID] = _BlogPageCity.PropertyNames.BlogPageID;
                     ht[CityID] = _BlogPageCity.PropertyNames.CityID;
+                    ht[ShowSites] = _BlogPageCity.PropertyNames.ShowSites;
 
 				}
 				return (string)ht[columnName];
@@ -156,6 +166,7 @@ namespace VikkiSoft_BLL.DAL
             public const string BlogPageCityID = "BlogPageCityID";
             public const string BlogPageID = "BlogPageID";
             public const string CityID = "CityID";
+            public const string ShowSites = "ShowSites";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -166,6 +177,7 @@ namespace VikkiSoft_BLL.DAL
 					ht[BlogPageCityID] = _BlogPageCity.ColumnNames.BlogPageCityID;
                     ht[BlogPageID] = _BlogPageCity.ColumnNames.BlogPageID;
                     ht[CityID] = _BlogPageCity.ColumnNames.CityID;
+                    ht[ShowSites] = _BlogPageCity.ColumnNames.ShowSites;
 
 				}
 				return (string)ht[propertyName];
@@ -181,6 +193,7 @@ namespace VikkiSoft_BLL.DAL
             public const string BlogPageCityID = "s_BlogPageCityID";
             public const string BlogPageID = "s_BlogPageID";
             public const string CityID = "s_CityID";
+            public const string ShowSites = "s_ShowSites";
 
 		}
 		#endregion		
@@ -220,6 +233,18 @@ namespace VikkiSoft_BLL.DAL
             set
             {
                 base.Setint(ColumnNames.CityID, value);
+            }
+        }
+
+        public virtual bool ShowSites
+        {
+            get
+            {
+                return base.Getbool(ColumnNames.ShowSites);
+            }
+            set
+            {
+                base.Setbool(ColumnNames.ShowSites, value);
             }
         }
 
@@ -269,6 +294,21 @@ namespace VikkiSoft_BLL.DAL
                     this.SetColumnNull(ColumnNames.CityID);
                 else
                     this.CityID = base.SetintAsString(ColumnNames.CityID, value);
+            }
+        }
+
+        public virtual string s_ShowSites
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.ShowSites) ? string.Empty : base.GetboolAsString(ColumnNames.ShowSites);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.ShowSites);
+                else
+                    this.ShowSites = base.SetboolAsString(ColumnNames.ShowSites, value);
             }
         }
 
@@ -334,6 +374,16 @@ namespace VikkiSoft_BLL.DAL
                     }
                 }
 
+                public WhereParameter ShowSites
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.ShowSites, Parameters.ShowSites);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
+
 				private WhereClause _clause;
 			}
 			#endregion
@@ -374,15 +424,29 @@ namespace VikkiSoft_BLL.DAL
                 }
             }
 
+            public WhereParameter ShowSites
+            {
+                get
+                {
+                    if (_ShowSites_W == null)
+                    {
+                        _ShowSites_W = TearOff.ShowSites;
+                    }
+                    return _ShowSites_W;
+                }
+            }
+
 			private WhereParameter _BlogPageCityID_W = null;
             private WhereParameter _BlogPageID_W = null;
 			private WhereParameter _CityID_W = null;
+            private WhereParameter _ShowSites_W = null;
 
 			public void WhereClauseReset()
 			{
 				_BlogPageCityID_W = null;
                 _BlogPageID_W = null;
                 _CityID_W = null;
+                _ShowSites_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -469,6 +533,16 @@ namespace VikkiSoft_BLL.DAL
                     }
                 }
 
+                public AggregateParameter ShowSites
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.ShowSites, Parameters.ShowSites);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
+
 				private AggregateClause _clause;
 			}
 			#endregion
@@ -509,15 +583,29 @@ namespace VikkiSoft_BLL.DAL
                 }
             }
 
+            public AggregateParameter ShowSites
+            {
+                get
+                {
+                    if (_ShowSites_W == null)
+                    {
+                        _ShowSites_W = TearOff.ShowSites;
+                    }
+                    return _ShowSites_W;
+                }
+            }
+
 			private AggregateParameter _BlogPageCityID_W = null;
             private AggregateParameter _BlogPageID_W = null;
 			private AggregateParameter _CityID_W = null;
+            private AggregateParameter _ShowSites_W = null;
 
 			public void AggregateClauseReset()
 			{
 				_BlogPageCityID_W = null;
                 _BlogPageID_W = null;
                 _CityID_W = null;
+                _ShowSites_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -603,6 +691,10 @@ namespace VikkiSoft_BLL.DAL
             p = cmd.Parameters.Add(Parameters.CityID);
             p.SourceColumn = ColumnNames.CityID;
 			p.SourceVersion = DataRowVersion.Current;
+
+            p = cmd.Parameters.Add(Parameters.ShowSites);
+            p.SourceColumn = ColumnNames.ShowSites;
+            p.SourceVersion = DataRowVersion.Current;
 
 			return cmd;
 		}

@@ -12,6 +12,7 @@ public partial class MasterPage : MasterPageBase
     string m_Title = "";
     string m_Keywords = "";
     string m_Description = "";
+    string m_TitleImage = "";
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -51,7 +52,7 @@ public partial class MasterPage : MasterPageBase
     {
         get
         {
-            return "<link rel=\"canonical\" href=\"" + Page.Request.Url.ToString() + "\" /> ";
+            return "<link rel=\"canonical\" href=\"" + Page.Request.Url.ToString() + "\" /> \n<meta property='og:url' content='" + Page.Request.Url.ToString() + "' />";
         }
     }
 
@@ -98,6 +99,10 @@ public partial class MasterPage : MasterPageBase
                     {
                         m_Description = c.GetColumn(City.ColumnNames.Description).ToString();
                     }
+                    if (!c.IsColumnNull(City.ColumnNames.TitleImage))
+                    {
+                        m_TitleImage = c.GetColumn(City.ColumnNames.TitleImage).ToString();
+                    }
                 }
             }
             else if (IsBlogPagePage)
@@ -117,6 +122,10 @@ public partial class MasterPage : MasterPageBase
                     if (!bp.IsColumnNull(BlogPage.ColumnNames.Description))
                     {
                         m_Description = bp.GetColumn(BlogPage.ColumnNames.Description).ToString();
+                    }
+                    if (!bp.IsColumnNull(BlogPage.ColumnNames.TitleImage))
+                    {
+                        m_TitleImage = bp.GetColumn(BlogPage.ColumnNames.TitleImage).ToString();
                     }
                 }
             }
@@ -139,7 +148,7 @@ public partial class MasterPage : MasterPageBase
     {
         get
         {
-            return "<title>" + m_Title + "</title><meta name='title' content='" + m_Title + "' />";
+            return "<title>" + m_Title + "</title><meta name='title' content='" + m_Title + "' />\n<meta property='og:title' content='" + m_Title + "'/>";
         }
     }
 
@@ -147,7 +156,7 @@ public partial class MasterPage : MasterPageBase
     {
         get
         {
-            return "<meta name='description' content='" + m_Description + "' />";
+            return "<meta name='description' content='" + m_Description + "' />\n<meta property='og:description' content='" + m_Description + "'/>";
         }
     }
 
@@ -192,6 +201,44 @@ public partial class MasterPage : MasterPageBase
         get
         {
             return Resources.Vikkisoft.menuContactUS;
+        }
+    }
+
+    public string AddShareScripts
+    {
+        get
+        {
+            if(Utils.ShowAddShare)
+            {
+                return "<script type=\"text/javascript\" src=\"/js/buttons.js\"></script><script type=\"text/javascript\" src=\"/js/loader.js\"></script>";
+            }
+            return "";
+        }
+    }
+
+    public string AddShareScripts2
+    {
+        get
+        {
+            if (Utils.ShowAddShare)
+            {
+                return "<script type=\"text/javascript\">stLight.options({ publisher: \"5135c174-79a0-4070-9da8-6ea8546a4fff\", doNotHash: false, doNotCopy: false, hashAddressBar: false, publisherGA: \"UA-89139442-1\" });</script>"
+                    + "<script>var options = { \"publisher\": \"5135c174-79a0-4070-9da8-6ea8546a4fff\", \"position\": \"left\", \"ad\": { \"visible\": false, \"openDelay\": 5, \"closeDelay\": 0 }, \"chicklets\": { \"items\": [\"facebook\", \"twitter\", \"odnoklassniki\", \"vkontakte\", \"googleplus\", \"blogger\", \"linkedin\", \"pinterest\", \"email\"] } };"
+                    + "var st_hover_widget = new sharethis.widgets.hoverbuttons(options);</script>";
+            }
+            return "";
+        }
+    }
+
+    public string FBImage
+    {
+        get
+        {
+            if (!string.IsNullOrEmpty(m_TitleImage))
+            {
+                return "<meta name='og:image' content='" + this.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + m_TitleImage + "' />";
+            }
+            return "";
         }
     }
 }

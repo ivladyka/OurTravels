@@ -15,7 +15,7 @@
         </td>
     </tr>
     <tr>
-	    <td align="right">Тип сайту:
+	    <td align="right">Тип посилання:
 		</td>
 		<td>
             <uc1:SiteTypeChoice id="choice_SiteTypeID" runat="server" UseValueInsteadText="true" Width="300" AddEmptyItem="false"></uc1:SiteTypeChoice>
@@ -33,10 +33,17 @@
         </td>
     </tr>
     <tr>
-		<td align="right">Активний:
+		<td align="right">Активне:
 		</td>
 		<td>
            <asp:CheckBox id="chk_Active" runat="server" Text="" Checked="true"></asp:CheckBox>
+		</td>
+    </tr>
+    <tr>
+		<td align="right">Головне:
+		</td>
+		<td>
+           <asp:CheckBox id="chk_Main" runat="server" Text="" Checked="false"></asp:CheckBox>
 		</td>
     </tr>
     <tr>

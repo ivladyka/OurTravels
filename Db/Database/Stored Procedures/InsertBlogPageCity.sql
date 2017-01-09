@@ -2,7 +2,8 @@
 (
 	@BlogPageCityID int = NULL output,
 	@BlogPageID int,
-	@CityID int
+	@CityID int,
+	@ShowSites bit
 )
 AS
 BEGIN
@@ -14,17 +15,31 @@ BEGIN
 	INTO [BlogPageCity]
 	(
 		BlogPageID,
-		CityID
+		CityID,
+		ShowSites
 	)
 	VALUES
 	(
 		@BlogPageID,
-		@CityID
+		@CityID,
+		@ShowSites
 	)
 
 	SET @Err = @@Error
 
 	SELECT @BlogPageCityID = SCOPE_IDENTITY()
+
+	UPDATE [BlogPage]
+	SET
+		[DateUpdate] = GETDATE()
+	WHERE
+		[BlogPageID] = @BlogPageID
+
+	UPDATE [City]
+	SET
+		[DateUpdate] = GETDATE()
+	WHERE
+		[CityID] = @CityID
 
 	RETURN @Err
 END

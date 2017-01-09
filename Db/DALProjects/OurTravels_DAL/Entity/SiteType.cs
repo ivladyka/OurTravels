@@ -14,5 +14,10 @@ namespace  VikkiSoft_BLL
 		{
 		
 		}
+
+        public virtual bool LoadWithIcon()
+        {
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_SiteType_LoadWithIcon]");
+        }
 	}
 }

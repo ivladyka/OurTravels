@@ -11,6 +11,7 @@ BEGIN
 		[BlogPageCityID]
       ,[BlogPageID]
       ,[CityID]
+	   ,[ShowSites]
 	FROM 
 		[BlogPageCity]
 	WHERE

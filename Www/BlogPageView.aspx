@@ -6,7 +6,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="BlogContentPlaceHolder3" Runat="Server">
-    <div id="fb-root"></div>
+<!--    <div id="fb-root"></div>
 <script>(function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
@@ -30,7 +30,7 @@
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
-</script>
+</script>-->
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
        	<div class="fh5co-hero fh5co-hero-3 blogpage-header">
@@ -43,7 +43,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h3>
+						<h1><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h1>
 						<p id="pTravelDate" runat="server"><asp:Label ID="lblTravelDate" runat="server" Text="" Visible="false"></asp:Label><br /></p>
 					</div>
 				</div>
@@ -51,8 +51,7 @@
 			<div class="container">
 				<div class="row row-bottom-padded-md">					
                     <div ID="divCategoryContent" runat="server"></div>
-                    <div class="fb-comments" data-href="https://www.facebook.com/traveldreamsua/" data-width="100%" data-numposts="5"></div>
-                   <!-- <uc1:SocialNetworks id="socialNetworks" runat="server"></uc1:SocialNetworks> -->
+                   <!-- <div class="fb-comments" data-href="https://www.facebook.com/traveldreamsua/" data-width="100%" data-numposts="5"></div>-->
 				</div>				
 			</div>
 		</div> 

@@ -114,6 +114,14 @@ namespace  VikkiSoft_BLL.DAL
 					return new SqlParameter("@Name", SqlDbType.VarChar, 50);
 				}
 			}
+
+            public static SqlParameter OrderIndex
+            {
+                get
+                {
+                    return new SqlParameter("@OrderIndex", SqlDbType.Int, 0);
+                }
+            }
 			
 		}
 		#endregion		
@@ -123,6 +131,7 @@ namespace  VikkiSoft_BLL.DAL
 		{  
             public const string SiteTypeID = "SiteTypeID";
             public const string Name = "Name";
+            public const string OrderIndex = "OrderIndex";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -132,6 +141,7 @@ namespace  VikkiSoft_BLL.DAL
 					
 					ht[SiteTypeID] = _SiteType.PropertyNames.SiteTypeID;
 					ht[Name] = _SiteType.PropertyNames.Name;
+                    ht[OrderIndex] = _SiteType.PropertyNames.OrderIndex;
 
 				}
 				return (string)ht[columnName];
@@ -146,6 +156,7 @@ namespace  VikkiSoft_BLL.DAL
 		{  
             public const string SiteTypeID = "SiteTypeID";
             public const string Name = "Name";
+            public const string OrderIndex = "OrderIndex";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -155,6 +166,7 @@ namespace  VikkiSoft_BLL.DAL
 					
 					ht[SiteTypeID] = _SiteType.ColumnNames.SiteTypeID;
 					ht[Name] = _SiteType.ColumnNames.Name;
+                    ht[OrderIndex] = _SiteType.ColumnNames.OrderIndex;
 
 				}
 				return (string)ht[propertyName];
@@ -169,7 +181,7 @@ namespace  VikkiSoft_BLL.DAL
 		{  
             public const string SiteTypeID = "s_SiteTypeID";
             public const string Name = "s_Name";
-
+            public const string OrderIndex = "s_OrderIndex";
 		}
 		#endregion		
 		
@@ -198,6 +210,18 @@ namespace  VikkiSoft_BLL.DAL
 				base.Setstring(ColumnNames.Name, value);
 			}
 		}
+
+        public virtual int OrderIndex
+        {
+            get
+            {
+                return base.Getint(ColumnNames.OrderIndex);
+            }
+            set
+            {
+                base.Setint(ColumnNames.OrderIndex, value);
+            }
+        }
 
 
 		#endregion
@@ -233,6 +257,21 @@ namespace  VikkiSoft_BLL.DAL
 					this.Name = base.SetstringAsString(ColumnNames.Name, value);
 			}
 		}
+
+        public virtual string s_OrderIndex
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.OrderIndex) ? string.Empty : base.GetintAsString(ColumnNames.OrderIndex);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.OrderIndex);
+                else
+                    this.OrderIndex = base.SetintAsString(ColumnNames.OrderIndex, value);
+            }
+        }
 
 
 		#endregion		
@@ -287,6 +326,15 @@ namespace  VikkiSoft_BLL.DAL
 					}
 				}
 
+                public WhereParameter OrderIndex
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.OrderIndex, Parameters.OrderIndex);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
 
 				private WhereClause _clause;
 			}
@@ -316,13 +364,27 @@ namespace  VikkiSoft_BLL.DAL
 				}
 			}
 
+            public WhereParameter OrderIndex
+            {
+                get
+                {
+                    if (_OrderIndex_W == null)
+                    {
+                        _OrderIndex_W = TearOff.OrderIndex;
+                    }
+                    return _OrderIndex_W;
+                }
+            }
+
 			private WhereParameter _SiteTypeID_W = null;
 			private WhereParameter _Name_W = null;
+            private WhereParameter _OrderIndex_W = null;
 
 			public void WhereClauseReset()
 			{
 				_SiteTypeID_W = null;
 				_Name_W = null;
+                _OrderIndex_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -399,6 +461,16 @@ namespace  VikkiSoft_BLL.DAL
 					}
 				}
 
+                public AggregateParameter OrderIndex
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.OrderIndex, Parameters.OrderIndex);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
+
 
 				private AggregateClause _clause;
 			}
@@ -428,13 +500,27 @@ namespace  VikkiSoft_BLL.DAL
 				}
 			}
 
+            public AggregateParameter OrderIndex
+            {
+                get
+                {
+                    if (_OrderIndex_W == null)
+                    {
+                        _OrderIndex_W = TearOff.OrderIndex;
+                    }
+                    return _OrderIndex_W;
+                }
+            }
+
 			private AggregateParameter _SiteTypeID_W = null;
 			private AggregateParameter _Name_W = null;
+            private AggregateParameter _OrderIndex_W = null;
 
 			public void AggregateClauseReset()
 			{
 				_SiteTypeID_W = null;
 				_Name_W = null;
+                _OrderIndex_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -513,6 +599,9 @@ namespace  VikkiSoft_BLL.DAL
 			p.SourceColumn = ColumnNames.Name;
 			p.SourceVersion = DataRowVersion.Current;
 
+            p = cmd.Parameters.Add(Parameters.OrderIndex);
+            p.SourceColumn = ColumnNames.OrderIndex;
+            p.SourceVersion = DataRowVersion.Current;
 
 			return cmd;
 		}

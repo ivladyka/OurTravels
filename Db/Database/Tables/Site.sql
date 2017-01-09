@@ -8,7 +8,10 @@
     [Notes]      VARCHAR (2000) NULL,
     [Logo]       VARCHAR (50)   NULL,
     [Banner]     VARCHAR (50)   NULL,
+    [Main]       BIT            CONSTRAINT [DF_Site_Main] DEFAULT ((0)) NULL,
     CONSTRAINT [PK_Site] PRIMARY KEY CLUSTERED ([SiteID] ASC),
     CONSTRAINT [FK_Site_SiteType] FOREIGN KEY ([SiteTypeID]) REFERENCES [dbo].[SiteType] ([SiteTypeID])
 );
+
+
 

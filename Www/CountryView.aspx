@@ -2,7 +2,6 @@
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
 <%@ Register TagPrefix="uc1" TagName="CityTableView" Src="Controls/CityTableView.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SiteViewList" Src="Controls/SiteViewList.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="SocialNetworks" Src="Controls/SocialNetworks.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
@@ -16,7 +15,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h3>
+						<h1><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h1>
                         <asp:Panel ID="pnlCapital" runat="server">
         Столиця: <asp:HyperLink id="hlCapital" runat="server"></asp:HyperLink>
     </asp:Panel>
@@ -26,11 +25,10 @@
 			<div class="container">
 				<div class="row row-bottom-padded-md">					
                     <div ID="divCountryContent" runat="server"></div>
-                    <uc1:SocialNetworks id="socialNetworks" runat="server"></uc1:SocialNetworks>
 				</div>				
 			</div>
     </div> 
-    <uc1:CityTableView id="cityTableView" runat="server"></uc1:CityTableView>
     <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
+    <uc1:CityTableView id="cityTableView" runat="server"></uc1:CityTableView>
 </asp:Content>
 

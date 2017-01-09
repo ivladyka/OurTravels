@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using Telerik.Web.UI;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -33,7 +33,7 @@ public partial class CountryEdit : EditControlBase
         }
         else
         {
-            pnlMainImage.Visible = pnlContent.Visible = false;
+            pnlMainImage.Visible = pnlContent.Visible = rtsCountry.Visible = false;
         }
     }
 
@@ -103,6 +103,36 @@ public partial class CountryEdit : EditControlBase
         get
         {
             return m_CountryName;
+        }
+    }
+
+    protected void rtsCountry_TabClick(object sender, RadTabStripEventArgs e)
+    {
+        switch (e.Tab.Text)
+        {
+            case "Країна":
+                pnlCountryEdit.Visible = true;
+                pnlSiteList.Visible = false;
+                break;
+            case "Корисні посилання":
+                pnlCountryEdit.Visible = false;
+                pnlSiteList.Visible = true;
+                countrySiteList.RebindGrid();
+                break;
+        }
+    }
+
+    public override EditableEntity EditableEntity
+    {
+        get
+        {
+            return UserSession.GetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY
+                + "CountryEdit") as EditableEntity;
+        }
+        set
+        {
+            UserSession.SetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY
+                + "CountryEdit", value);
         }
     }
 }

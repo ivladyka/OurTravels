@@ -170,7 +170,15 @@ namespace  VikkiSoft_BLL.DAL
 					return new SqlParameter("@Banner", SqlDbType.VarChar, 50);
 				}
 			}
-			
+
+            public static SqlParameter Main
+            {
+                get
+                {
+                    return new SqlParameter("@Main", SqlDbType.Bit, 0);
+                }
+            }
+
 		}
 		#endregion		
 	
@@ -186,6 +194,7 @@ namespace  VikkiSoft_BLL.DAL
             public const string Notes = "Notes";
             public const string Logo = "Logo";
             public const string Banner = "Banner";
+            public const string Main = "Main";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -202,6 +211,7 @@ namespace  VikkiSoft_BLL.DAL
 					ht[Notes] = _Site.PropertyNames.Notes;
 					ht[Logo] = _Site.PropertyNames.Logo;
 					ht[Banner] = _Site.PropertyNames.Banner;
+                    ht[Main] = _Site.PropertyNames.Main;
 
 				}
 				return (string)ht[columnName];
@@ -223,6 +233,7 @@ namespace  VikkiSoft_BLL.DAL
             public const string Notes = "Notes";
             public const string Logo = "Logo";
             public const string Banner = "Banner";
+            public const string Main = "Main";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -239,6 +250,7 @@ namespace  VikkiSoft_BLL.DAL
 					ht[Notes] = _Site.ColumnNames.Notes;
 					ht[Logo] = _Site.ColumnNames.Logo;
 					ht[Banner] = _Site.ColumnNames.Banner;
+                    ht[Main] = _Site.ColumnNames.Main;
 
 				}
 				return (string)ht[propertyName];
@@ -260,6 +272,7 @@ namespace  VikkiSoft_BLL.DAL
             public const string Notes = "s_Notes";
             public const string Logo = "s_Logo";
             public const string Banner = "s_Banner";
+            public const string Main = "s_Main";
 
 		}
 		#endregion		
@@ -374,6 +387,17 @@ namespace  VikkiSoft_BLL.DAL
 			}
 		}
 
+        public virtual bool Main
+        {
+            get
+            {
+                return base.Getbool(ColumnNames.Main);
+            }
+            set
+            {
+                base.Setbool(ColumnNames.Main, value);
+            }
+        }
 
 		#endregion
 		
@@ -514,6 +538,20 @@ namespace  VikkiSoft_BLL.DAL
 			}
 		}
 
+        public virtual string s_Main
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.Main) ? string.Empty : base.GetboolAsString(ColumnNames.Main);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.Main);
+                else
+                    this.Main = base.SetboolAsString(ColumnNames.Main, value);
+            }
+        }
 
 		#endregion		
 	
@@ -637,6 +675,15 @@ namespace  VikkiSoft_BLL.DAL
 					}
 				}
 
+                public WhereParameter Main
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.Main, Parameters.Main);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
 
 				private WhereClause _clause;
 			}
@@ -750,6 +797,18 @@ namespace  VikkiSoft_BLL.DAL
 				}
 			}
 
+            public WhereParameter Main
+            {
+                get
+                {
+                    if (_Main_W == null)
+                    {
+                        _Main_W = TearOff.Main;
+                    }
+                    return _Main_W;
+                }
+            }
+
 			private WhereParameter _SiteID_W = null;
 			private WhereParameter _SiteTypeID_W = null;
 			private WhereParameter _Name_W = null;
@@ -759,6 +818,7 @@ namespace  VikkiSoft_BLL.DAL
 			private WhereParameter _Notes_W = null;
 			private WhereParameter _Logo_W = null;
 			private WhereParameter _Banner_W = null;
+            private WhereParameter _Main_W = null;
 
 			public void WhereClauseReset()
 			{
@@ -771,6 +831,7 @@ namespace  VikkiSoft_BLL.DAL
 				_Notes_W = null;
 				_Logo_W = null;
 				_Banner_W = null;
+                _Main_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -917,6 +978,15 @@ namespace  VikkiSoft_BLL.DAL
 					}
 				}
 
+                public AggregateParameter Main
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.Main, Parameters.Main);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
 
 				private AggregateClause _clause;
 			}
@@ -1030,6 +1100,18 @@ namespace  VikkiSoft_BLL.DAL
 				}
 			}
 
+            public AggregateParameter Main
+            {
+                get
+                {
+                    if (_Main_W == null)
+                    {
+                        _Main_W = TearOff.Main;
+                    }
+                    return _Main_W;
+                }
+            }
+
 			private AggregateParameter _SiteID_W = null;
 			private AggregateParameter _SiteTypeID_W = null;
 			private AggregateParameter _Name_W = null;
@@ -1039,6 +1121,7 @@ namespace  VikkiSoft_BLL.DAL
 			private AggregateParameter _Notes_W = null;
 			private AggregateParameter _Logo_W = null;
 			private AggregateParameter _Banner_W = null;
+            private AggregateParameter _Main_W = null;
 
 			public void AggregateClauseReset()
 			{
@@ -1051,6 +1134,7 @@ namespace  VikkiSoft_BLL.DAL
 				_Notes_W = null;
 				_Logo_W = null;
 				_Banner_W = null;
+                _Main_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -1160,6 +1244,10 @@ namespace  VikkiSoft_BLL.DAL
 			p = cmd.Parameters.Add(Parameters.Banner);
 			p.SourceColumn = ColumnNames.Banner;
 			p.SourceVersion = DataRowVersion.Current;
+
+            p = cmd.Parameters.Add(Parameters.Main);
+            p.SourceColumn = ColumnNames.Main;
+            p.SourceVersion = DataRowVersion.Current;
 
 
 			return cmd;

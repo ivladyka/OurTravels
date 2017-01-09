@@ -12,6 +12,7 @@ BEGIN
 		[Name],
 		[URL],
 		[Active],
+		[Main],
 		[OrderIndex],
 		[Notes],
 		[Logo],

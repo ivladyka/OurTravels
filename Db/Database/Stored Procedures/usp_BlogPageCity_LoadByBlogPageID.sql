@@ -9,7 +9,8 @@ BEGIN
 		BlogPageCity.BlogPageCityID, 
 		BlogPageCity.BlogPageID, 
 		BlogPageCity.CityID, 
-		City.Name AS CityName
+		City.Name AS CityName,
+		BlogPageCity.ShowSites
 	FROM            
 		BlogPageCity 
 	INNER JOIN

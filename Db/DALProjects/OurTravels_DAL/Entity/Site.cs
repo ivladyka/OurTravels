@@ -27,5 +27,34 @@ namespace  VikkiSoft_BLL
 
             return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Site_LoadBySiteTypeID]", parameters);
         }
+
+        public virtual bool LoadMainSite()
+        {
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Site_LoadMainSite]");
+        }
+
+        public virtual bool LoadByCountryID(int countryID)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@CountryID", SqlDbType.Int), countryID);
+
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Site_LoadByCountryID]", parameters);
+        }
+
+        public virtual bool LoadByCityID(int cityID)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@CityID", SqlDbType.Int), cityID);
+
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Site_LoadByCityID]", parameters);
+        }
+
+        public virtual bool LoadByBlogPageID(int blogPageID)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@BlogPageID", SqlDbType.Int), blogPageID);
+
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Site_LoadByBlogPageID]", parameters);
+        }
 	}
 }

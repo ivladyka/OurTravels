@@ -45,10 +45,10 @@ public partial class Controls_BlogPageViewList : System.Web.UI.UserControl
             strBlogList.Append("<h3><a href=\"" + pageURL + "\">" + row[BlogPage.ColumnNames.Name].ToString() + "</a></h3>");
             if (!row.IsNull(BlogPage.ColumnNames.StartTravelDate))
             {
-                strBlogList.Append("<span class=\"posted_by\">" + ((DateTime)row[BlogPage.ColumnNames.StartTravelDate]).ToString("dd.mm.yyyy"));
+                strBlogList.Append("<span class=\"posted_by\">" + ((DateTime)row[BlogPage.ColumnNames.StartTravelDate]).ToString("dd.MM.yyyy"));
                 if (!row.IsNull(BlogPage.ColumnNames.EndTravelDate))
                 {
-                    strBlogList.Append(" - " + ((DateTime)row[BlogPage.ColumnNames.EndTravelDate]).ToString("dd.mm.yyyy"));
+                    strBlogList.Append(" - " + ((DateTime)row[BlogPage.ColumnNames.EndTravelDate]).ToString("dd.MM.yyyy"));
                 }
                 strBlogList.Append("</span>");
             }

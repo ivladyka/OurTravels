@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using Telerik.Web.UI;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -34,7 +34,7 @@ public partial class CityEdit : EditControlBase
         }
         else
         {
-            pnlTitleImage.Visible = pnlMainImage.Visible = pnlContent.Visible = false;
+            pnlTitleImage.Visible = pnlMainImage.Visible = pnlContent.Visible = rtsCity.Visible = false;
         }
     }
 
@@ -119,6 +119,36 @@ public partial class CityEdit : EditControlBase
         get
         {
             return m_CityName;
+        }
+    }
+
+    protected void rtsCity_TabClick(object sender, RadTabStripEventArgs e)
+    {
+        switch (e.Tab.Text)
+        {
+            case "Місто":
+                pnlCityEdit.Visible = true;
+                pnlSiteList.Visible = false;
+                break;
+            case "Корисні посилання":
+                pnlCityEdit.Visible = false;
+                pnlSiteList.Visible = true;
+                citySiteList.RebindGrid();
+                break;
+        }
+    }
+
+    public override EditableEntity EditableEntity
+    {
+        get
+        {
+            return UserSession.GetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY
+                + "CityEdit") as EditableEntity;
+        }
+        set
+        {
+            UserSession.SetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY
+                + "CityEdit", value);
         }
     }
 }

@@ -16,6 +16,13 @@
             <uc1:CityChoice id="choice_CityID" runat="server" UseValueInsteadText="true" Width="300"></uc1:CityChoice>
 		</td>
     </tr>
+    <tr>
+		<td align="right">Показати Посилання:
+		</td>
+		<td>
+           <asp:CheckBox id="chk_ShowSites" runat="server" Text=""></asp:CheckBox>
+		</td>
+    </tr>
   	<tr>
 	    <td colspan="2" align="right">
 	      <asp:Button ID="btnCancel" runat="server" CommandArgument="False" ForeColor="Black" BorderStyle="None" Font-Size="10pt"  Height="30px" BackColor="#ffc33f"

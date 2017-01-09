@@ -9,7 +9,7 @@ public partial class SiteList : ListControlBase, Interfaces.IColouredGrid
 {
     public SiteList()
 	{
-        this.m_Name = "Сайти";
+        this.m_Name = "Корисні Посилання";
         this.AllowUserTypes = "LoggedUser";
         BackURL = "~/Office/Office.aspx";
 	}
@@ -38,10 +38,11 @@ public partial class SiteList : ListControlBase, Interfaces.IColouredGrid
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.SiteID, false, VikkiSoft_BLL.Site.ColumnNames.SiteID,
 				0, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Name, true, "Назва", 0, HorizontalAlign.Center, "");
-        SetColumnSettings("SiteTypeName", true, "Тип сайту", 0, HorizontalAlign.Center, "");
-        SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Active, true, "Активний", 0, HorizontalAlign.Center, "");
+        SetColumnSettings("SiteTypeName", true, "Тип посилання", 0, HorizontalAlign.Center, "");
+        SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Active, true, "Активне", 0, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Notes, true, "Примітки", 0, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.OrderIndex, true, "Порядок сортування", 50, HorizontalAlign.Center, "");
+        SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Main, true, "Головне", 0, HorizontalAlign.Center, "");
 	}
 
     protected override DataTable GetDataSource()

@@ -17,7 +17,8 @@ BEGIN
 		[OrderIndex],
 		[Notes],
 		[Logo],
-		[Banner]
+		[Banner],
+		[Main]
 	FROM [Site]
 	WHERE
 		([SiteID] = @SiteID)

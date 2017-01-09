@@ -10,7 +10,8 @@ BEGIN
 		[Site].Name, 
 		SiteType.Name AS SiteTypeName, 
 		[Site].URL, 
-		[Site].Active, 
+		[Site].Active,
+		[Site].Main, 
 		[Site].Notes, 
 		[Site].OrderIndex
 	FROM         

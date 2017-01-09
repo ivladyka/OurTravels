@@ -14,7 +14,8 @@ BEGIN
 		[Site].URL, 
 		[Site].Banner,
 		[Site].Logo,
-		[Site].Notes
+		[Site].Notes,
+		[Site].Main
 	FROM         
 		[Site] 
 	WHERE

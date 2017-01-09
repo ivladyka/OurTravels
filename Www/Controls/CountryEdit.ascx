@@ -3,6 +3,17 @@
 <%@ Register TagPrefix="uc1" TagName="IntInput" Src="ValueControls/IntInput.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="CityChoice" Src="ChoiceControls/CityChoice.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="PhotoUpload" Src="ValueControls/PhotoUpload.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="CountrySiteList" Src="CountrySiteList.ascx" %>
+<%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
+<telerik:RadTabStrip ID="rtsCountry" runat="server" AutoPostBack="true" Align="Left" Width="747px" OnTabClick="rtsCountry_TabClick">
+    <Tabs>
+        <telerik:RadTab Text="Країна" Selected="True">
+        </telerik:RadTab>
+        <telerik:RadTab Text="Корисні посилання">
+        </telerik:RadTab>
+    </Tabs>
+</telerik:RadTabStrip>
+<asp:Panel ID="pnlCountryEdit" runat="server">
 <TABLE id="Table3" class="EditControl3" cellpadding="2" cellspacing="7"  align="left" border="0" width="950px">	
     <tr>
         <td align="right">
@@ -84,3 +95,7 @@
 			 </td>
 	</tr>
 </TABLE>
+    </asp:Panel>
+<asp:Panel ID="pnlSiteList" runat="server" Visible="false">
+    <uc1:CountrySiteList id="countrySiteList" runat="server"></uc1:CountrySiteList>
+</asp:Panel>

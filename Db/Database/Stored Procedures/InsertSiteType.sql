@@ -1,8 +1,9 @@
 ﻿
 CREATE PROCEDURE [dbo].[InsertSiteType]
 (
-	@SiteTypeID int,
-	@Name varchar(50)
+	@SiteTypeID int = NULL output,
+	@Name varchar(50),
+	@OrderIndex int = NULL
 )
 AS
 BEGIN
@@ -13,17 +14,18 @@ BEGIN
 	INSERT
 	INTO [SiteType]
 	(
-		[SiteTypeID],
-		[Name]
+		[Name],
+		[OrderIndex]
 	)
 	VALUES
 	(
-		@SiteTypeID,
-		@Name
+		@Name,
+		@OrderIndex
 	)
 
 	SET @Err = @@Error
 
+	SELECT @SiteTypeID = SCOPE_IDENTITY()
 
 	RETURN @Err
 END
