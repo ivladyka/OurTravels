@@ -11,7 +11,8 @@ BEGIN
 		[Site].Banner,
 		[Site].Logo,
 		[Site].Notes,
-		[Site].Main
+		[Site].Main,
+		[Site].SiteTypeID
 	FROM         
 		[Site] 
 	WHERE
