@@ -19,6 +19,8 @@ public partial class MasterPage : MasterPageBase
         hlMenuAccommodation.NavigateUrl = this.SiteURL + "/page/3/accommodation/";
         hlMenuTransport.NavigateUrl = this.SiteURL + "/page/4/transport/";
         hlMenuAnimals.NavigateUrl = this.SiteURL + "/page/5/animals/";
+        hlMenuAnimals1.NavigateUrl = this.SiteURL + "/page/17/animals-in-train/";
+        hlMenuAnimals2.NavigateUrl = this.SiteURL + "/page/18/animals-in-train-abroad/";
         hlMenuChildren.NavigateUrl = this.SiteURL + "/page/6/children/";
         hlMenuPlanning.NavigateUrl = this.SiteURL + "/page/7/planning/";
         hlMenuSuitcase.NavigateUrl = this.SiteURL + "/page/8/suitcase/";

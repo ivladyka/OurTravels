@@ -327,7 +327,7 @@ background-color: rgba(255, 255, 255, 0.7);
 .sf-menu ul li a,
 .sf-menu ul ul li a {
   text-transform: none;
-  padding: 0.2em 1em !important;
+  padding: 0.5em !important;
   letter-spacing: 1px;
   font-size: 14px !important;
 }
@@ -479,7 +479,7 @@ background-color: rgba(255, 255, 255, 0.7);
   position: absolute;
   float: right;
   margin-right: 10px;
-  top: 20px;
+  top: 15px;
   font-size: 16px;
   content: "\e924";
   color: rgba(0, 0, 0, 0.5);
@@ -550,13 +550,14 @@ background-color: rgba(255, 255, 255, 0.7);
 
 #fh5co-primary-menu .fh5co-sub-menu a {
   letter-spacing: 0;
-  padding: 0 15px;
+  padding: 0 25px;
   font-size: 18px;
-  line-height: 34px;
   color: #575757 !important;
   text-transform: none;
   background: none;
+  line-height:18px
 }
+
 #fh5co-primary-menu .fh5co-sub-menu a:hover {
   color: #01a3d4 !important;
 }
@@ -2062,6 +2063,19 @@ color:#01a3d4;
     font-weight:bold;
     font-style:italic;
     color:#01a3d4;
+    margin:20px 0;
+    text-align:center
+}
+.text_style4
+{
+    display:inline-block;
+    width:100%;
+    padding:20px;
+    border: solid 1px #f17660;
+    font-size:12pt;
+    font-weight:bold;
+    font-style:italic;
+    color:#f17660;
     margin:20px 0;
     text-align:center
 }

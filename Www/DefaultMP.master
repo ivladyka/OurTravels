@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster|Open+Sans" rel="stylesheet"> 
 	<link rel="stylesheet" href="Theme/css/style.css"/>
     <script src="/Theme/js/modernizr-2.6.2.min.js"></script>	
-    <script src="/js/snow.js" type="text/javascript"></script>
+ <!--   <script src="/js/snow.js" type="text/javascript"></script>-->
     <link rel="shortcut icon" href="/favicon.ico" />
     <telerik:RadCodeBlock ID="RadCodeBlock1" runat="server">
     <%=Title%>
@@ -69,7 +69,12 @@
 												<li><asp:HyperLink id="hlMenuAccommodation" runat="server">Проживання</asp:HyperLink></li>
 												<li><asp:HyperLink id="hlMenuTransport" runat="server">Транспорт</asp:HyperLink></li>
                                                 <li><asp:HyperLink id="hlMenuChildren" runat="server">Діти</asp:HyperLink></li>
-												<li><asp:HyperLink id="hlMenuAnimals" runat="server">Тварини</asp:HyperLink></li>
+												<li><asp:HyperLink id="hlMenuAnimals" runat="server">Тварини</asp:HyperLink>
+                                                    <ul class="fh5co-sub-menu">
+                                                        <li><asp:HyperLink id="hlMenuAnimals1" runat="server">Перевезення тварин у потягах внутрішнього сполучення</asp:HyperLink></li>
+                                                        <li><asp:HyperLink id="hlMenuAnimals2" runat="server">Перевезення тварин у потягах міжнародного сполучення</asp:HyperLink></li>
+                                                    </ul>
+												</li>
 												<li><asp:HyperLink id="hlMenuSuitcase" runat="server">Збираємо валізу</asp:HyperLink></li>
 											</ul>
 		                                </li>
@@ -125,10 +130,7 @@
 						<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 							<h3>Слідуй за нами</h3>
 							<ul class="fh5co-social">
-								<li><a href="#"><i class="icon-twitter2"></i> Twitter</a></li>
 								<li><a href="https://www.facebook.com/traveldreamsua"><i class="icon-facebook2"></i> Facebook</a></li>
-								<li><a href="#"><i class="icon-google-plus2"></i> Google Plus</a></li>
-								<li><a href="#"><i class="icon-instagram2"></i> Instagram</a></li>
 							</ul>
 						</div>
 					</div>
