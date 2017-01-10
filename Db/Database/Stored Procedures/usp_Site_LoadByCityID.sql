@@ -27,7 +27,7 @@ BEGIN
 		SiteID,
 		SiteTypeSubOrderIndex
 	  )
-	  SELECT 
+	  SELECT DISTINCT
 		[Site].SiteID, 
 		0
 	  FROM
@@ -45,7 +45,7 @@ BEGIN
 		SiteID,
 		SiteTypeSubOrderIndex
 	  )
-	  SELECT 
+	  SELECT DISTINCT
 		[Site].SiteID, 
 		1
 	  FROM
