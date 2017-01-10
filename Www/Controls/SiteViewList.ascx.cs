@@ -64,7 +64,7 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
                                 strSiteList.Append("</div>");
                             }
                         }
-                        strSiteList.Append("<div class=\"row\"><div class=\"col-md-12 animate-box fadeInUp animated\">" + row["SiteTypeName"].ToString() + "</div></div>");
+                        strSiteList.Append("<div class=\"row\"><div class=\"col-md-12 animate-box fadeInUp animated\"><h3>" + row["SiteTypeName"].ToString() + "</h3></div></div>");
                     }
                 }
                 if (i % 3 == 0)
