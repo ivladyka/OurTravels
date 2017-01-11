@@ -78,7 +78,7 @@
   	<tr>
 	    <td colspan="2" align="right">
 	      <asp:Button ID="btnCancel" runat="server" CommandArgument="False" ForeColor="Black" BorderStyle="None" Font-Size="10pt"  Height="30px" BackColor="#ffc33f"
-                            commandname="Cancel" CssClass="formbutton1" Text="Відмінити" />     
+                            commandname="Cancel" CssClass="formbutton1" Text="Відмінити" causesvalidation="False" />     
                    <asp:Button ID="btnUpdate" runat="server" CommandArgument="Update" ForeColor="Black" BorderStyle="None" Font-Size="10pt"  Height="30px" BackColor="#ffc33f"
                             commandname="Update" CssClass="formbutton1" Text="Зберегти"/>
 			 </td>

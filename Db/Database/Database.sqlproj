@@ -150,5 +150,6 @@
     <Build Include="Stored Procedures\usp_Site_LoadByCountryID.sql" />
     <Build Include="Stored Procedures\usp_Site_LoadByCityID.sql" />
     <Build Include="Stored Procedures\usp_Site_LoadByBlogPageID.sql" />
+    <Build Include="Stored Procedures\usp_City_LoadByBlogPageID.sql" />
   </ItemGroup>
 </Project>

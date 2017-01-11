@@ -27,6 +27,21 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
         {
             loaded = s.LoadByBlogPageID(BlogPageID);
             groupBySiteType = true;
+            VikkiSoft_BLL.City c = new VikkiSoft_BLL.City();
+            if (c.LoadByBlogPageID(BlogPageID, true))
+            {
+                if(c.RowCount > 0)
+                {
+                    StringBuilder strCityList = new StringBuilder();
+                    pnlCityLinks.Visible = true;
+                    do
+                    {
+                        string pageURL = SiteURL + "/" + Utils.GenerateFriendlyURL("city", new string[] { c.GetColumn("CountryName").ToString(), c.s_Name_en }, false);
+                        strCityList.Append("<a href=\"" + pageURL + "\">" + c.s_Name + "</a> | ");
+                    } while (c.MoveNext());
+                    pnlCityLinksCell.InnerHtml = strCityList.ToString().TrimEnd().TrimEnd('|').TrimEnd();
+                }
+            }
         }
         else if (IsCountryPage)
         {
@@ -49,6 +64,7 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
             StringBuilder strSiteList = new StringBuilder();
             foreach (DataRow row in s.DefaultView.Table.Rows)
             {
+                string logoURLSmall = SiteURL + Utils.SiteTypeImagePath.Replace("~", "") + "/" + row[SiteType.ColumnNames.SiteTypeID].ToString() + "-small.png";
                 if (groupBySiteType)
                 {
                     int siteTypeID = int.Parse(row[VikkiSoft_BLL.Site.ColumnNames.SiteTypeID].ToString());
@@ -64,7 +80,8 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
                                 strSiteList.Append("</div>");
                             }
                         }
-                        strSiteList.Append("<div class=\"row\"><div class=\"col-md-12 animate-box fadeInUp animated\"><h3>" + row["SiteTypeName"].ToString() + "</h3></div></div>");
+                        strSiteList.Append("<div class=\"row\"><div class=\"col-md-12 animate-box fadeInUp animated\"><h3><img src=\""
+                            + logoURLSmall + "\" alt=\"\" style=\"height: 32px; margin-right:20px\"></a>" + row["SiteTypeName"].ToString() + "</h3></div></div>");
                     }
                 }
                 if (i % 3 == 0)

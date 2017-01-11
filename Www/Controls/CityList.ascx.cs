@@ -47,6 +47,7 @@ public partial class CityList : ListControlBase, Interfaces.IColouredGrid
 
     protected override DataTable GetDataSource()
     {
+        UserSession.SetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY + "CityEdit", null);
         VikkiSoft_BLL.City c = new VikkiSoft_BLL.City();
         c.LoadWithCountry();
         return c.DefaultView.Table;

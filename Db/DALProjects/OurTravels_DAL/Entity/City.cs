@@ -44,5 +44,14 @@ namespace VikkiSoft_BLL
 
             return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_City_LoadByCountryID]", parameters);
         }
+
+        public virtual bool LoadByBlogPageID(int blogPageID, bool onlyShowSites)
+        {
+            ListDictionary parameters = new ListDictionary();
+            parameters.Add(new SqlParameter("@BlogPageID", SqlDbType.Int), blogPageID);
+            parameters.Add(new SqlParameter("@OnlyShowSites", SqlDbType.Bit), onlyShowSites);
+
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_City_LoadByBlogPageID]", parameters);
+        }
 	}
 }

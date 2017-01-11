@@ -6,6 +6,9 @@
                     <h3>Корисні посилання</h3>
                 </div>
         </div>
+        <div ID="pnlCityLinks" runat="server" Visible="false" class="row">
+            <div ID="pnlCityLinksCell" runat="server" class="col-md-8 col-md-offset-2 text-center animate-box"></div>
+        </div>
     </div>
     <div class="container useful-links" id="divSiteViewList" runat="server">
     </div>

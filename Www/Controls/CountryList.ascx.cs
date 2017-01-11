@@ -47,6 +47,7 @@ public partial class CountryList : ListControlBase, Interfaces.IColouredGrid
 
     protected override DataTable GetDataSource()
     {
+        UserSession.SetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY + "CountryEdit", null);
         VikkiSoft_BLL.Country c = new VikkiSoft_BLL.Country();
         c.LoadWithCapital();
         return c.DefaultView.Table;
