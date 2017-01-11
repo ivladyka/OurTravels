@@ -27,8 +27,8 @@
                     <div ID="divCityContent" runat="server"></div>
 				</div>				
 			</div>
-    </div> 
-    <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
+    </div>     
     <uc1:BlogPageTableList id="blogPageTableList" runat="server"></uc1:BlogPageTableList>
+    <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
 </asp:Content>
 

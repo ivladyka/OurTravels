@@ -1033,7 +1033,8 @@ background-color: rgba(255, 255, 255, 0.7);
   font-weight: 700;
 }
 #fh5co-features .feature-left p {
-  font-size: 15px;
+    font-size: 11pt;
+    line-height: 13pt;
 }
 #fh5co-features .feature-left p:last-child {
   margin-bottom: 0;
@@ -2613,4 +2614,8 @@ padding: 20px 0;
 #ctl00_cphWithoutScroll_siteViewList_pnlCityLinks
 {
 margin-bottom:40px
+}
+#ctl00_cphWithoutScroll_blogPageTableList_divOtherTravels
+{
+     background-color: #fcfcfc !important
 }
