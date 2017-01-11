@@ -751,16 +751,23 @@ background-color: rgba(255, 255, 255, 0.7);
     background-size:100% auto;
     background-position:center center;
     background-repeat:no-repeat;
-    display:inline-block;
+    display: table;
     position:relative;
-    text-align:center
+    text-align:center;
+
 }
 .smallbloglist:hover .fh5co-overlay{background: rgba(255, 255, 255, 0) none repeat scroll 0 0;}
 .smallbloglist .fh5co-overlay{background: rgba(0, 119, 147, 0.4) none repeat scroll 0 0;}
 .smallbloglist h3
 {
-    position:relative; z-index:999; font-weight:bold; 
-    font-size:18pt
+  display: table-cell;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 0;
+    position: relative;
+    vertical-align: middle;
+    z-index: 999;
+    padding: 0 20px;
 }
 .small-blog-item .fh5co-blog
 {
@@ -771,7 +778,7 @@ background-color: rgba(255, 255, 255, 0.7);
     padding:4em 0
 }
 .smallbloglist h3 a{
-    font-size:18pt;
+    font-size:20pt;
     color:#fff; font-family: "Lobster",cursive;
 }
 .smallbloglist h3 a:hover {
