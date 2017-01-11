@@ -771,11 +771,11 @@ background-color: rgba(255, 255, 255, 0.7);
     padding:4em 0
 }
 .smallbloglist h3 a{
-    font-size:24pt;
+    font-size:18pt;
     color:#fff; font-family: "Lobster",cursive;
 }
 .smallbloglist h3 a:hover {
-    font-size:24pt;
+    font-size:18pt;
     color:#fff; font-family: "Lobster",cursive;
 }
 #fh5co-portfolio {
@@ -979,9 +979,15 @@ background-color: rgba(255, 255, 255, 0.7);
   width: 25%;
 }
 #fh5co-features .feature-left .icon img{
-  float: left;
-  text-align: center;
-  width: 100%;
+    float: left;
+    max-height: 100px;
+    max-width: 100%;
+    text-align: center;
+}
+#fh5co-features .col-md-12.animate-box.fadeInUp.animated h3 {
+    background-color:#cdeff8;
+    padding: 10px ;
+    color:#000
 }
 @media screen and (max-width: 992px) {
   #fh5co-features .feature-left .icon {
