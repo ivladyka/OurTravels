@@ -23,10 +23,12 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
         VikkiSoft_BLL.Site s = new VikkiSoft_BLL.Site();
         bool loaded = false;
         bool groupBySiteType = false;
+        bool showCityName = false;
         if (IsBlogPagePage)
         {
             loaded = s.LoadByBlogPageID(BlogPageID);
             groupBySiteType = true;
+            showCityName = true;
             VikkiSoft_BLL.City c = new VikkiSoft_BLL.City();
             if (c.LoadByBlogPageID(BlogPageID, true))
             {
@@ -97,6 +99,18 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
                 strSiteList.Append("<div class=\"col-md-4 animate-box fadeInUp animated\"><div class=\"feature-left\"><span class=\"icon\">");
                 strSiteList.Append("<a href=\"" + row[VikkiSoft_BLL.Site.ColumnNames.URL].ToString() + "\" target=\"_blank\" rel=\"nofollow\"><img src=\""
                     + logoURL + "\" alt=\"\"></a>");
+                if (showCityName)
+                {
+                    string cityList = row["CityList"].ToString();
+                    if (!string.IsNullOrEmpty(cityList))
+                    {
+                        string[] arrCity = cityList.TrimEnd(';').Split(';');
+                        foreach(string cityName in arrCity)
+                        {
+                            strSiteList.Append("<span class=\"city\">" + cityName + "</span>");
+                        }
+                    }
+                }
                 strSiteList.Append("</span>");
                 strSiteList.Append("<div class=\"feature-copy\">");
                 strSiteList.Append("<h3><a href=\"" + row[VikkiSoft_BLL.Site.ColumnNames.URL].ToString() + "\" target=\"_blank\" rel=\"nofollow\">" + row[VikkiSoft_BLL.Site.ColumnNames.Name].ToString()

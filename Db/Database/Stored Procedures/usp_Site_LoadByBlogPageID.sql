@@ -11,7 +11,8 @@ BEGIN
 	DECLARE @RelatedSites TABLE
 	(
 		SiteID int,
-		SiteTypeSubOrderIndex tinyint
+		SiteTypeSubOrderIndex tinyint,
+		CityList varchar(max)
 	)
 
 	INSERT
@@ -35,6 +36,11 @@ BEGIN
 		[Site].Active = 1
 		AND
 		BlogPageCity.ShowSites = 1
+
+	UPDATE
+		@RelatedSites
+	SET
+		CityList = dbo.fxGetCityList(SiteID, @BlogPageID)
 
 
 	INSERT
@@ -90,7 +96,10 @@ BEGIN
 		[Site].Notes,
 		[Site].Main,
 		[Site].SiteTypeID,
-		SiteType.Name AS SiteTypeName
+		SiteType.Name AS SiteTypeName,
+		[Site].Latitude,
+		[Site].Longitude,
+		ISNULL(rs.CityList, '') AS CityList
 	FROM
 		@RelatedSites rs
 	INNER JOIN 

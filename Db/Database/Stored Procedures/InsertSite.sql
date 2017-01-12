@@ -10,7 +10,9 @@ CREATE PROCEDURE [dbo].[InsertSite]
 	@Notes varchar(2000) = NULL,
 	@Logo varchar(50) = NULL,
 	@Banner varchar(50) = NULL,
-	@Main bit
+	@Main bit,
+	@Latitude decimal(9, 6) = NULL,
+	@Longitude decimal(9, 6) = NULL
 )
 AS
 BEGIN
@@ -29,7 +31,9 @@ BEGIN
 		[Notes],
 		[Logo],
 		[Banner],
-		[Main]
+		[Main],
+		Latitude,
+		Longitude
 	)
 	VALUES
 	(
@@ -41,7 +45,9 @@ BEGIN
 		@Notes,
 		@Logo,
 		@Banner,
-		@Main
+		@Main,
+		@Latitude,
+		@Longitude
 	)
 
 	SET @Err = @@Error

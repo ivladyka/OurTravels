@@ -10,7 +10,9 @@ CREATE PROCEDURE [dbo].[UpdateSite]
 	@Notes varchar(2000) = NULL,
 	@Logo varchar(50) = NULL,
 	@Banner varchar(50) = NULL,
-	@Main bit
+	@Main bit,
+	@Latitude decimal(9, 6) = NULL,
+	@Longitude decimal(9, 6) = NULL
 )
 AS
 BEGIN
@@ -28,7 +30,9 @@ BEGIN
 		[Notes] = @Notes,
 		[Logo] = @Logo,
 		[Banner] = @Banner,
-		[Main] = @Main
+		[Main] = @Main,
+		Latitude = @Latitude,
+		Longitude = @Longitude
 	WHERE
 		[SiteID] = @SiteID
 

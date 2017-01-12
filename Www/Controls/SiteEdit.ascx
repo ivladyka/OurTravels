@@ -2,6 +2,7 @@
 <%@ Register TagPrefix="uc1" TagName="SiteTypeChoice" Src="ChoiceControls/SiteTypeChoice.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="IntInput" Src="ValueControls/IntInput.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="PhotoUpload" Src="ValueControls/PhotoUpload.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="NumericInput" Src="ValueControls/NumericInput.ascx" %>
 <TABLE id="Table3" class="EditControl3" cellpadding="2" cellspacing="7"  align="left" border="0" width="550px">	
     <tr>
         <td align="right">
@@ -52,6 +53,22 @@
         </td>
         <td>
             <asp:TextBox ID="text_Notes" runat="server" CssClass="textBoxStyle" TextMode="MultiLine" Width="300px" Rows="5"></asp:TextBox>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Широта:
+        </td>
+        <td>
+            <uc1:NumericInput id="num_Latitude" runat="server"></uc1:NumericInput>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Довгота:
+        </td>
+        <td>
+            <uc1:NumericInput id="num_Longitude" runat="server"></uc1:NumericInput>
         </td>
     </tr>
     <tr>

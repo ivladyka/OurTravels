@@ -12,7 +12,9 @@ BEGIN
 		[Site].Logo,
 		[Site].Notes,
 		[Site].Main,
-		[Site].SiteTypeID
+		[Site].SiteTypeID,
+		[Site].Latitude,
+		[Site].Longitude
 	FROM         
 		[Site] 
 	WHERE

@@ -9,9 +9,13 @@
     [Logo]       VARCHAR (50)   NULL,
     [Banner]     VARCHAR (50)   NULL,
     [Main]       BIT            CONSTRAINT [DF_Site_Main] DEFAULT ((0)) NULL,
+    [Latitude]   DECIMAL (9, 6) NULL,
+    [Longitude]  DECIMAL (9, 6) NULL,
     CONSTRAINT [PK_Site] PRIMARY KEY CLUSTERED ([SiteID] ASC),
     CONSTRAINT [FK_Site_SiteType] FOREIGN KEY ([SiteTypeID]) REFERENCES [dbo].[SiteType] ([SiteTypeID])
 );
+
+
 
 
 

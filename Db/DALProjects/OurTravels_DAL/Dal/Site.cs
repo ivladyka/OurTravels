@@ -179,6 +179,22 @@ namespace  VikkiSoft_BLL.DAL
                 }
             }
 
+            public static SqlParameter Latitude
+            {
+                get
+                {
+                    return new SqlParameter("@Latitude", SqlDbType.Decimal, 0);
+                }
+            }
+
+            public static SqlParameter Longitude
+            {
+                get
+                {
+                    return new SqlParameter("@Longitude", SqlDbType.Decimal, 0);
+                }
+            }
+
 		}
 		#endregion		
 	
@@ -195,6 +211,8 @@ namespace  VikkiSoft_BLL.DAL
             public const string Logo = "Logo";
             public const string Banner = "Banner";
             public const string Main = "Main";
+            public const string Latitude = "Latitude";
+            public const string Longitude = "Longitude";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -212,6 +230,8 @@ namespace  VikkiSoft_BLL.DAL
 					ht[Logo] = _Site.PropertyNames.Logo;
 					ht[Banner] = _Site.PropertyNames.Banner;
                     ht[Main] = _Site.PropertyNames.Main;
+                    ht[Latitude] = _Site.PropertyNames.Latitude;
+                    ht[Longitude] = _Site.PropertyNames.Longitude;
 
 				}
 				return (string)ht[columnName];
@@ -234,6 +254,8 @@ namespace  VikkiSoft_BLL.DAL
             public const string Logo = "Logo";
             public const string Banner = "Banner";
             public const string Main = "Main";
+            public const string Latitude = "Latitude";
+            public const string Longitude = "Longitude";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -251,6 +273,8 @@ namespace  VikkiSoft_BLL.DAL
 					ht[Logo] = _Site.ColumnNames.Logo;
 					ht[Banner] = _Site.ColumnNames.Banner;
                     ht[Main] = _Site.ColumnNames.Main;
+                    ht[Latitude] = _Site.ColumnNames.Latitude;
+                    ht[Longitude] = _Site.ColumnNames.Longitude;
 
 				}
 				return (string)ht[propertyName];
@@ -273,6 +297,8 @@ namespace  VikkiSoft_BLL.DAL
             public const string Logo = "s_Logo";
             public const string Banner = "s_Banner";
             public const string Main = "s_Main";
+            public const string Latitude = "s_Latitude";
+            public const string Longitude = "s_Longitude";
 
 		}
 		#endregion		
@@ -398,6 +424,31 @@ namespace  VikkiSoft_BLL.DAL
                 base.Setbool(ColumnNames.Main, value);
             }
         }
+
+        public virtual decimal Latitude
+        {
+            get
+            {
+                return base.Getdecimal(ColumnNames.Latitude);
+            }
+            set
+            {
+                base.Setdecimal(ColumnNames.Latitude, value);
+            }
+        }
+
+        public virtual decimal Longitude
+        {
+            get
+            {
+                return base.Getdecimal(ColumnNames.Longitude);
+            }
+            set
+            {
+                base.Setdecimal(ColumnNames.Longitude, value);
+            }
+        }
+
 
 		#endregion
 		
@@ -553,6 +604,36 @@ namespace  VikkiSoft_BLL.DAL
             }
         }
 
+        public virtual string s_Latitude
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.Latitude) ? string.Empty : base.GetintAsString(ColumnNames.Latitude);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.Latitude);
+                else
+                    this.Latitude = base.SetintAsString(ColumnNames.Latitude, value);
+            }
+        }
+
+        public virtual string s_Longitude
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.Longitude) ? string.Empty : base.GetintAsString(ColumnNames.Longitude);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.Longitude);
+                else
+                    this.Longitude = base.SetintAsString(ColumnNames.Longitude, value);
+            }
+        }
+
 		#endregion		
 	
 		#region Where Clause
@@ -685,6 +766,26 @@ namespace  VikkiSoft_BLL.DAL
                     }
                 }
 
+                public WhereParameter Latitude
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.Latitude, Parameters.Latitude);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
+
+                public WhereParameter Longitude
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.Longitude, Parameters.Longitude);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
+
 				private WhereClause _clause;
 			}
 			#endregion
@@ -809,6 +910,30 @@ namespace  VikkiSoft_BLL.DAL
                 }
             }
 
+            public WhereParameter Latitude
+            {
+                get
+                {
+                    if (_Latitude_W == null)
+                    {
+                        _Latitude_W = TearOff.Latitude;
+                    }
+                    return _Latitude_W;
+                }
+            }
+
+            public WhereParameter Longitude
+            {
+                get
+                {
+                    if (_Longitude_W == null)
+                    {
+                        _Longitude_W = TearOff.Longitude;
+                    }
+                    return _Longitude_W;
+                }
+            }
+
 			private WhereParameter _SiteID_W = null;
 			private WhereParameter _SiteTypeID_W = null;
 			private WhereParameter _Name_W = null;
@@ -819,6 +944,8 @@ namespace  VikkiSoft_BLL.DAL
 			private WhereParameter _Logo_W = null;
 			private WhereParameter _Banner_W = null;
             private WhereParameter _Main_W = null;
+            private WhereParameter _Latitude_W = null;
+            private WhereParameter _Longitude_W = null;
 
 			public void WhereClauseReset()
 			{
@@ -832,6 +959,8 @@ namespace  VikkiSoft_BLL.DAL
 				_Logo_W = null;
 				_Banner_W = null;
                 _Main_W = null;
+                _Latitude_W = null;
+                _Longitude_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -988,6 +1117,26 @@ namespace  VikkiSoft_BLL.DAL
                     }
                 }
 
+                public AggregateParameter Latitude
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.Latitude, Parameters.Latitude);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
+
+                public AggregateParameter Longitude
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.Longitude, Parameters.Longitude);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
+
 				private AggregateClause _clause;
 			}
 			#endregion
@@ -1112,6 +1261,30 @@ namespace  VikkiSoft_BLL.DAL
                 }
             }
 
+            public AggregateParameter Latitude
+            {
+                get
+                {
+                    if (_Latitude_W == null)
+                    {
+                        _Latitude_W = TearOff.Latitude;
+                    }
+                    return _Latitude_W;
+                }
+            }
+
+            public AggregateParameter Longitude
+            {
+                get
+                {
+                    if (_Longitude_W == null)
+                    {
+                        _Longitude_W = TearOff.Longitude;
+                    }
+                    return _Longitude_W;
+                }
+            }
+
 			private AggregateParameter _SiteID_W = null;
 			private AggregateParameter _SiteTypeID_W = null;
 			private AggregateParameter _Name_W = null;
@@ -1122,6 +1295,8 @@ namespace  VikkiSoft_BLL.DAL
 			private AggregateParameter _Logo_W = null;
 			private AggregateParameter _Banner_W = null;
             private AggregateParameter _Main_W = null;
+            private AggregateParameter _Latitude_W = null;
+            private AggregateParameter _Longitude_W = null;
 
 			public void AggregateClauseReset()
 			{
@@ -1135,6 +1310,8 @@ namespace  VikkiSoft_BLL.DAL
 				_Logo_W = null;
 				_Banner_W = null;
                 _Main_W = null;
+                _Latitude_W = null;
+                _Longitude_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -1247,6 +1424,14 @@ namespace  VikkiSoft_BLL.DAL
 
             p = cmd.Parameters.Add(Parameters.Main);
             p.SourceColumn = ColumnNames.Main;
+            p.SourceVersion = DataRowVersion.Current;
+
+            p = cmd.Parameters.Add(Parameters.Latitude);
+            p.SourceColumn = ColumnNames.Latitude;
+            p.SourceVersion = DataRowVersion.Current;
+
+            p = cmd.Parameters.Add(Parameters.Longitude);
+            p.SourceColumn = ColumnNames.Longitude;
             p.SourceVersion = DataRowVersion.Current;
 
 

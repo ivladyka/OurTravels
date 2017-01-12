@@ -13,13 +13,15 @@ BEGIN
 		[Site].Active,
 		[Site].Main, 
 		[Site].Notes, 
-		[Site].OrderIndex
+		[Site].OrderIndex,
+		[Site].Latitude,
+		[Site].Longitude
 	FROM         
 		[Site] 
 	INNER JOIN
 		SiteType ON [Site].SiteTypeID = SiteType.SiteTypeID
 	ORDER BY
-		ISNULL(Site.OrderIndex, 0)
+		[SiteID] DESC
 	
 	SET @Err = @@Error
 

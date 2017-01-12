@@ -15,7 +15,9 @@ BEGIN
 		[Site].Banner,
 		[Site].Logo,
 		[Site].Notes,
-		[Site].Main
+		[Site].Main,
+		[Site].Latitude,
+		[Site].Longitude
 	FROM         
 		[Site] 
 	WHERE

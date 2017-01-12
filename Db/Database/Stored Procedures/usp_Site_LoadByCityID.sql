@@ -86,7 +86,9 @@ BEGIN
 		[Site].Notes,
 		[Site].Main,
 		[Site].SiteTypeID,
-		SiteType.Name AS SiteTypeName
+		SiteType.Name AS SiteTypeName,
+		[Site].Latitude,
+		[Site].Longitude
 	FROM
 		@RelatedSites rs
 	INNER JOIN 

@@ -16,7 +16,9 @@ BEGIN
 		[OrderIndex],
 		[Notes],
 		[Logo],
-		[Banner]
+		[Banner],
+		Latitude,
+		Longitude
 	FROM [Site]
 
 	SET @Err = @@Error

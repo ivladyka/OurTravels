@@ -18,7 +18,9 @@ BEGIN
 		[Notes],
 		[Logo],
 		[Banner],
-		[Main]
+		[Main],
+		Latitude,
+		Longitude
 	FROM [Site]
 	WHERE
 		([SiteID] = @SiteID)

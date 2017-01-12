@@ -43,6 +43,8 @@ public partial class SiteList : ListControlBase, Interfaces.IColouredGrid
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Notes, true, "Примітки", 0, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.OrderIndex, true, "Порядок сортування", 50, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Main, true, "Головне", 0, HorizontalAlign.Center, "");
+        SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Latitude, true, "Широта", 0, HorizontalAlign.Center, "");
+        SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Longitude, true, "Довгота", 0, HorizontalAlign.Center, "");
 	}
 
     protected override DataTable GetDataSource()
