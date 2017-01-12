@@ -2626,3 +2626,18 @@ margin-bottom:40px
 {
      background-color: #fcfcfc !important
 }
+.feature-left .city
+{
+    font-size:8pt;
+    color:rgba(255, 255, 255, 1);
+    background-color: #f17660;
+    display:inline-block;
+    margin:10px 3px;
+    padding:2px 5px
+}
+#fh5co-features .feature-left .icon a
+{
+    text-align:center;
+    display:inline-block;
+    
+}
