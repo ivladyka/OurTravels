@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -10,6 +10,8 @@ using System.IO;
 
 public partial class Controls_SiteViewList : System.Web.UI.UserControl
 {
+    private Hashtable m_htCityStyles = new Hashtable();
+
     protected void Page_Load(object sender, EventArgs e)
     {
         if (!Page.IsPostBack)
@@ -29,6 +31,7 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
             loaded = s.LoadByBlogPageID(BlogPageID);
             groupBySiteType = true;
             showCityName = true;
+            m_htCityStyles.Clear();
             VikkiSoft_BLL.City c = new VikkiSoft_BLL.City();
             if (c.LoadByBlogPageID(BlogPageID, true))
             {
@@ -36,10 +39,13 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
                 {
                     StringBuilder strCityList = new StringBuilder();
                     pnlCityLinks.Visible = true;
+                    int indexCity = 0;
                     do
                     {
                         string pageURL = SiteURL + "/" + Utils.GenerateFriendlyURL("city", new string[] { c.GetColumn("CountryName").ToString(), c.s_Name_en }, false);
                         strCityList.Append("<a href=\"" + pageURL + "\">" + c.s_Name + "</a> | ");
+                        m_htCityStyles.Add(c.s_Name, "city" + (indexCity > 0 ? indexCity.ToString() : ""));
+                        indexCity++;
                     } while (c.MoveNext());
                     pnlCityLinksCell.InnerHtml = strCityList.ToString().TrimEnd().TrimEnd('|').TrimEnd();
                 }
@@ -107,7 +113,7 @@ public partial class Controls_SiteViewList : System.Web.UI.UserControl
                         string[] arrCity = cityList.TrimEnd(';').Split(';');
                         foreach(string cityName in arrCity)
                         {
-                            strSiteList.Append("<span class=\"city\">" + cityName + "</span>");
+                            strSiteList.Append("<span class=\"" + m_htCityStyles[cityName].ToString() + "\">" + cityName + "</span>");
                         }
                     }
                 }

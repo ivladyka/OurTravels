@@ -283,6 +283,15 @@ public class Utils
     public static string FormatContent(string content)
     {
         content = content.Replace("&nbsp;end", "");
+        Site s = new Site();
+        if(s.LoadNeedChangeURL())
+        {
+            do
+            {
+                content = content.Replace("[" + s.s_Name + "]", "<a href=\"" + s.s_URL + "\" target=\"_blank\" rel=\"nofollow\">" + s.s_Name + "</a>");
+            }
+            while (s.MoveNext());
+        }
         /*string[] arrSiteNames = { "rooms.bg", "pochivka.bg", "AirBnb", "Karpaty.info", "meteor-turystyka.pl", "умови" };
         foreach (string siteName in arrSiteNames)
         {

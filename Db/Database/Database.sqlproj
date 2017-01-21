@@ -152,5 +152,7 @@
     <Build Include="Stored Procedures\usp_Site_LoadByBlogPageID.sql" />
     <Build Include="Stored Procedures\usp_City_LoadByBlogPageID.sql" />
     <Build Include="Functions\fxGetCityList.sql" />
+    <Build Include="Stored Procedures\usp_SiteLinks_LoadBySiteID.sql" />
+    <Build Include="Stored Procedures\usp_Site_LoadNeedChangeURL.sql" />
   </ItemGroup>
 </Project>

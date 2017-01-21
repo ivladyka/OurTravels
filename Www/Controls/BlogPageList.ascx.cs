@@ -33,7 +33,7 @@ public partial class BlogPageList : ListControlBase, Interfaces.IColouredGrid
         base.InitGrid();
         this.editableGrid.GridMode = GridModes.Add | GridModes.Delete
             | GridModes.Edit | GridModes.Refresh;
-        editableGrid.Width = 1500;
+        editableGrid.Width = 1600;
         SetColumnSettings(BlogPage.ColumnNames.BlogPageID, false, BlogPage.ColumnNames.BlogPageID, 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.Name, true, "Назва", 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.Name_en, true, "Дружній URL", 0, HorizontalAlign.Center, "");

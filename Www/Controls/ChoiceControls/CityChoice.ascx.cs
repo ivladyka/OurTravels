@@ -17,6 +17,10 @@ public partial class CityChoice : ChoiceControlBase
     public void LoadCityDDL(int countryID)
     {
         ddlList.Items.Clear();
+        if (this.AddEmptyItem)
+        {
+            this.ddlList.Items.Add(new RadComboBoxItem("", ""));
+        }
         City c = new City();
         c.Where.CountryID.Value = countryID;
         c.Query.AddOrderBy(City.ColumnNames.Name, WhereParameter.Dir.ASC);

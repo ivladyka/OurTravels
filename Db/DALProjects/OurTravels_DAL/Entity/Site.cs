@@ -56,5 +56,10 @@ namespace  VikkiSoft_BLL
 
             return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Site_LoadByBlogPageID]", parameters);
         }
+
+        public virtual bool LoadNeedChangeURL()
+        {
+            return base.LoadFromSql("[" + this.SchemaStoredProcedure + "usp_Site_LoadNeedChangeURL]");
+        }
 	}
 }

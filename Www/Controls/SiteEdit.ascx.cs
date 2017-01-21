@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using VikkiSoft_BLL;
+using Telerik.Web.UI;
 
 public partial class SiteEdit : EditControlBase
 {
@@ -12,6 +13,7 @@ public partial class SiteEdit : EditControlBase
     {
         this.m_Name = "Корисне Посилання";
         this.AllowUserTypes = "LoggedUser";
+        BackURL = "";
     }
     protected override Type GetEditableEntityType()
     {
@@ -21,7 +23,11 @@ public partial class SiteEdit : EditControlBase
     protected override void InitOnFirstLoading()
     {
         base.InitOnFirstLoading();
-        text_Name.Focus();
+        if (IsNew)
+        {
+            text_Name.Focus();
+            rtsSite.Visible = false;
+        }
     }
 
     protected override void RedirectBackToList()
@@ -35,5 +41,35 @@ public partial class SiteEdit : EditControlBase
             upload_Banner.DeletePhoto();
         }
         Response.Redirect("Office.aspx?content=SiteList");
+    }
+
+    protected void rtsSite_TabClick(object sender, RadTabStripEventArgs e)
+    {
+        switch (e.Tab.Text)
+        {
+            case "Посилання":
+                pnlSiteEdit.Visible = true;
+                pnlCityList.Visible = false;
+                break;
+            case "Міста/Країни":
+                pnlSiteEdit.Visible = false;
+                pnlCityList.Visible = true;
+                siteLinksList.RebindGrid();
+                break;
+        }
+    }
+
+    public override EditableEntity EditableEntity
+    {
+        get
+        {
+            return UserSession.GetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY
+                + "SiteEdit") as EditableEntity;
+        }
+        set
+        {
+            UserSession.SetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY
+                + "SiteEdit", value);
+        }
     }
 }
