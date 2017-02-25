@@ -25,11 +25,11 @@ public partial class BlogPageView : ProjectPageBase
                     lblTravelDate.Visible = true;
                     if (!bp.IsColumnNull(BlogPage.ColumnNames.StartTravelDate))
                     {
-                        lblTravelDate.Text = bp.s_StartTravelDate;
+                        lblTravelDate.Text = bp.StartTravelDate.ToString("dd.MM.yyyy");
                     }
                     if (!bp.IsColumnNull(BlogPage.ColumnNames.EndTravelDate))
                     {
-                        lblTravelDate.Text += " - " + bp.s_EndTravelDate;
+                        lblTravelDate.Text += " - " + bp.EndTravelDate.ToString("dd.MM.yyyy");
                     }
                 }
                 else

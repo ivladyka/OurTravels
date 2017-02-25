@@ -8,7 +8,7 @@ BEGIN
 		Country.CountryID, 
 		Country.Name, 
 		Country.Name_en, 
-		Country.Keywords, 
+		Country.Description, 
 		Country.Active, 
         City.Name AS CapitalName,
         '' AS URL

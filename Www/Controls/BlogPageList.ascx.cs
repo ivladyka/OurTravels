@@ -3,6 +3,7 @@ using System.Data;
 using System.Web.UI.WebControls;
 using Telerik.Web.UI;
 using VikkiSoft_BLL;
+using MyGeneration.dOOdads;
 
 public partial class BlogPageList : ListControlBase, Interfaces.IColouredGrid
 {
@@ -38,9 +39,18 @@ public partial class BlogPageList : ListControlBase, Interfaces.IColouredGrid
         SetColumnSettings(BlogPage.ColumnNames.Name, true, "Назва", 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.Name_en, true, "Дружній URL", 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.PageContent, false, BlogPage.ColumnNames.PageContent, 0, HorizontalAlign.Center, "");
+        SetColumnSettings(BlogPage.ColumnNames.Keywords, false, BlogPage.ColumnNames.Keywords, 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.BlogDescription, false, BlogPage.ColumnNames.BlogDescription, 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.TitleImage, false, BlogPage.ColumnNames.TitleImage, 0, HorizontalAlign.Center, "");
         SetColumnSettings(BlogPage.ColumnNames.MainImage, false, BlogPage.ColumnNames.MainImage, 0, HorizontalAlign.Center, "");
+    }
+
+    protected override DataTable GetDataSource()
+    {
+        VikkiSoft_BLL.BlogPage bp = new VikkiSoft_BLL.BlogPage();
+        bp.Query.AddOrderBy(BlogPage.ColumnNames.BlogPageID, WhereParameter.Dir.DESC);
+        bp.Query.Load();
+        return bp.DefaultView.Table;
     }
 
     protected override void OnEditableGridItemDataBound(object sender, GridItemEventArgs e)

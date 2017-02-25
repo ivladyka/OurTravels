@@ -34,7 +34,7 @@ public partial class CountryList : ListControlBase, Interfaces.IColouredGrid
 		base.InitGrid ();
 		this.editableGrid.GridMode = GridModes.Add | GridModes.Delete
 			| GridModes.Edit | GridModes.Refresh;				
-		editableGrid.Width = 1200;
+		editableGrid.Width = 1600;
         SetColumnSettings(VikkiSoft_BLL.Country.ColumnNames.CountryID, false, VikkiSoft_BLL.Country.ColumnNames.CountryID,
 				0, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.Country.ColumnNames.Name, true, "Назва", 0, HorizontalAlign.Center, "");

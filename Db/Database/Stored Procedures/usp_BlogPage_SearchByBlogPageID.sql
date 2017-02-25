@@ -32,5 +32,7 @@ BEGIN
 		bp.Active = 1
 		AND
 		bpc.CityID IN (SELECT CityID FROM BlogPageCity WHERE BlogPageID = @BlogPageID)
+		AND
+		bpc.CityID <> 2
 
 END

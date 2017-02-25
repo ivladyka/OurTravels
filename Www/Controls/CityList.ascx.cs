@@ -33,7 +33,7 @@ public partial class CityList : ListControlBase, Interfaces.IColouredGrid
 	{
 		base.InitGrid ();
 		this.editableGrid.GridMode = GridModes.Add | GridModes.Delete | GridModes.Edit | GridModes.Refresh;				
-		editableGrid.Width = 1200;
+		editableGrid.Width = 1600;
         SetColumnSettings(VikkiSoft_BLL.City.ColumnNames.CityID, false, VikkiSoft_BLL.City.ColumnNames.CityID,
 				0, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.City.ColumnNames.Name, true, "Назва", 0, HorizontalAlign.Center, "");
@@ -41,7 +41,6 @@ public partial class CityList : ListControlBase, Interfaces.IColouredGrid
         SetColumnSettings(VikkiSoft_BLL.City.ColumnNames.Active, true, "Активний", 0, HorizontalAlign.Center, "");
         SetColumnSettings("CountryName", true, "Країна", 0, HorizontalAlign.Center, "");
         SetColumnSettings("CountryName_en", false, "", 0, HorizontalAlign.Center, "");
-        SetColumnSettings(VikkiSoft_BLL.City.ColumnNames.Keywords, true, "Ключові слова", 0, HorizontalAlign.Center, "");
         SetColumnSettings("URL", true, "Дружній URL", 0, HorizontalAlign.Center, "");
 	}
 

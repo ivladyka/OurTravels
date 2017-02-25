@@ -6,7 +6,7 @@ BEGIN
 		City.CityID, 
 		City.Name, 
 		Country.Name AS CountryName, 
-		City.Keywords, 
+		City.Description, 
 		City.Active,
 		City.Name_en, 
 		Country.Name_en AS CountryName_en, 

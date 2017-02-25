@@ -23,7 +23,7 @@
 					<div class="wrap">
 						<div class="partner animate-box">
 							<div class="inner">
-								<a href="https://ru.airbnb.com/c/ivladyka" target="_blank" rel="nofollow"><img class="img-responsive" src="Theme/images/logo-1.png" alt=""></a>
+								<a href="https://www.airbnb.co.uk/c/ivladyka" target="_blank" rel="nofollow"><img class="img-responsive" src="Theme/images/logo-1.png" alt=""></a>
 							</div>
 						</div>
 						<div class="partner animate-box">
