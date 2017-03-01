@@ -6,16 +6,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
     <div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(Theme/images/winterbg.jpg);">
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(Theme/images/spring.jpg);">
 				<div class="desc animate-box">
-                    <h2><strong>Істинне призначення вашої подорожі - <br/>це не місце на карті,  а новий погляд на життя. </strong></h2>
-                    <span><strong><i>- Генрі Міллер</i></strong></span>
+                    <h2><strong>Мандрівка довжиною в тисячі кілометрів <br/>починається з одного кроку.</strong></h2>
+                    <span><strong><i>- Лао Тзу</i></strong></span>
 					<!--<h2><strong>Світ – це книжка і той, хто не подорожує, <br/>читає лише одну сторінку</strong>
 					<span><strong><i>– Св. Августин</i></strong></span></h2>-->
 					<!--<p><a class="btn btn-primary btn-lg btn-learn" href="#">Learn More</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-play"></i> Watch Video</a></p>	-->
                 </div>
 			</div>
-
 		</div>
     		<div id="fh5co-partner">
 			<div class="container">
@@ -55,14 +54,14 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3>Наші останні подорожі</h3>
-						<p>Я бачу мою дорогу, але не знаю куди вона приведе. Незнання того, куди йде дорога, надихає мене йти нею.<br />
-                        – Росалія де Кастро</p>
+						<p>Я затятий мандрівник. Ще з дитинства подорожі навчали мене так само, як і формальна освіта.<br />
+                        – Девід Рокфеллер</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="container ">
-                <uc1:BlogPageViewList id="blogPageViewList" runat="server" PageSize="3" ShowPager="false"></uc1:BlogPageViewList>				
+                <uc1:BlogPageViewList id="blogPageViewList" runat="server" PageSize="6" ShowPager="false"></uc1:BlogPageViewList>				
 			</div>
 		</div>	
         <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
