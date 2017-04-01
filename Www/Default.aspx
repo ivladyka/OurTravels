@@ -27,12 +27,12 @@
 						</div>
 						<div class="partner animate-box">
 							<div class="inner">
-								<a href="http://www.booking.com" target="_blank" rel="nofollow"><img class="img-responsive" src="Theme/images/logo-2.png" alt=""></a>
+								<a href="http://www.booking.com/index.html?aid=1263910" target="_blank" rel="nofollow"><img class="img-responsive" src="Theme/images/logo-2.png" alt=""></a>
 							</div>
 						</div>
 						<div class="partner animate-box">
 							<div class="inner">
-								<a href="https://infobus.eu/ua" target="_blank"><img class="img-responsive" src="Theme/images/logo-3.png" alt=""></a>
+								<a href="https://www.infobus.eu/booking?lang=ua&partner=1824" target="_blank"><img class="img-responsive" src="Theme/images/logo-3.png" alt=""></a>
 							</div>
 						</div>
 						<div class="partner animate-box">
