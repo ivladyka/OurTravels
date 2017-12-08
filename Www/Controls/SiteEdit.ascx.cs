@@ -28,6 +28,11 @@ public partial class SiteEdit : EditControlBase
             text_Name.Focus();
             rtsSite.Visible = false;
         }
+        else
+        {
+            rowCountry.Visible = false;
+            rowCity.Visible = false;
+        }
     }
 
     protected override void RedirectBackToList()
@@ -39,6 +44,28 @@ public partial class SiteEdit : EditControlBase
         if (upload_Banner.IsPhotoDeleted)
         {
             upload_Banner.DeletePhoto();
+        }
+        if(IsNew)
+        {
+            if (string.IsNullOrEmpty(ddlCity.SelectedValue))
+            {
+                if (!string.IsNullOrEmpty(ddlCountryChoice.SelectedValue))
+                {
+                    CountrySite cs = new CountrySite();
+                    cs.AddNew();
+                    cs.CountryID = int.Parse(ddlCountryChoice.SelectedValue);
+                    cs.SiteID = ((Site)EditableEntity).SiteID;
+                    cs.Save();
+                }
+            }
+            else
+            {
+                CitySite cs = new CitySite();
+                cs.AddNew();
+                cs.CityID = int.Parse(ddlCity.SelectedValue);
+                cs.SiteID = ((Site)EditableEntity).SiteID;
+                cs.Save();
+            }
         }
         Response.Redirect("Office.aspx?content=SiteList");
     }
@@ -71,5 +98,19 @@ public partial class SiteEdit : EditControlBase
             UserSession.SetObjectKey(UserSession.EDIT_CONTROL_EDITABLE_ENTITY
                 + "SiteEdit", value);
         }
+    }
+
+    protected override void SetEventHandlers()
+    {
+        if (IsNew)
+        {
+            this.ddlCountryChoice.SelectedItemChanged += new SelectedItemChangedEventHandler(ddlCountryChoice_SelectedItemChanged);
+        }
+        base.SetEventHandlers();
+    }
+
+    private void ddlCountryChoice_SelectedItemChanged(object sender, SelectedItemChangedEventArgs e)
+    {
+        ddlCity.LoadCityDDL(int.Parse(e.NewValue));
     }
 }

@@ -50,6 +50,14 @@
             <uc1:CountryChoice id="choice_CountryID" runat="server" UseValueInsteadText="true" Width="300" AddEmptyItem="false"></uc1:CountryChoice>
 		</td>
     </tr>
+    <tr>
+        <td align="right">
+            Booking ID:
+        </td>
+        <td>
+            <asp:TextBox ID="text_BookingID" runat="server" CssClass="textBoxStyle" Width="300px"></asp:TextBox>
+        </td>
+    </tr>
     <asp:Panel ID="pnlTitleImage" runat="server">
     <tr>
 	    <td align="right">Зображення для заголовку:

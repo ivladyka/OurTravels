@@ -186,6 +186,14 @@ namespace VikkiSoft_BLL.DAL
                     return new SqlParameter("@MainImage", SqlDbType.VarChar, 100);
                 }
             }
+
+            public static SqlParameter BookingID
+            {
+                get
+                {
+                    return new SqlParameter("@BookingID", SqlDbType.VarChar, 15);
+                }
+            }
 			
 		}
 		#endregion		
@@ -204,6 +212,7 @@ namespace VikkiSoft_BLL.DAL
             public const string DateUpdate = "DateUpdate";
             public const string TitleImage = "TitleImage";
             public const string MainImage = "MainImage";
+            public const string BookingID = "BookingID";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -222,6 +231,7 @@ namespace VikkiSoft_BLL.DAL
 					ht[DateUpdate] = _City.PropertyNames.DateUpdate;
                     ht[TitleImage] = _City.PropertyNames.TitleImage;
                     ht[MainImage] = _City.PropertyNames.MainImage;
+                    ht[BookingID] = _City.PropertyNames.BookingID;
 
 				}
 				return (string)ht[columnName];
@@ -245,6 +255,7 @@ namespace VikkiSoft_BLL.DAL
             public const string DateUpdate = "DateUpdate";
             public const string TitleImage = "TitleImage";
             public const string MainImage = "MainImage";
+            public const string BookingID = "BookingID";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -263,6 +274,7 @@ namespace VikkiSoft_BLL.DAL
 					ht[DateUpdate] = _City.ColumnNames.DateUpdate;
                     ht[TitleImage] = _City.ColumnNames.TitleImage;
                     ht[MainImage] = _City.ColumnNames.MainImage;
+                    ht[BookingID] = _City.ColumnNames.BookingID;
 
 				}
 				return (string)ht[propertyName];
@@ -286,6 +298,7 @@ namespace VikkiSoft_BLL.DAL
             public const string DateUpdate = "s_DateUpdate";
             public const string TitleImage = "s_TitleImage";
             public const string MainImage = "s_MainImage";
+            public const string BookingID = "s_BookingID";
 
 		}
 		#endregion		
@@ -421,6 +434,18 @@ namespace VikkiSoft_BLL.DAL
             set
             {
                 base.Setstring(ColumnNames.MainImage, value);
+            }
+        }
+
+        public virtual string BookingID
+        {
+            get
+            {
+                return base.Getstring(ColumnNames.BookingID);
+            }
+            set
+            {
+                base.Setstring(ColumnNames.BookingID, value);
             }
         }
 
@@ -593,6 +618,20 @@ namespace VikkiSoft_BLL.DAL
             }
         }
 
+        public virtual string s_BookingID
+        {
+            get
+            {
+                return this.IsColumnNull(ColumnNames.BookingID) ? string.Empty : base.GetstringAsString(ColumnNames.BookingID);
+            }
+            set
+            {
+                if (string.Empty == value)
+                    this.SetColumnNull(ColumnNames.BookingID);
+                else
+                    this.BookingID = base.SetstringAsString(ColumnNames.BookingID, value);
+            }
+        }
 
 		#endregion		
 	
@@ -737,6 +776,15 @@ namespace VikkiSoft_BLL.DAL
                     }
                 }
 
+                public WhereParameter BookingID
+                {
+                    get
+                    {
+                        WhereParameter where = new WhereParameter(ColumnNames.BookingID, Parameters.BookingID);
+                        this._clause._entity.Query.AddWhereParameter(where);
+                        return where;
+                    }
+                }
 
 				private WhereClause _clause;
 			}
@@ -874,6 +922,18 @@ namespace VikkiSoft_BLL.DAL
                 }
             }
 
+            public WhereParameter BookingID
+            {
+                get
+                {
+                    if (_BookingID_W == null)
+                    {
+                        _BookingID_W = TearOff.BookingID;
+                    }
+                    return _BookingID_W;
+                }
+            }
+
 			private WhereParameter _CityID_W = null;
 			private WhereParameter _Name_W = null;
 			private WhereParameter _Name_en_W = null;
@@ -885,6 +945,7 @@ namespace VikkiSoft_BLL.DAL
 			private WhereParameter _DateUpdate_W = null;
             private WhereParameter _TitleImage_W = null;
             private WhereParameter _MainImage_W = null;
+            private WhereParameter _BookingID_W = null;
 
 			public void WhereClauseReset()
 			{
@@ -899,6 +960,7 @@ namespace VikkiSoft_BLL.DAL
 				_DateUpdate_W = null;
                 _TitleImage_W = null;
                 _MainImage_W = null;
+                _BookingID_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -1065,6 +1127,15 @@ namespace VikkiSoft_BLL.DAL
                     }
                 }
 
+                public AggregateParameter BookingID
+                {
+                    get
+                    {
+                        AggregateParameter aggregate = new AggregateParameter(ColumnNames.BookingID, Parameters.BookingID);
+                        this._clause._entity.Query.AddAggregateParameter(aggregate);
+                        return aggregate;
+                    }
+                }
 
 				private AggregateClause _clause;
 			}
@@ -1202,6 +1273,18 @@ namespace VikkiSoft_BLL.DAL
                 }
             }
 
+            public AggregateParameter BookingID
+            {
+                get
+                {
+                    if (_BookingID_W == null)
+                    {
+                        _BookingID_W = TearOff.BookingID;
+                    }
+                    return _BookingID_W;
+                }
+            }
+
 			private AggregateParameter _CityID_W = null;
 			private AggregateParameter _Name_W = null;
 			private AggregateParameter _Name_en_W = null;
@@ -1213,6 +1296,7 @@ namespace VikkiSoft_BLL.DAL
 			private AggregateParameter _DateUpdate_W = null;
             private AggregateParameter _TitleImage_W = null;
             private AggregateParameter _MainImage_W = null;
+            private AggregateParameter _BookingID_W = null;
 
 			public void AggregateClauseReset()
 			{
@@ -1227,6 +1311,7 @@ namespace VikkiSoft_BLL.DAL
 				_DateUpdate_W = null;
                 _TitleImage_W = null;
                 _MainImage_W = null;
+                _BookingID_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -1345,6 +1430,9 @@ namespace VikkiSoft_BLL.DAL
             p.SourceColumn = ColumnNames.MainImage;
             p.SourceVersion = DataRowVersion.Current;
 
+            p = cmd.Parameters.Add(Parameters.BookingID);
+            p.SourceColumn = ColumnNames.BookingID;
+            p.SourceVersion = DataRowVersion.Current;
 
 			return cmd;
 		}

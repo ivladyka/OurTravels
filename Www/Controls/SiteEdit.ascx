@@ -5,6 +5,8 @@
 <%@ Register TagPrefix="uc1" TagName="NumericInput" Src="ValueControls/NumericInput.ascx" %>
 <%@ Register TagPrefix="telerik" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI" %>
 <%@ Register TagPrefix="uc1" TagName="SiteLinksList" Src="SiteLinksList.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="CityChoice" Src="ChoiceControls/CityChoice.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="CountryChoice" Src="ChoiceControls/CountryChoice.ascx" %>
 <telerik:RadTabStrip ID="rtsSite" runat="server" AutoPostBack="true" Align="Left" Width="747px" OnTabClick="rtsSite_TabClick">
     <Tabs>
         <telerik:RadTab Text="Посилання" Selected="True">
@@ -43,6 +45,20 @@
             <asp:RequiredFieldValidator ID="rfvURL" runat="server" ControlToValidate="text_URL" Display="Dynamic" 
                 ErrorMessage="Обов'язкове поле."></asp:RequiredFieldValidator>
         </td>
+    </tr>
+    <tr id="rowCountry" runat="server">
+		<td align="right">Країна:
+		</td>
+		<td>
+            <uc1:CountryChoice id="ddlCountryChoice" runat="server" UseValueInsteadText="true" Width="300" AutoPostBack="true"></uc1:CountryChoice>
+		</td>
+    </tr>
+    <tr id="rowCity" runat="server">
+	    <td align="right">Місто:
+		</td>
+		<td>
+            <uc1:CityChoice id="ddlCity" runat="server" UseValueInsteadText="true" Width="300" AddEmptyItem="true"></uc1:CityChoice>
+		</td>
     </tr>
     <tr>
 		<td align="right">Активне:

@@ -3,6 +3,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using VikkiSoft_BLL;
+using System.Text;
 
 public partial class BlogPageView : ProjectPageBase
 {
@@ -39,6 +40,29 @@ public partial class BlogPageView : ProjectPageBase
                 if (bp.IsBlogPage)
                 {
                     blogPageTableList.LoadBlogPages(BlogPageID);
+
+                    VikkiSoft_BLL.City c = new VikkiSoft_BLL.City();
+                    if (c.LoadByBlogPageID(BlogPageID, false))
+                    {
+                        if (c.RowCount > 0)
+                        {
+                            StringBuilder strCityList = new StringBuilder();
+                            pRoutes.Visible = true;
+                            do
+                            {
+                                string pageURL = SiteURL + "/" + Utils.GenerateFriendlyURL("city", new string[] { c.GetColumn("CountryName").ToString(), c.s_Name_en }, false);
+                                strCityList.Append("<a href=\"" + pageURL + "\">" + c.s_Name + "</a>");
+                                if (!c.IsColumnNull(City.ColumnNames.BookingID) && c.s_BookingID.Length > 0)
+                                {
+                                    strCityList.Append("<a title='Забронюйте найкраще проживання у місті " + c.GetColumn(City.ColumnNames.Name).ToString() 
+                                        + " на booking.com!' class='booking-small' href='http://www.booking.com/searchresults.uk.html?city=" + c.s_BookingID +
+                                        "&aid=1263910&no_rooms=1&group_adults=2' target='_blank'><img src='" + SiteURL + "/Images/booking_small.png'></a>");
+                                }
+                                strCityList.Append(" | ");
+                            } while (c.MoveNext());
+                            pRoutes.InnerHtml = strCityList.ToString().TrimEnd().TrimEnd('|').TrimEnd();
+                        }
+                    }
                 }
                 else
                 {
@@ -57,6 +81,19 @@ public partial class BlogPageView : ProjectPageBase
         get
         {
             return Master.BlogPageID;
+        }
+    }
+
+    private string SiteURL
+    {
+        get
+        {
+            MasterPageBase master = Page.Master as MasterPageBase;
+            if (master != null)
+            {
+                return master.SiteURL;
+            }
+            return "";
         }
     }
 }

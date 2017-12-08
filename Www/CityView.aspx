@@ -15,7 +15,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h1><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h1>
+						<h1><asp:Label ID="lblName" runat="server" Text=""> &nbsp;</asp:Label><asp:HyperLink ID="hlBooking" runat="server" Visible="false" Target="_blank" CssClass="booking-large"></asp:HyperLink></h1>
                         <asp:Panel ID="pnlCountry" runat="server">
                             Країна: <asp:HyperLink id="hlCountry" runat="server"></asp:HyperLink>
                         </asp:Panel>

@@ -32,7 +32,8 @@ public partial class CityList : ListControlBase, Interfaces.IColouredGrid
 	public override void InitGrid()
 	{
 		base.InitGrid ();
-		this.editableGrid.GridMode = GridModes.Add | GridModes.Delete | GridModes.Edit | GridModes.Refresh;				
+		this.editableGrid.GridMode = GridModes.Add | GridModes.Delete | GridModes.Edit | GridModes.Refresh;
+        editableGrid.PageSize = 30;	
 		editableGrid.Width = 1600;
         SetColumnSettings(VikkiSoft_BLL.City.ColumnNames.CityID, false, VikkiSoft_BLL.City.ColumnNames.CityID,
 				0, HorizontalAlign.Center, "");
@@ -68,7 +69,7 @@ public partial class CityList : ListControlBase, Interfaces.IColouredGrid
                     hl.NavigateUrl = Utils.GenerateFriendlyURL("city", new string[] {  
                        dataRowView["CountryName_en"].ToString(),
                         dataRowView[City.ColumnNames.Name_en].ToString()});
-                    e.Item.Cells[10].Controls.Add(hl);
+                    e.Item.Cells[11].Controls.Add(hl);
                 }
             }
         }

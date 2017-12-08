@@ -13,7 +13,7 @@
 					    </div>
 				    </div>
 			    </div>
-                <uc1:BlogPageViewList id="blogPageViewList" runat="server" PageSize="15" ShowPager="true"></uc1:BlogPageViewList>
+                <uc1:BlogPageViewList id="blogPageViewList" runat="server" PageSize="30" ShowPager="true"></uc1:BlogPageViewList>
             </div>	
             <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
 </asp:Content>

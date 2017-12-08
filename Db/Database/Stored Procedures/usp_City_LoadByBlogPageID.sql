@@ -15,6 +15,7 @@ BEGIN
       ,[City].[Name_en]
       ,Country.Name_en AS CountryName
 	  ,[City].TitleImage
+	  ,[City].BookingID
 	FROM 
 		BlogPageCity
 	INNER JOIN

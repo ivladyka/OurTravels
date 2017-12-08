@@ -7,6 +7,7 @@ BEGIN
 		City.Name, 
 		Country.Name AS CountryName, 
 		City.Description, 
+		City.BookingID,
 		City.Active,
 		City.Name_en, 
 		Country.Name_en AS CountryName_en, 
@@ -15,5 +16,7 @@ BEGIN
 		City 
 	LEFT OUTER JOIN
         Country ON City.CountryID = Country.CountryID
+	ORDER BY
+		City.CityID DESC
 	
 END

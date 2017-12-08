@@ -11,7 +11,8 @@ CREATE PROCEDURE [dbo].[UpdateCity]
 	@Description varchar(200) = NULL,
 	@DateUpdate smalldatetime = NULL,
 	@TitleImage varchar(100) = NULL,
-	@MainImage varchar(100) = NULL
+	@MainImage varchar(100) = NULL,
+	@BookingID varchar(15) = NULL
 )
 AS
 BEGIN
@@ -30,7 +31,8 @@ BEGIN
 		[Description] = @Description,
 		[DateUpdate] = @DateUpdate,
 		[TitleImage] = @TitleImage,
-		[MainImage] = @MainImage
+		[MainImage] = @MainImage,
+		[BookingID] = @BookingID
 	WHERE
 		[CityID] = @CityID
 

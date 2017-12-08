@@ -27,6 +27,13 @@ public partial class CityView : ProjectPageBase
                 {
                     pnlPageTitle.Attributes["style"] = "background-image: url(" + Master.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + c.MainImage + ");";
                 }
+                if (!c.IsColumnNull(City.ColumnNames.BookingID) && c.s_BookingID.Length > 0)
+                {
+                    hlBooking.Visible = true;
+                    hlBooking.Text = "<img id='imgBooking' runat='server' src='" + SiteURL + "/Images/booking_large.png' />";
+                    hlBooking.NavigateUrl = "http://www.booking.com/searchresults.uk.html?city=" + c.s_BookingID + "&aid=1263910&no_rooms=1&group_adults=2";
+                    hlBooking.ToolTip = "Забронюйте найкраще проживання у місті " + c.GetColumn(City.ColumnNames.Name).ToString() + " на booking.com!";
+                }
             }
         }
     }
@@ -38,4 +45,18 @@ public partial class CityView : ProjectPageBase
             return Master.CityID;
         }
     }
+
+    private string SiteURL
+    {
+        get
+        {
+            MasterPageBase master = Page.Master as MasterPageBase;
+            if (master != null)
+            {
+                return master.SiteURL;
+            }
+            return "";
+        }
+    }
+
 }

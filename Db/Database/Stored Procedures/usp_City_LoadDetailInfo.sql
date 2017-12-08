@@ -12,7 +12,8 @@ BEGIN
 		Country.Name_en AS CountryName_en, 
 		City.Content,
 		City.[TitleImage],
-		City.[MainImage]
+		City.[MainImage], 
+		City.BookingID
 	FROM         
 		City 
 	INNER JOIN

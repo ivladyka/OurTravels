@@ -19,7 +19,8 @@ BEGIN
 		[Description],
 		[DateUpdate],
 		[TitleImage],
-		[MainImage]
+		[MainImage],
+		[BookingID]
 	FROM [City]
 	WHERE
 		([CityID] = @CityID)

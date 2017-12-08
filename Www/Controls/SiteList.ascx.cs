@@ -33,10 +33,13 @@ public partial class SiteList : ListControlBase, Interfaces.IColouredGrid
 	{
 		base.InitGrid ();
 		this.editableGrid.GridMode = GridModes.Add | GridModes.Delete
-			| GridModes.Edit | GridModes.Refresh;				
+			| GridModes.Edit | GridModes.Refresh;
+        editableGrid.PageSize = 40;	
 		editableGrid.Width = 1600;
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.SiteID, false, VikkiSoft_BLL.Site.ColumnNames.SiteID,
 				0, HorizontalAlign.Center, "");
+        SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.URL, false, VikkiSoft_BLL.Site.ColumnNames.URL,
+                0, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Name, true, "Назва", 0, HorizontalAlign.Center, "");
         SetColumnSettings("SiteTypeName", true, "Тип посилання", 0, HorizontalAlign.Center, "");
         SetColumnSettings(VikkiSoft_BLL.Site.ColumnNames.Active, true, "Активне", 0, HorizontalAlign.Center, "");
