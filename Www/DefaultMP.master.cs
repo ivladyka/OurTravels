@@ -212,21 +212,7 @@ public partial class MasterPage : MasterPageBase
         {
             if(Utils.ShowAddShare)
             {
-                return "<script type=\"text/javascript\" src=\"/js/buttons.js\"></script><script type=\"text/javascript\" src=\"/js/loader.js\"></script>";
-            }
-            return "";
-        }
-    }
-
-    public string AddShareScripts2
-    {
-        get
-        {
-            if (Utils.ShowAddShare)
-            {
-                return "<script type=\"text/javascript\">stLight.options({ publisher: \"5135c174-79a0-4070-9da8-6ea8546a4fff\", doNotHash: false, doNotCopy: false, hashAddressBar: false, publisherGA: \"UA-89139442-1\" });</script>"
-                    + "<script>var options = { \"publisher\": \"5135c174-79a0-4070-9da8-6ea8546a4fff\", \"position\": \"left\", \"ad\": { \"visible\": false, \"openDelay\": 5, \"closeDelay\": 0 }, \"chicklets\": { \"items\": [\"facebook\", \"twitter\", \"odnoklassniki\", \"vkontakte\", \"googleplus\", \"blogger\", \"linkedin\", \"pinterest\", \"email\"] } };"
-                    + "var st_hover_widget = new sharethis.widgets.hoverbuttons(options);</script>";
+                return "<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5a2bc19ed05e400013827d90&product=sticky-share-buttons' async='async'></script>";
             }
             return "";
         }

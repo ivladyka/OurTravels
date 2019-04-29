@@ -282,3 +282,12 @@ function VIKKI_CheckHotelSearch(tableRoomsClientID, ChildrenAgeAlert) {
     }
     return true;
 }
+
+function TD_UsefulLinksDDLChanged()
+{
+    $("div.useful-links-content > div.tab-pane").removeClass("active in");
+    if ($("#ddlUsefulLinks option:selected").val() != "0")
+    {
+        $("#divSiteType" + $("#ddlUsefulLinks option:selected").val()).addClass("active in");
+    }
+}

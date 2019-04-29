@@ -2,6 +2,7 @@
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
 <%@ Register TagPrefix="uc1" TagName="CityTableView" Src="Controls/CityTableView.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SiteViewList" Src="Controls/SiteViewList.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="SiteViewTab" Src="Controls/SiteViewTab.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
@@ -14,11 +15,12 @@
     <div id="fh5co-blogpageview">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h1><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h1>
-                        <asp:Panel ID="pnlCapital" runat="server">
+					<div class="col-md-12 text-center heading-section animate-box">
+						<h1 style="margin-bottom: 0px;"><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h1>
+                        <asp:Panel ID="pnlCapital" runat="server" style="padding-top: 5px; padding-bottom: 5px;">
         Столиця: <asp:HyperLink id="hlCapital" runat="server"></asp:HyperLink>
     </asp:Panel>
+                        <uc1:SiteViewTab id="siteViewTab" runat="server"></uc1:SiteViewTab>
 					</div>
 				</div>
 			</div>

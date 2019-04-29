@@ -755,6 +755,10 @@ background-color: rgba(255, 255, 255, 0.7);
     min-height: 1px !important;
     padding: 20px !important;
 }
+  .bookinginspiring
+  {
+      display: none;
+  }
 }
 .feature-left .feature-copy h3 {
   font-size: 18px;
@@ -996,15 +1000,19 @@ background-color: rgba(255, 255, 255, 0.7);
     margin-bottom: 4em;
   }
 }
-#fh5co-features .feature-left .icon i {
+#fh5co-features .feature-left .icon i,
+.useful-links-content .feature-left .icon i {
   color: #b3b3b3;
 }
-#fh5co-features .feature-left .icon {
+#fh5co-features .feature-left .icon,
+.useful-links-content .feature-left .icon {
   float: left;
   text-align: center;
   width: 25%;
 }
-#fh5co-features .feature-left .icon img{
+#fh5co-features .feature-left .icon img,
+.useful-links-content .feature-left .icon img
+{
     float: left;
     max-height: 100px;
     max-width: 100%;
@@ -1016,12 +1024,14 @@ background-color: rgba(255, 255, 255, 0.7);
     color:#000
 }
 @media screen and (max-width: 992px) {
-  #fh5co-features .feature-left .icon {
+  #fh5co-features .feature-left .icon,
+  .useful-links-content .feature-left .icon {
     width: 10%;
   }
 }
 @media screen and (max-width: 767px) {
-  #fh5co-features .feature-left .icon {
+  #fh5co-features .feature-left .icon,
+  .useful-links-content .feature-left .icon {
     width: 15%;
   }
   #back-to-top 
@@ -1034,36 +1044,93 @@ background-color: rgba(255, 255, 255, 0.7);
   }
 
 }
-#fh5co-features .feature-left .feature-copy {
+#fh5co-features .feature-left .feature-copy,
+.useful-links-content .feature-left .feature-copy {
   float: right;
   width: 70%;
 }
 @media screen and (max-width: 992px) {
-  #fh5co-features .feature-left .feature-copy {
+  #fh5co-features .feature-left .feature-copy,
+  .useful-links-content .feature-left .feature-copy 
+  {
     width: 80%;
   }
 }
 @media screen and (max-width: 767px) {
-  #fh5co-features .feature-left .feature-copy {
+  #fh5co-features .feature-left .feature-copy,
+  .useful-links-content .feature-left .feature-copy {
     width: 75%;
   }
 }
 @media screen and (max-width: 480px) {
-  #fh5co-features .feature-left .feature-copy {
+  #fh5co-features .feature-left .feature-copy,
+  .useful-links-content .feature-left .feature-copy {
     width: 70%;
   }
 }
-#fh5co-features .feature-left h3 {
+#fh5co-features .feature-left h3,
+.useful-links-content .feature-left h3 
+{
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 700;
 }
-#fh5co-features .feature-left p {
+.useful-links-content .feature-left h3 
+{
+    text-align: left;
+}
+#fh5co-features .feature-left p,
+.useful-links-content .feature-left p
+{
     font-size: 11pt;
     line-height: 13pt;
 }
-#fh5co-features .feature-left p:last-child {
+#fh5co-features .feature-left p:last-child,
+.useful-links-content .feature-left p:last-child
+{
   margin-bottom: 0;
+}
+
+.useful-links-content .feature-left p
+{
+    text-align: left;
+}
+.useful-links-tab.nav-pills > li > a, 
+.useful-links-tab.nav-pills > li > a:focus, 
+.useful-links-tab.nav-pills > li > a:hover {
+    background-color: #eeeeee;
+}
+
+.useful-links-tab.nav-pills > li.active > a, 
+.useful-links-tab.nav-pills > li.active > a:focus, 
+.useful-links-tab.nav-pills > li.active > a:hover {
+    color: #fff;
+    background-color: #337ab7;
+}
+
+.useful-links-tab > li
+{
+    padding-right: 6px;
+    padding-bottom: 10px;
+    float: none;
+    width: auto;
+    display: inline-block;
+}
+
+.useful-links-ddl
+{
+    display: none;
+}
+
+.travel-date
+{
+    margin-bottom: 10px;
+}
+
+.travel-routes
+{
+    font-size: 18px; 
+    margin-bottom: 10px;
 }
 
 #fh5co-services, #fh5co-about, #fh5co-contact {
@@ -2129,6 +2196,38 @@ color:#01a3d4;
     max-width:100%;
     height:auto;
 }
+table.bookingtable
+{
+width:100%
+}
+table.bookingtable td
+{
+    width:50% !important;
+    display:inline-block;
+    float:left
+}
+.bookingmap
+{
+padding: 0 15px 0 0 !important;
+}
+.bookingpromo
+{
+    vertical-align:top;
+    padding: 0 0 5px 15px !important;
+}
+.bookingpromo ins
+{
+    width:100%
+}
+
+.bookinginspiring
+{
+    text-align: center;
+}
+
+img{
+    max-width:100%
+}
 .fh5co-hero.fh5co-hero-2.fh5co-map .fh5co-cover.fh5co-cover_2.text-center
 {
 background-repeat:no-repeat;
@@ -2247,6 +2346,18 @@ background-repeat:no-repeat;
 }
 }
 @media screen and (max-width: 767px) {
+    table.bookingtable td
+{
+    width:100%
+}
+    .bookingmap
+    {
+        padding: 0px !important;
+    }
+table.bookingtable td.bookingpromo
+{
+padding: 0px 0px 15px 0px !important
+}
 #ctl00_cphWithoutScroll_divCategoryContent td {
     display: inline-block;
     padding: 20px;
@@ -2380,6 +2491,29 @@ padding: 20px 0;
 #fh5co-advice .fh5co-icon
 {
     text-align:center
+}
+.useful-links-ddl
+{
+    display: block;
+    padding-bottom: 15px;
+}
+.useful-links-tab
+{
+    display: none;
+}
+.travel-date,
+.travel-routes
+{
+    margin-bottom: 0px;
+    padding-bottom: 5px !important;
+}
+.useful-links-content .feature-left
+{
+    margin-bottom: 0px;
+}
+#fh5co-blogpageview
+{
+    padding-top:10px
 }
 }
 #back-to-top {
@@ -2677,7 +2811,8 @@ margin-bottom:40px
 {
     background-color: #e55084;
 }
-#fh5co-features .feature-left .icon a
+#fh5co-features .feature-left .icon a,
+.useful-links-content .feature-left .icon a
 {
     text-align:center;
     display:inline-block;

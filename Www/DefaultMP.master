@@ -147,6 +147,10 @@
      <a href="#" id="back-to-top" title="Back to top"><span class="icon-arrow-bold-up"> </span></a>
 	<!-- END fh5co-wrapper -->
     <script>
+        $(document).ready(function () {
+            //Show popup in time out here
+            //alert('hi2');
+        });
         $(function () {
             var menu = $('#fh5co-header'),
                 pos = menu.offset();
@@ -216,6 +220,14 @@
         ga('send', 'pageview');
 
     </script>
-    <%=AddShareScripts2%>
+    <script type="text/javascript">
+        (function (d, sc, u) {
+            var s = d.createElement(sc), p = d.getElementsByTagName(sc)[0];
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = u + '?v=' + (+new Date());
+            p.parentNode.insertBefore(s, p);
+        })(document, 'script', '//aff.bstatic.com/static/affiliate_base/js/flexiproduct.js');
+    </script>
 </body>
 </html>
