@@ -28,7 +28,7 @@ public partial class CountryView : ProjectPageBase
                 }
                 if (!c.IsColumnNull(Country.ColumnNames.Content))
                 {
-                    divCountryContent.InnerHtml = c.GetColumn(Country.ColumnNames.Content).ToString();
+                    divCountryContent.InnerHtml = Utils.FormatContent(c.GetColumn(Country.ColumnNames.Content).ToString(), SiteURL);
                 }
                 if (!c.IsColumnNull(Country.ColumnNames.MainImage) && c.s_MainImage.Length > 0)
                 {
@@ -43,6 +43,19 @@ public partial class CountryView : ProjectPageBase
         get
         {
             return Master.CountryID;
+        }
+    }
+
+    private string SiteURL
+    {
+        get
+        {
+            MasterPageBase master = Page.Master as MasterPageBase;
+            if (master != null)
+            {
+                return master.SiteURL;
+            }
+            return "";
         }
     }
 }

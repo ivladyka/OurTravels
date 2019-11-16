@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: http://traveldreams.com.ua/sitemap.aspx
+Sitemap: https://traveldreams.com.ua/sitemap.aspx

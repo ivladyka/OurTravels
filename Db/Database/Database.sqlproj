@@ -154,5 +154,18 @@
     <Build Include="Functions\fxGetCityList.sql" />
     <Build Include="Stored Procedures\usp_SiteLinks_LoadBySiteID.sql" />
     <Build Include="Stored Procedures\usp_Site_LoadNeedChangeURL.sql" />
+    <Build Include="Tables\Email.sql" />
+    <Build Include="Stored Procedures\UpdateEmail.sql" />
+    <Build Include="Stored Procedures\LoadEmailByPrimaryKey.sql" />
+    <Build Include="Stored Procedures\LoadAllEmail.sql" />
+    <Build Include="Stored Procedures\InsertEmail.sql" />
+    <Build Include="Stored Procedures\DeleteEmail.sql" />
+    <Build Include="Stored Procedures\usp_Email_LoadWithEmailType.sql" />
+    <Build Include="Stored Procedures\UpdateEmailType_1.sql" />
+    <Build Include="Stored Procedures\LoadEmailTypeByPrimaryKey_1.sql" />
+    <Build Include="Stored Procedures\LoadAllEmailType_1.sql" />
+    <Build Include="Stored Procedures\InsertEmailType_1.sql" />
+    <Build Include="Stored Procedures\DeleteEmailType_1.sql" />
+    <Build Include="Tables\EmailType.sql" />
   </ItemGroup>
 </Project>

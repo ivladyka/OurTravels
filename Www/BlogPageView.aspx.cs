@@ -19,7 +19,7 @@ public partial class BlogPageView : ProjectPageBase
                 if (!bp.IsColumnNull(BlogPage.ColumnNames.PageContent))
                 {
 
-                    divCategoryContent.InnerHtml = Utils.FormatContent(bp.GetColumn(BlogPage.ColumnNames.PageContent).ToString());
+                    divCategoryContent.InnerHtml = Utils.FormatContent(bp.GetColumn(BlogPage.ColumnNames.PageContent).ToString(), SiteURL);
                 }
                 if (bp.IsBlogPage && (!bp.IsColumnNull(BlogPage.ColumnNames.StartTravelDate) || !bp.IsColumnNull(BlogPage.ColumnNames.EndTravelDate)))
                 {

@@ -46,6 +46,8 @@
     <Compile Include="Dal\CitySite.cs" />
     <Compile Include="Dal\Country.cs" />
     <Compile Include="Dal\CountrySite.cs" />
+    <Compile Include="Dal\Email.cs" />
+    <Compile Include="Dal\EmailType.cs" />
     <Compile Include="Dal\Settings.cs" />
     <Compile Include="Dal\Site.cs" />
     <Compile Include="Dal\SiteType.cs" />
@@ -55,6 +57,8 @@
     <Compile Include="Entity\CitySite.cs" />
     <Compile Include="Entity\Country.cs" />
     <Compile Include="Entity\CountrySite.cs" />
+    <Compile Include="Entity\Email.cs" />
+    <Compile Include="Entity\EmailType.cs" />
     <Compile Include="Entity\Settings.cs" />
     <Compile Include="Entity\Site.cs" />
     <Compile Include="Entity\SiteType.cs" />

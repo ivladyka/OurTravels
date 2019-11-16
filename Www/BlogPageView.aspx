@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMP.master" AutoEventWireup="true" CodeFile="BlogPageView.aspx.cs" Inherits="BlogPageView" %>
 <%@ Register TagPrefix="uc1" TagName="BlogPageTableList" Src="Controls/BlogPageTableList.ascx" %>
-<%@ Register TagPrefix="uc1" TagName="SiteViewList" Src="Controls/SiteViewList.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SiteViewTab" Src="Controls/SiteViewTab.ascx" %>
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
@@ -14,7 +13,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center heading-section animate-box">
-						<h1 style="margin-bottom: 0px;"><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h1>
+						<h1 style="margin-bottom: 10px;"><asp:Label ID="lblName" runat="server" Text=""></asp:Label></h1>
                         <p id="pTravelDate" runat="server" class="travel-date"><asp:Label ID="lblTravelDate" runat="server" Text="" Visible="false"></asp:Label><br /></p>
                         <p id="pRoutes" runat="server" visible="false" class="travel-routes"></p>
                         <uc1:SiteViewTab id="siteViewTab" runat="server"></uc1:SiteViewTab>
@@ -29,6 +28,5 @@
 		</div> 
  
     <uc1:BlogPageTableList id="blogPageTableList" runat="server"></uc1:BlogPageTableList>
-    <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
 </asp:Content>
 

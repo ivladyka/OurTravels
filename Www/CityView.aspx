@@ -1,6 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/DefaultMP.master" AutoEventWireup="true" CodeFile="CityView.aspx.cs" Inherits="CityView" %>
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
-<%@ Register TagPrefix="uc1" TagName="SiteViewList" Src="Controls/SiteViewList.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="BlogPageTableList" Src="Controls/BlogPageTableList.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SiteViewTab" Src="Controls/SiteViewTab.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
@@ -16,10 +15,13 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center heading-section animate-box">
-						<h1 style="margin-bottom: 0px;"><asp:Label ID="lblName" runat="server" Text=""> &nbsp;</asp:Label><asp:HyperLink ID="hlBooking" runat="server" Visible="false" Target="_blank" CssClass="booking-large"></asp:HyperLink></h1>
+						<h1 style="margin-bottom: 10px;"><asp:Label ID="lblName" runat="server" Text=""> &nbsp;</asp:Label><asp:HyperLink ID="hlBooking" runat="server" Visible="false" Target="_blank" CssClass="booking-large"></asp:HyperLink></h1>
                         <asp:Panel ID="pnlCountry" runat="server" style="padding-top: 5px; padding-bottom: 5px;">
                             Країна: <asp:HyperLink id="hlCountry" runat="server"></asp:HyperLink>
                         </asp:Panel>
+                        <hr style="margin: 10px 0px;" />
+                        <h4 style="padding: 0; margin: 0;"><a href="#divOurTravelsInThisWay" style="color:#f27660"><span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color:#f27660"></span> Наші подорожі в цьому напрямку <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color:#f27660"></span></a></h4>
+                        <hr style="margin: 10px 0px 20px 0px;" />
                         <uc1:SiteViewTab id="siteViewTab" runat="server"></uc1:SiteViewTab>
 					</div>
 				</div>
@@ -29,8 +31,8 @@
                     <div ID="divCityContent" runat="server"></div>
 				</div>				
 			</div>
-    </div>     
+    </div>    
+    <span id="divOurTravelsInThisWay"></span>
     <uc1:BlogPageTableList id="blogPageTableList" runat="server"></uc1:BlogPageTableList>
-    <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
 </asp:Content>
 

@@ -104,6 +104,7 @@ figure {
   position: relative;
   height: 800px;
 }
+
 @media screen and (max-width: 767px) {
   .fh5co-cover,
   .fh5co-hero {
@@ -191,7 +192,7 @@ background-color: rgba(255, 255, 255, 0.7);
 
 #fh5co-blogpageview
 {
-    padding-top:60px
+    padding-top: 35px
 }
 .fh5co-cover.fh5co-cover_3 {
   height: 300px;
@@ -215,6 +216,10 @@ background-color: rgba(255, 255, 255, 0.7);
   margin-top: -80px;
   z-index: 2;
   color: #fff;
+}
+#fh5co-services-section.fh5co-section-gray.fh5co-home-blog-section
+{
+
 }
 @media screen and (max-width: 767px) {
   .fh5co-cover .desc {
@@ -321,7 +326,7 @@ background-color: rgba(255, 255, 255, 0.7);
 }
 
 .sf-menu a {
-  color: rgba(255, 255, 255, 1);
+  color: #52bfdf;
   padding: 0.75em 1em !important;
   font-weight: normal;
   border-left: none;
@@ -334,10 +339,10 @@ background-color: rgba(255, 255, 255, 0.7);
 
 }
 .sf-menu a:hover, .sf-menu a:focus {
-  color: rgba(255, 255, 255, 0.7);
+  color: #ff715b !important;
 }
 .sf-menu li.active a:hover, .sf-menu li.active a:focus {
-  color: rgba(255, 255, 255, 0.7);
+  color: #ff715b !important;
 }
 .sf-menu li,
 .sf-menu ul li,
@@ -358,7 +363,7 @@ background-color: rgba(255, 255, 255, 0.7);
 .sf-menu ul li:hover a,
 .sf-menu ul li.sfHover a,
 .sf-menu li.active a {
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #ff715b !important;
 }
 .sf-menu ul li:hover,
 .sf-menu ul li.sfHover {
@@ -412,7 +417,8 @@ background-color: rgba(255, 255, 255, 0.7);
   left: 0;
   width: 100%;
   z-index: 2;
- background: rgba(0, 119, 147, 0.6) none repeat scroll 0 0;
+ //background: rgba(0, 119, 147, 0.6) none repeat scroll 0 0;
+ background: #f4fafb none  repeat scroll 0 0;
 }
 
 .nav-header {
@@ -442,10 +448,10 @@ background-color: rgba(255, 255, 255, 0.7);
   }
 }
 #fh5co-logo a {
-  color: #fff;
+  color: #52bfdf;
 }
 #fh5co-logo a:hover, #fh5co-logo a:focus {
-  color: #fff !important;
+  color: #ff715b !important;
 }
 
 #fh5co-menu-wrap {
@@ -480,8 +486,21 @@ background-color: rgba(255, 255, 255, 0.7);
   top: 50%;
   margin-top: -7px;
   content: "\e922";
-  color: rgba(255, 255, 255, 0.5);
+  color: #52bfdf;
 }
+#fh5co-header.default .fh5co-nav-toggle i::before, 
+#fh5co-header.default .fh5co-nav-toggle i::after,
+#fh5co-header.default .fh5co-nav-toggle i
+{
+    color: #52bfdf !important;
+    background: #52bfdf !important;
+}
+#fh5co-primary-menu > li:hover > .sf-with-ul:after,
+#fh5co-header.fixed #fh5co-header-section .sf-menu li a:after
+{
+    color: #fff;
+}
+
 #fh5co-primary-menu > li > ul li {
   position: relative;
   text-align:left
@@ -521,6 +540,7 @@ background-color: rgba(255, 255, 255, 0.7);
   -o-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
 }
+
 #fh5co-primary-menu .fh5co-sub-menu > li > .fh5co-sub-menu {
   left: 100%;
 }
@@ -609,7 +629,8 @@ background-color: rgba(255, 255, 255, 0.7);
 }
 #fh5co-blog-section
 {
-    padding-top:130px !important
+    padding-top:60px !important;
+    background-size: auto 100% !important;
 }
 #fh5co-blog-section.fh5co-home-blog-section
 {
@@ -621,11 +642,16 @@ background-color: rgba(255, 255, 255, 0.7);
 }
 .fh5co-section-gray {
   background: rgba(0, 0, 0, 0.04);
-  background-image:url('/Theme/images/map.png');
+  background-image:url('/Theme/images/bg4.jpg');
   background-position:top center;
   background-repeat:no-repeat;  
 }
-
+.fh5co-section-advices {
+  background: rgba(0, 0, 0, 0.04);
+  background-image:url('/Theme/images/bg5.jpg');
+  background-position:top center;
+  background-repeat:no-repeat;  
+}
 .fh5co-section-gray1 {
   background: rgba(0, 0, 0, 0);
   background-image:url('/Theme/images/map1.png');
@@ -659,7 +685,8 @@ background-color: rgba(255, 255, 255, 0.7);
 .services {
   padding: 40px 20px 20px 20px;
   margin-bottom: 20px;
-  min-height:350px
+  min-height:350px;
+  background: rgba(255,255,255,0.5);
 }
 .services span {
   margin-bottom: 30px;
@@ -1505,7 +1532,7 @@ padding: 30px;
     margin:40px
 }
 #footer ul li a {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none !important;
 }
 #footer ul li a:hover {
@@ -1570,13 +1597,13 @@ padding: 30px;
 }
 
 .btn-primary {
-  background: #01a3d4;
+  background:#ff9787;
   color: #fff;
-  border: 2px solid #01a3d4;
+  border: 2px solid #ff9787;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: #f17660 !important;
-  border-color: #f17660 !important;
+  background: #ff715b !important;
+  border-color: #ff715b !important;
   color: #fff !important;
 }
 .btn-primary.btn-outline {
@@ -1945,6 +1972,7 @@ http://localhost:14142/}
   padding-top: 2em;
 }
 @media screen and (max-width: 767px) {
+
   .row-top-padded-sm {
     padding-top: 2em;
   }
@@ -2112,8 +2140,38 @@ width:100%
 }
 #fh5co-header.fixed #fh5co-header-section
 {
-    background-color:rgba(0, 119, 147, 1);
+    background-color: #52bfdf;
  
+}
+#fh5co-header.fixed #fh5co-header-section #fh5co-logo a,
+#fh5co-header.fixed #fh5co-header-section .sf-menu a
+{
+    color: #fff !important
+}
+
+#fh5co-header.fixed #fh5co-header-section .sf-menu li a
+{
+    color: #fff !important
+}
+
+#fh5co-header.fixed #fh5co-primary-menu > li > ul li > .sf-with-ul::after,
+#fh5co-header.fixed #fh5co-header-section .sf-menu li li a
+{
+    color: #000 !important
+}
+
+#fh5co-header.fixed #fh5co-header-section .sf-menu li li a:hover
+{
+    color:#ff715b !important
+}
+#fh5co-header.fixed #fh5co-header-section #fh5co-logo a:hover, 
+#fh5co-header.fixed #fh5co-header-section #fh5co-logo a:active,
+#fh5co-header.fixed #fh5co-header-section #fh5co-logo a:focus,
+#fh5co-header.fixed #fh5co-header-section .sf-menu a:hover, 
+#fh5co-header.fixed #fh5co-header-section .sf-menu a:active,
+#fh5co-header.fixed #fh5co-header-section .sf-menu a:focus
+{
+    color: #bdf0ff !important;
 }
 #fh5co-header.fixed #fh5co-logo a, #fh5co-header.fixed .sf-menu a
 {
@@ -2210,6 +2268,10 @@ table.bookingtable td
 {
 padding: 0 15px 0 0 !important;
 }
+.bookingbanner
+{
+padding: 0 15px 10px 0 !important;
+}
 .bookingpromo
 {
     vertical-align:top;
@@ -2233,6 +2295,11 @@ img{
 background-repeat:no-repeat;
 }
 @media screen and (max-width: 1000px){
+    #fh5co-header-section .container
+{
+padding-left: 0px;
+padding-right: 0px;
+}
     #fh5co-features
 {
         padding: 20px 0;
@@ -2346,13 +2413,26 @@ background-repeat:no-repeat;
 }
 }
 @media screen and (max-width: 767px) {
-    table.bookingtable td
+
+    #fh5co-header-section .container
+{
+padding-left: 15px;
+padding-right: 15px;
+}
+    table.bookingtable td,
+    table.bookingtable td.bookingbanner img
 {
     width:100%
 }
     .bookingmap
     {
         padding: 0px !important;
+    }
+
+    .bookingbanner
+    {
+        padding-right: 0px !important;
+        padding-bottom: 15px !important;
     }
 table.bookingtable td.bookingpromo
 {
@@ -2817,4 +2897,8 @@ margin-bottom:40px
     text-align:center;
     display:inline-block;
     
+}
+p.booking_map_container
+{
+    border: 2px solid #1F3975 !important;
 }

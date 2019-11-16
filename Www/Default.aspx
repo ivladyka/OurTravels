@@ -6,17 +6,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
     <div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(Theme/images/spring.jpg);">
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(Theme/images/bg3.jpg);">
 				<div class="desc animate-box">
-                    <h2><strong>Мандрівка довжиною в тисячі кілометрів <br/>починається з одного кроку.</strong></h2>
-                    <span><strong><i>- Лао Тзу</i></strong></span>
+                    <h2><strong>Я бачу мою дорогу, але не знаю куди вона приведе. <br />Незнання того, куди йде дорога, надихає мене йти нею.</strong></h2>
+                    <span><strong><i>- Росалія де Кастро</i></strong></span>
 					<!--<h2><strong>Світ – це книжка і той, хто не подорожує, <br/>читає лише одну сторінку</strong>
 					<span><strong><i>– Св. Августин</i></strong></span></h2>-->
 					<!--<p><a class="btn btn-primary btn-lg btn-learn" href="#">Learn More</a> <a class="btn btn-primary btn-lg popup-vimeo btn-video" href="https://vimeo.com/channels/staffpicks/93951774"><i class="icon-play"></i> Watch Video</a></p>	-->
                 </div>
 			</div>
 		</div>
-    		<div id="fh5co-partner">
+       <div id="fh5co-partner">
 			<div class="container">
 				<div class="partner-wrap">
 					<div class="wrap">
@@ -42,7 +42,7 @@
 						</div>
 						<div class="partner animate-box">
 							<div class="inner">
-								<a href="https://pochivka.bg/" target="_blank" rel="nofollow"><img class="img-responsive" src="Theme/images/logo-5.png" alt=""></a>
+								<a href="https://www.kiwi.com/deep?affilid=traveldreamsua&lang=uk" target="_blank" rel="nofollow"><img class="img-responsive" src="Theme/images/logo-7.png" alt=""></a>
 							</div>
 						</div>
 					</div>
@@ -65,7 +65,7 @@
 			</div>
 		</div>	
         <uc1:SiteViewList id="siteViewList" runat="server"></uc1:SiteViewList>
-		<div id="fh5co-services-section">
+		<div id="fh5co-services-section"  class="fh5co-section-advices fh5co-home-blog-section" data-stellar-background-ratio="0.5">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">

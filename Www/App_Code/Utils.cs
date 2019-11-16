@@ -280,7 +280,7 @@ public class Utils
         }
     }
 
-    public static string FormatContent(string content)
+    public static string FormatContent(string content, string siteURL)
     {
         content = content.Replace("&nbsp;end", "");
         Site s = new Site();
@@ -289,6 +289,13 @@ public class Utils
             do
             {
                 content = content.Replace("[" + s.s_Name + "]", "<a href=\"" + s.s_URL + "\" target=\"_blank\" rel=\"nofollow\">" + s.s_Name + "</a>");
+                if(s.s_Banner.Length > 0)
+                {
+                    content = content.Replace("[" + s.s_Name + "_Banner]", "<a href=\"" + s.s_URL + "\" target=\"_blank\" rel=\"nofollow\"><img src=\"" + siteURL 
+                        + Utils.GaleryImagePath.Replace("~", "") + "/" + s.s_Banner + "\" alt=\"" + s.s_Notes + "\"/></a>");
+                    content = content.Replace("[" + s.s_SiteID + "_Banner]", "<a href=\"" + s.s_URL + "\" target=\"_blank\" rel=\"nofollow\"><img src=\"" + siteURL
+                        + Utils.GaleryImagePath.Replace("~", "") + "/" + s.s_Banner + "\" alt=\"" + s.s_Notes + "\"/></a>");
+                }
             }
             while (s.MoveNext());
         }
