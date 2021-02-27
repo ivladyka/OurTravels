@@ -20,6 +20,7 @@ public class PhotoUpload : ControlBase
     private int m_ImageHeight = 0;
     private string m_SubFolder = "";
     private string m_FileName = "";
+    private Label m_lblPhotoName;
 
     protected RadAsyncUpload auFile
     {
@@ -129,6 +130,24 @@ public class PhotoUpload : ControlBase
         }
     }
 
+    protected Label lblPhotoName
+    {
+        get
+        {
+            if (m_lblPhotoName != null) return m_lblPhotoName;
+            Control c = this.FindControl("lblPhotoName");
+            if (c != null)
+            {
+                if (c is Label)
+                {
+                    m_lblPhotoName = (Label)c;
+                    return m_lblPhotoName;
+                }
+            }
+            return null;
+        }
+    }
+
     public string PhotoName
     {
         get
@@ -152,15 +171,24 @@ public class PhotoUpload : ControlBase
                 {
                     this.ViewState["VIKKI_UPLOAD_PHOTO_NAME" + this.ClientID] = value;
                     string imageName = value;
-                    if(this.CreateThumbnail)
+                    string extension = value.Substring(value.Length - 4, 4);
+                    if (extension == ".mp4")
                     {
-                        string extension = value.Substring(value.Length - 4, 4);
-                        imageName = value.Substring(0, value.Length - 4) + "_s" + extension;
+                        imgPhoto.Style["display"] = "none";
+                        lblPhotoName.Visible = true;
+                        lblPhotoName.Text = imageName;
                     }
-                    imgPhoto.ImageUrl = Path.Combine(Utils.GaleryImagePath, imageName.TrimStart('/'));
-                    imgDelete.Visible = true;
-                    imgPhoto.Attributes["onclick"] = "return VIKKI_ShowImageViewWindowPhotoUpload('0', '" 
+                    else
+                    {
+                        if (this.CreateThumbnail)
+                        {
+                            imageName = value.Substring(0, value.Length - 4) + "_s" + extension;
+                        }
+                        imgPhoto.ImageUrl = Path.Combine(Utils.GaleryImagePath, imageName.TrimStart('/'));
+                        imgPhoto.Attributes["onclick"] = "return VIKKI_ShowImageViewWindowPhotoUpload('0', '"
                         + value + "', '" + radWindow.ClientID + "');";
+                    }
+                    imgDelete.Visible = true;
                     return;
                 }
             }
@@ -199,8 +227,9 @@ public class PhotoUpload : ControlBase
         base.InitOnFirstLoading();
         auFile.TemporaryFolder = Utils.GaleryTempImagePath;
         imgDelete.Attributes["onclick"] = "return VIKKI_DeletePhoto('" + imgPhoto.ClientID
-            + "', '" + hdPhotoNameDeleted.ClientID + "', '" + imgDelete.ClientID + "');";
+            + "', '" + hdPhotoNameDeleted.ClientID + "', '" + imgDelete.ClientID + "', '" + lblPhotoName.ClientID + "');";
         imgPhoto.ImageUrl = Path.Combine(Utils.GaleryImagePath, "nophoto.jpg");
+        imgPhoto.Visible = true;
     }
 
     public string AllowedFileExtensions

@@ -6,7 +6,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
     <div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(Theme/images/bg3.jpg);">
+			<div class="fh5co-cover text-center" data-stellar-background-ratio="0.5">
+                
+                <video autoplay="autoplay" loop="loop" poster="Theme/images/videobg.jpg" style="min-width:100%; min-height:100%"> 
+                    <source css="videoscss" src="Theme/images/Setangibeach.mp4" type="video/mp4">
+                        </video>
 				<div class="desc animate-box">
                     <h2><strong>Я бачу мою дорогу, але не знаю куди вона приведе. <br />Незнання того, куди йде дорога, надихає мене йти нею.</strong></h2>
                     <span><strong><i>- Росалія де Кастро</i></strong></span>
@@ -123,7 +127,7 @@
 		</div>
     	<div class="fh5co-hero fh5co-hero-2 fh5co-map ">
             <div class="fh5co-overlay"></div>
-            <div class="fh5co-cover fh5co-cover_2 text-center" data-stellar-background-ratio="0.5" style="background-image: url(Theme/images/map.jpg); background-position: 0px 0px; border-top:1px solid #ccc">
+            <div class="fh5co-cover fh5co-cover_2 text-center" data-stellar-background-ratio="0.5" style="background-image: url(Theme/images/map.svg); background-position: 0px 0px; background-size:cover; ">
                 <div class="desc animate-box fadeInUp animated">
                     <h3>Де ми вже були</h3>
                 </div>

@@ -19,7 +19,7 @@ BEGIN
 	FROM         
 		[Site] 
 	WHERE
-		[Site].SiteID IN (2, 3, 4, 9533)
+		[Site].SiteID IN (2, 3, 4, 9533, 19567, 17555, 18567, 17556, 21575)
 
 	SET @Err = @@Error
 

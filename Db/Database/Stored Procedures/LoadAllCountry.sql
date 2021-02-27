@@ -16,7 +16,9 @@ BEGIN
 		[CapitalID],
 		[Description],
 		[DateUpdate],
-		[MainImage]
+		[MainImage],
+		[Advert1],
+		[Advert2]
 	FROM [Country]
 
 	SET @Err = @@Error

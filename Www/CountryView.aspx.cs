@@ -28,13 +28,27 @@ public partial class CountryView : ProjectPageBase
                 }
                 if (!c.IsColumnNull(Country.ColumnNames.Content))
                 {
-                    divCountryContent.InnerHtml = Utils.FormatContent(c.GetColumn(Country.ColumnNames.Content).ToString(), SiteURL);
+                    divCountryContent.InnerHtml = Utils.FormatContent(c.GetColumn(Country.ColumnNames.Content).ToString(), SiteURL).Replace("[Country_Advert1]", c.s_Advert1)
+                        .Replace("[Country_Advert2]", c.s_Advert2);
+                }
+                else
+                {
+                    divCountryContentContainer.Visible = false;
+                    
                 }
                 if (!c.IsColumnNull(Country.ColumnNames.MainImage) && c.s_MainImage.Length > 0)
                 {
                     pnlPageTitle.Attributes["style"] = "background-image: url(" + Master.SiteURL + Utils.GaleryImagePath.Replace("~", "") + "/" + c.MainImage + ");";
                 }
             }
+        }
+    }
+
+    protected void Page_PreRender(object sender, EventArgs e)
+    {
+        if (!divCountryContentContainer.Visible && cityTableView.CityCount <= 8)
+        {
+            h4OurTravelsInThisWay.Visible = hrOurTravelsInThisWay.Visible = false;
         }
     }
 

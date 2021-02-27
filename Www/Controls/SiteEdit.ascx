@@ -116,7 +116,7 @@
 		<td align="right">Banner:
 		</td>
 		<td>
-           <uc1:PhotoUpload id="upload_Banner" runat="server" AllowedFileExtensions="jpg,gif,png" CreateThumbnail="false"></uc1:PhotoUpload>
+           <uc1:PhotoUpload id="upload_Banner" runat="server" AllowedFileExtensions="jpg,gif,png,mp4" CreateThumbnail="false"></uc1:PhotoUpload>
 		</td>
 	</tr>
   	<tr>

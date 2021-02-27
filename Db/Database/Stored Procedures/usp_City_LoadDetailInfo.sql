@@ -13,7 +13,9 @@ BEGIN
 		City.Content,
 		City.[TitleImage],
 		City.[MainImage], 
-		City.BookingID
+		City.BookingID,
+		City.Advert1,
+		City.Advert2
 	FROM         
 		City 
 	INNER JOIN

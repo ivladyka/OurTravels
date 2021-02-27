@@ -10,7 +10,9 @@ CREATE PROCEDURE [dbo].[InsertCountry]
 	@CapitalID int = NULL,
 	@Description varchar(200) = NULL,
 	@DateUpdate smalldatetime = NULL,
-	@MainImage varchar(100) = NULL
+	@MainImage varchar(100) = NULL,
+	@Advert1 varchar(1000) = NULL,
+	@Advert2 varchar(1000) = NULL
 )
 AS
 BEGIN
@@ -29,7 +31,9 @@ BEGIN
 		[CapitalID],
 		[Description],
 		[DateUpdate],
-		[MainImage]
+		[MainImage],
+		[Advert1],
+		[Advert2]
 	)
 	VALUES
 	(
@@ -41,7 +45,9 @@ BEGIN
 		@CapitalID,
 		@Description,
 		@DateUpdate,
-		@MainImage
+		@MainImage,
+		@Advert1,
+		@Advert2
 	)
 
 	SET @Err = @@Error

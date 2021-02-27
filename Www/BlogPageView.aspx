@@ -22,7 +22,7 @@
 			</div>
 			<div class="container">
 				<div class="row row-bottom-padded-md">					
-                    <div ID="divCategoryContent" runat="server"></div>
+                    <div ID="divCategoryContent" runat="server" class="blog-content"></div>
 				</div>				
 			</div>
 		</div> 

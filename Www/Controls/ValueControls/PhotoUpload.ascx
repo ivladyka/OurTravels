@@ -8,6 +8,7 @@
     <tr>
         <td>
             <asp:Image ID="imgPhoto" runat="server" CssClass="VIKKI_HandCursor"/>
+            <asp:Label ID="lblPhotoName" runat="server" Visible="false"></asp:Label>
         </td>
         <td>
             <asp:ImageButton ID="imgDelete" runat="server" CssClass="b_style" ToolTip="Видалити зображення" ImageUrl="~/Images/Delete.gif" Visible="false"/>

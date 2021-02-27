@@ -19,7 +19,9 @@ BEGIN
 		[Country].[Description],
 		City.Name AS CapitalName, 
 		City.Name_en AS CapitalName_en,
-		[Country].[MainImage]
+		[Country].[MainImage],
+		[Country].Advert1,
+		[Country].Advert2
 	FROM 
 		[Country]
 	LEFT OUTER JOIN

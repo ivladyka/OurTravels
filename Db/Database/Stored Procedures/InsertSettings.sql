@@ -7,7 +7,10 @@ CREATE PROCEDURE [dbo].[InsertSettings]
 	@Keywords varchar(250) = NULL,
 	@Title varchar(100) = NULL,
 	@Description varchar(200) = NULL,
-	@TitleSuffix varchar(100) = NULL
+	@TitleSuffix varchar(100) = NULL,
+	@Advert1 varchar(1000) = NULL,
+	@Advert2 varchar(1000) = NULL,
+	@Advert3 varchar(1000) = NULL
 )
 AS
 BEGIN
@@ -23,7 +26,10 @@ BEGIN
 		[Keywords],
 		[Title],
 		[Description],
-		[TitleSuffix]
+		[TitleSuffix],
+		[Advert1],
+		[Advert2],
+		[Advert3]
 	)
 	VALUES
 	(
@@ -32,7 +38,10 @@ BEGIN
 		@Keywords,
 		@Title,
 		@Description,
-		@TitleSuffix
+		@TitleSuffix,
+		@Advert1,
+		@Advert2,
+		@Advert3
 	)
 
 	SET @Err = @@Error

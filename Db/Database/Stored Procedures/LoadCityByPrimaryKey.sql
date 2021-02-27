@@ -20,7 +20,9 @@ BEGIN
 		[DateUpdate],
 		[TitleImage],
 		[MainImage],
-		[BookingID]
+		[BookingID],
+		[Advert1],
+		[Advert2]
 	FROM [City]
 	WHERE
 		([CityID] = @CityID)

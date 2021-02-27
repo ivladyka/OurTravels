@@ -155,6 +155,30 @@ namespace VikkiSoft_BLL.DAL
 					return new SqlParameter("@TitleSuffix", SqlDbType.VarChar, 100);
 				}
 			}
+
+			public static SqlParameter Advert1
+			{
+				get
+				{
+					return new SqlParameter("@Advert1", SqlDbType.VarChar, 1000);
+				}
+			}
+
+			public static SqlParameter Advert2
+			{
+				get
+				{
+					return new SqlParameter("@Advert2", SqlDbType.VarChar, 1000);
+				}
+			}
+
+			public static SqlParameter Advert3
+			{
+				get
+				{
+					return new SqlParameter("@Advert3", SqlDbType.VarChar, 1000);
+				}
+			}
 		}
 		#endregion		
 	
@@ -168,6 +192,9 @@ namespace VikkiSoft_BLL.DAL
             public const string Title = "Title";
             public const string Description = "Description";
             public const string TitleSuffix = "TitleSuffix";
+			public const string Advert1 = "Advert1";
+			public const string Advert2 = "Advert2";
+			public const string Advert3 = "Advert3";
 
 			static public string ToPropertyName(string columnName)
 			{
@@ -182,6 +209,9 @@ namespace VikkiSoft_BLL.DAL
 					ht[Title] = _Settings.PropertyNames.Title;
 					ht[Description] = _Settings.PropertyNames.Description;
 					ht[TitleSuffix] = _Settings.PropertyNames.TitleSuffix;
+					ht[Advert1] = _Settings.PropertyNames.Advert1;
+					ht[Advert2] = _Settings.PropertyNames.Advert2;
+					ht[Advert3] = _Settings.PropertyNames.Advert3;
 
 				}
 				return (string)ht[columnName];
@@ -201,6 +231,9 @@ namespace VikkiSoft_BLL.DAL
             public const string Title = "Title";
             public const string Description = "Description";
             public const string TitleSuffix = "TitleSuffix";
+			public const string Advert1 = "Advert1";
+			public const string Advert2 = "Advert2";
+			public const string Advert3 = "Advert3";
 
 			static public string ToColumnName(string propertyName)
 			{
@@ -215,6 +248,9 @@ namespace VikkiSoft_BLL.DAL
 					ht[Title] = _Settings.ColumnNames.Title;
 					ht[Description] = _Settings.ColumnNames.Description;
 					ht[TitleSuffix] = _Settings.ColumnNames.TitleSuffix;
+					ht[Advert1] = _Settings.ColumnNames.Advert1;
+					ht[Advert2] = _Settings.ColumnNames.Advert2;
+					ht[Advert3] = _Settings.ColumnNames.Advert3;
 
 				}
 				return (string)ht[propertyName];
@@ -234,7 +270,9 @@ namespace VikkiSoft_BLL.DAL
             public const string Title = "s_Title";
             public const string Description = "s_Description";
             public const string TitleSuffix = "s_TitleSuffix";
-
+			public const string Advert1 = "s_Advert1";
+			public const string Advert2 = "s_Advert2";
+			public const string Advert3 = "s_Advert3";
 		}
 		#endregion		
 		
@@ -324,10 +362,46 @@ namespace VikkiSoft_BLL.DAL
 			}
 		}
 
+		public virtual string Advert1
+		{
+			get
+			{
+				return base.Getstring(ColumnNames.Advert1);
+			}
+			set
+			{
+				base.Setstring(ColumnNames.Advert1, value);
+			}
+		}
+
+		public virtual string Advert2
+		{
+			get
+			{
+				return base.Getstring(ColumnNames.Advert2);
+			}
+			set
+			{
+				base.Setstring(ColumnNames.Advert2, value);
+			}
+		}
+
+		public virtual string Advert3
+		{
+			get
+			{
+				return base.Getstring(ColumnNames.Advert3);
+			}
+			set
+			{
+				base.Setstring(ColumnNames.Advert3, value);
+			}
+		}
+
 		#endregion
-		
+
 		#region String Properties
-	
+
 		public virtual string s_SettingID
 	    {
 			get
@@ -433,8 +507,53 @@ namespace VikkiSoft_BLL.DAL
 			}
 		}
 
-		#endregion		
-	
+		public virtual string s_Advert1
+		{
+			get
+			{
+				return this.IsColumnNull(ColumnNames.Advert1) ? string.Empty : base.GetstringAsString(ColumnNames.Advert1);
+			}
+			set
+			{
+				if (string.Empty == value)
+					this.SetColumnNull(ColumnNames.Advert1);
+				else
+					this.Advert1 = base.SetstringAsString(ColumnNames.Advert1, value);
+			}
+		}
+
+		public virtual string s_Advert2
+		{
+			get
+			{
+				return this.IsColumnNull(ColumnNames.Advert2) ? string.Empty : base.GetstringAsString(ColumnNames.Advert2);
+			}
+			set
+			{
+				if (string.Empty == value)
+					this.SetColumnNull(ColumnNames.Advert2);
+				else
+					this.Advert2 = base.SetstringAsString(ColumnNames.Advert2, value);
+			}
+		}
+
+		public virtual string s_Advert3
+		{
+			get
+			{
+				return this.IsColumnNull(ColumnNames.Advert3) ? string.Empty : base.GetstringAsString(ColumnNames.Advert3);
+			}
+			set
+			{
+				if (string.Empty == value)
+					this.SetColumnNull(ColumnNames.Advert3);
+				else
+					this.Advert3 = base.SetstringAsString(ColumnNames.Advert3, value);
+			}
+		}
+
+		#endregion
+
 		#region Where Clause
 		public class WhereClause
 		{
@@ -535,6 +654,36 @@ namespace VikkiSoft_BLL.DAL
 					}
 				}
 
+				public WhereParameter Advert1
+				{
+					get
+					{
+						WhereParameter where = new WhereParameter(ColumnNames.Advert1, Parameters.Advert1);
+						this._clause._entity.Query.AddWhereParameter(where);
+						return where;
+					}
+				}
+
+				public WhereParameter Advert2
+				{
+					get
+					{
+						WhereParameter where = new WhereParameter(ColumnNames.Advert2, Parameters.Advert2);
+						this._clause._entity.Query.AddWhereParameter(where);
+						return where;
+					}
+				}
+
+				public WhereParameter Advert3
+				{
+					get
+					{
+						WhereParameter where = new WhereParameter(ColumnNames.Advert3, Parameters.Advert3);
+						this._clause._entity.Query.AddWhereParameter(where);
+						return where;
+					}
+				}
+
 				private WhereClause _clause;
 			}
 			#endregion
@@ -623,6 +772,42 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+			public WhereParameter Advert1
+			{
+				get
+				{
+					if (_Advert1_W == null)
+					{
+						_Advert1_W = TearOff.Advert1;
+					}
+					return _Advert1_W;
+				}
+			}
+
+			public WhereParameter Advert2
+			{
+				get
+				{
+					if (_Advert2_W == null)
+					{
+						_Advert2_W = TearOff.Advert2;
+					}
+					return _Advert2_W;
+				}
+			}
+
+			public WhereParameter Advert3
+			{
+				get
+				{
+					if (_Advert3_W == null)
+					{
+						_Advert3_W = TearOff.Advert3;
+					}
+					return _Advert3_W;
+				}
+			}
+
 			private WhereParameter _SettingID_W = null;
 			private WhereParameter _UserName_W = null;
 			private WhereParameter _Password_W = null;
@@ -630,6 +815,9 @@ namespace VikkiSoft_BLL.DAL
 			private WhereParameter _Title_W = null;
 			private WhereParameter _Description_W = null;
 			private WhereParameter _TitleSuffix_W = null;
+			private WhereParameter _Advert1_W = null;
+			private WhereParameter _Advert2_W = null;
+			private WhereParameter _Advert3_W = null;
 
 			public void WhereClauseReset()
 			{
@@ -640,6 +828,9 @@ namespace VikkiSoft_BLL.DAL
 				_Title_W = null;
 				_Description_W = null;
 				_TitleSuffix_W = null;
+				_Advert1_W = null;
+				_Advert2_W = null;
+				_Advert3_W = null;
 
 				this._entity.Query.FlushWhereParameters();
 
@@ -766,6 +957,36 @@ namespace VikkiSoft_BLL.DAL
 					}
 				}
 
+				public AggregateParameter Advert1
+				{
+					get
+					{
+						AggregateParameter aggregate = new AggregateParameter(ColumnNames.Advert1, Parameters.Advert1);
+						this._clause._entity.Query.AddAggregateParameter(aggregate);
+						return aggregate;
+					}
+				}
+
+				public AggregateParameter Advert2
+				{
+					get
+					{
+						AggregateParameter aggregate = new AggregateParameter(ColumnNames.Advert2, Parameters.Advert2);
+						this._clause._entity.Query.AddAggregateParameter(aggregate);
+						return aggregate;
+					}
+				}
+
+				public AggregateParameter Advert3
+				{
+					get
+					{
+						AggregateParameter aggregate = new AggregateParameter(ColumnNames.Advert3, Parameters.Advert3);
+						this._clause._entity.Query.AddAggregateParameter(aggregate);
+						return aggregate;
+					}
+				}
+
 				private AggregateClause _clause;
 			}
 			#endregion
@@ -854,6 +1075,42 @@ namespace VikkiSoft_BLL.DAL
 				}
 			}
 
+			public AggregateParameter Advert1
+			{
+				get
+				{
+					if (_Advert1_W == null)
+					{
+						_Advert1_W = TearOff.Advert1;
+					}
+					return _Advert1_W;
+				}
+			}
+
+			public AggregateParameter Advert2
+			{
+				get
+				{
+					if (_Advert2_W == null)
+					{
+						_Advert2_W = TearOff.Advert2;
+					}
+					return _Advert2_W;
+				}
+			}
+
+			public AggregateParameter Advert3
+			{
+				get
+				{
+					if (_Advert3_W == null)
+					{
+						_Advert3_W = TearOff.Advert3;
+					}
+					return _Advert3_W;
+				}
+			}
+
 			private AggregateParameter _SettingID_W = null;
 			private AggregateParameter _UserName_W = null;
 			private AggregateParameter _Password_W = null;
@@ -861,6 +1118,9 @@ namespace VikkiSoft_BLL.DAL
 			private AggregateParameter _Title_W = null;
 			private AggregateParameter _Description_W = null;
 			private AggregateParameter _TitleSuffix_W = null;
+			private AggregateParameter _Advert1_W = null;
+			private AggregateParameter _Advert2_W = null;
+			private AggregateParameter _Advert3_W = null;
 
 			public void AggregateClauseReset()
 			{
@@ -871,6 +1131,9 @@ namespace VikkiSoft_BLL.DAL
 				_Title_W = null;
 				_Description_W = null;
 				_TitleSuffix_W = null;
+				_Advert1_W = null;
+				_Advert2_W = null;
+				_Advert3_W = null;
 
 				this._entity.Query.FlushAggregateParameters();
 
@@ -971,6 +1234,18 @@ namespace VikkiSoft_BLL.DAL
 
 			p = cmd.Parameters.Add(Parameters.TitleSuffix);
 			p.SourceColumn = ColumnNames.TitleSuffix;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Advert1);
+			p.SourceColumn = ColumnNames.Advert1;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Advert2);
+			p.SourceColumn = ColumnNames.Advert2;
+			p.SourceVersion = DataRowVersion.Current;
+
+			p = cmd.Parameters.Add(Parameters.Advert3);
+			p.SourceColumn = ColumnNames.Advert3;
 			p.SourceVersion = DataRowVersion.Current;
 
 			return cmd;

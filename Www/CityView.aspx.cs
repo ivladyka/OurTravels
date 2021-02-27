@@ -18,7 +18,12 @@ public partial class CityView : ProjectPageBase
                 lblName.Text = c.GetColumn(City.ColumnNames.Name).ToString();
                 if (!c.IsColumnNull(City.ColumnNames.Content))
                 {
-                    divCityContent.InnerHtml = Utils.FormatContent(c.GetColumn(City.ColumnNames.Content).ToString(), SiteURL);
+                    divCityContent.InnerHtml = Utils.FormatContent(c.GetColumn(City.ColumnNames.Content).ToString(), SiteURL).Replace("[City_Advert1]", c.s_Advert1)
+                        .Replace("[City_Advert2]", c.s_Advert2);
+                }
+                else
+                {
+                    h4OurTravelsInThisWay.Visible = hrOurTravelsInThisWay.Visible = blogPageTableListBig.TitleVisible = divCityContentContainer.Visible = false;
                 }
                 hlCountry.Text = c.GetColumn("CountryName").ToString();
                 hlCountry.NavigateUrl = Utils.GenerateFriendlyURL("country",

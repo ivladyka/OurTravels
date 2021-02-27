@@ -144,8 +144,11 @@ function VIKKI_SetInputValue(InputClientID, InputValue) {
     inputControl.value = InputValue;
 }
 
-function VIKKI_DeletePhoto(imgPhotoClientID, hdPhotoNameDeletedClientID, imgDeleteClientID) {
+function VIKKI_DeletePhoto(imgPhotoClientID, hdPhotoNameDeletedClientID, imgDeleteClientID, lblPhotoNameClientID) {
     var PhotoImage = document.getElementById(imgPhotoClientID);
+    var PhotoName = document.getElementById(lblPhotoNameClientID);
+    VIKKI_HideControl(PhotoImage, false);
+    VIKKI_HideControl(PhotoName, true);
     var PhotoPath = PhotoImage.src.substring(0, PhotoImage.src.lastIndexOf('/'));
     PhotoImage.src = PhotoPath + "/nophoto.jpg"
     VIKKI_SetInputValue(hdPhotoNameDeletedClientID, '1');

@@ -102,6 +102,22 @@
             <asp:TextBox ID="text_Description" runat="server" CssClass="textBoxStyle" MaxLength="200" Width="675px"></asp:TextBox>
         </td>
     </tr>
+    <tr>
+        <td align="right" valign="top">
+            Реклама 1:
+        </td>
+        <td>
+            <uc1:EditorHTML ID="editor_Advert1" runat="server" EditorHeight="200" />
+        </td>
+    </tr>
+    <tr>
+        <td align="right" valign="top">
+            Реклама 2:
+        </td>
+        <td>
+            <uc1:EditorHTML ID="editor_Advert2" runat="server" EditorHeight="200" />
+        </td>
+    </tr>
   	<tr>
 	    <td colspan="2" align="right">
 	      <asp:Button ID="btnCancel" runat="server" CommandArgument="False" ForeColor="Black" BorderStyle="None" Font-Size="10pt"  Height="30px" BackColor="#ffc33f"

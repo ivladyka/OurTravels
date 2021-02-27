@@ -2,6 +2,7 @@
 <%@ MasterType VirtualPath="~/DefaultMP.master" %>
 <%@ Register TagPrefix="uc1" TagName="CityTableView" Src="Controls/CityTableView.ascx" %>
 <%@ Register TagPrefix="uc1" TagName="SiteViewTab" Src="Controls/SiteViewTab.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="BlogPageTableListBig" Src="Controls/BlogPageTableListBig.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphWithoutScroll" Runat="Server">
@@ -19,16 +20,20 @@
                         <asp:Panel ID="pnlCapital" runat="server" style="padding-top: 5px; padding-bottom: 5px;">
         Столиця: <asp:HyperLink id="hlCapital" runat="server"></asp:HyperLink>
     </asp:Panel>
+						<h4 style="padding: 0; margin: 0;" id="h4OurTravelsInThisWay" runat="server"><a href="#divOurTravelsInThisWay" style="color:#f27660"><span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color:#f27660"></span> Наші подорожі в цьому напрямку <span class="glyphicon glyphicon-menu-down" aria-hidden="true" style="color:#f27660"></span></a></h4>
+                        <hr style="margin: 10px 0px 20px 0px;" id="hrOurTravelsInThisWay" runat="server" />
                         <uc1:SiteViewTab id="siteViewTab" runat="server"></uc1:SiteViewTab>
 					</div>
 				</div>
 			</div>
-			<div class="container">
+			<div class="container" id="divCountryContentContainer" runat="server">
 				<div class="row row-bottom-padded-md">					
-                    <div ID="divCountryContent" runat="server"></div>
+                    <div ID="divCountryContent" runat="server" class="blog-content"></div>
 				</div>				
 			</div>
     </div>     
     <uc1:CityTableView id="cityTableView" runat="server"></uc1:CityTableView>
+	<span id="divOurTravelsInThisWay"></span>
+    <uc1:BlogPageTableListBig id="blogPageTableListBig" runat="server" class="blog-content"></uc1:BlogPageTableListBig>
 </asp:Content>
 

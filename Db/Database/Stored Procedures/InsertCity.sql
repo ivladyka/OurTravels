@@ -12,7 +12,9 @@ CREATE PROCEDURE [dbo].[InsertCity]
 	@DateUpdate smalldatetime = NULL,
 	@TitleImage varchar(100) = NULL,
 	@MainImage varchar(100) = NULL,
-	@BookingID varchar(15) = NULL
+	@BookingID varchar(15) = NULL,
+	@Advert1 varchar(1000) = NULL,
+	@Advert2 varchar(1000) = NULL
 )
 AS
 BEGIN
@@ -33,7 +35,9 @@ BEGIN
 		[DateUpdate],
 		[TitleImage],
 		[MainImage],
-		[BookingID]
+		[BookingID],
+		[Advert1],
+		[Advert2]
 	)
 	VALUES
 	(
@@ -47,7 +51,9 @@ BEGIN
 		@DateUpdate,
 		@TitleImage,
 		@MainImage,
-		@BookingID
+		@BookingID,
+		@Advert1,
+		@Advert2
 	)
 
 	SET @Err = @@Error

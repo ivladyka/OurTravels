@@ -112,4 +112,12 @@ public class EditorHTML : ControlBase
             editorHTML.ImageManager.DeletePaths = new string[] { value };
         }
     }
+
+    public int EditorHeight
+    {
+        set
+        {
+            editorHTML.Height = new Unit(value, UnitType.Pixel);
+        }
+    }
 }

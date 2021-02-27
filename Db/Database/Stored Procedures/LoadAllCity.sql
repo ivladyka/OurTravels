@@ -18,7 +18,9 @@ BEGIN
 		[DateUpdate],
 		[TitleImage],
 		[MainImage],
-		[BookingID]
+		[BookingID],
+		[Advert1],
+		[Advert2]
 	FROM [City]
 
 	SET @Err = @@Error

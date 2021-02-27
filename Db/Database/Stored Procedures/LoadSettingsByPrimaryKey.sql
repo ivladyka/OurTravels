@@ -15,7 +15,10 @@ BEGIN
 		[Keywords],
 		[Title],
 		[Description],
-		[TitleSuffix]
+		[TitleSuffix],
+		[Advert1],
+		[Advert2],
+		[Advert3]
 	FROM [Settings]
 	WHERE
 		([SettingID] = @SettingID)

@@ -28,11 +28,15 @@ BEGIN
         BlogPageCity bpc ON bp.BlogPageID = bpc.BlogPageID
 	INNER JOIN
         City c ON bpc.CityID = c.CityID
+	INNER JOIN
+        Country ctr ON ctr.CountryID = c.CountryID
 	WHERE
 		bp.Active = 1
 		AND
 		(bpc.CityID = @CityID OR @CityID = 0)
 		AND
 		(c.CountryID = @CountryID OR @CountryID = 0)
+	ORDER BY
+		bp.[StartTravelDate] DESC
 
 END
