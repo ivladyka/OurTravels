@@ -45,6 +45,27 @@ BEGIN
 
 	SET @Err = @@Error
 
+	UPDATE c
+	SET
+		c.DateUpdate = GETDATE()
+	FROM
+		City c
+	INNER JOIN
+        BlogPageCity ON BlogPageCity.CityID = c.CityID
+	WHERE
+		BlogPageCity.BlogPageID = @BlogPageID
+
+	UPDATE c
+	SET
+		c.DateUpdate = GETDATE()
+	FROM
+		Country c 
+	INNER JOIN
+        City ON City.CountryID = c.CountryID
+	INNER JOIN
+		BlogPageCity ON BlogPageCity.CityID = City.CityID
+	WHERE
+		BlogPageCity.BlogPageID = @BlogPageID
 
 	RETURN @Err
 END

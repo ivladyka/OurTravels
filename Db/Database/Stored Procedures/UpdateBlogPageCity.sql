@@ -34,6 +34,23 @@ BEGIN
 	WHERE
 		[CityID] = @CityID
 
+	DECLARE @CountryID int
+
+	SELECT 
+		@CountryID = CountryID
+	FROM
+		[City]
+	WHERE
+		CityID = @CityID
+
+	IF @CountryID IS NOT NULL
+	 BEGIN
+		UPDATE [Country]
+		SET
+			[DateUpdate] = GETDATE()
+		WHERE
+			[CountryID] = @CountryID
+	 END
 
 	RETURN @Err
 END
